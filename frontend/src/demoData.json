@@ -1,0 +1,2632 @@
+{
+  "companies": [
+    {
+      "name": "Công ty Cổ phần Nhựa An Phát Xanh",
+      "ticker": "AAA",
+      "sector": "Nhựa - Bao bì",
+      "pd_scores_4q": [
+        60.03,
+        65.63,
+        80.77,
+        66.85
+      ],
+      "current_pd": 66.85,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 30.1962,
+          "display_val": "30.20",
+          "contribution": 0.774,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -0.9336,
+          "display_val": "-93.4%",
+          "contribution": 0.5819,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -0.9336,
+          "display_val": "-93.4%",
+          "contribution": 0.4645,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Đầu tư và Phát triển Bất động sản An Gia",
+      "ticker": "AGG",
+      "sector": "Bất động sản",
+      "pd_scores_4q": [
+        74.77,
+        5.61,
+        94.72,
+        88.37
+      ],
+      "current_pd": 88.37,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.3168,
+          "display_val": "29.32",
+          "contribution": 1.2498,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0125,
+          "display_val": "1.2%",
+          "contribution": 0.9039,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.0273,
+          "display_val": "2.7%",
+          "contribution": 0.7726,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Nam Việt",
+      "ticker": "ANV",
+      "sector": "Thủy sản",
+      "pd_scores_4q": [
+        38.28,
+        55.69,
+        72.25,
+        28.75
+      ],
+      "current_pd": 28.75,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.4337,
+          "display_val": "29.43",
+          "contribution": 1.1865,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.0135,
+          "display_val": "1.4%",
+          "contribution": 0.8145,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -0.5762,
+          "display_val": "-57.6%",
+          "contribution": 0.4149,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Tổng Công ty Đầu tư và Phát triển Công nghiệp - CTCP",
+      "ticker": "BCM",
+      "sector": "Bất động sản KCN",
+      "pd_scores_4q": [
+        39.37,
+        84.2,
+        38.24,
+        86.16
+      ],
+      "current_pd": 86.16,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.46,
+          "display_val": "46.0%",
+          "contribution": 0.9595,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        },
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.018,
+          "display_val": "1.8%",
+          "contribution": 0.882,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -1.2313,
+          "display_val": "-1.23",
+          "contribution": 0.721,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Lọc Hóa dầu Bình Sơn",
+      "ticker": "BSR",
+      "sector": "Dầu khí",
+      "pd_scores_4q": [
+        90.3,
+        66.54,
+        89.67,
+        5.28
+      ],
+      "current_pd": 5.28,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "depreciation_amortization",
+          "raw_val": -35814381345344.0,
+          "display_val": "-35,814 tỷ VNĐ",
+          "contribution": 4.7356,
+          "label_vi": "Khấu hao"
+        },
+        {
+          "feature": "ebitda",
+          "raw_val": -26578942071538.0,
+          "display_val": "-26,579 tỷ VNĐ",
+          "contribution": 2.2411,
+          "label_vi": "EBITDA"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -0.5788,
+          "display_val": "-57.9%",
+          "contribution": 0.4161,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Tập đoàn C.E.O",
+      "ticker": "CEO",
+      "sector": "Bất động sản",
+      "pd_scores_4q": [
+        43.43,
+        63.7,
+        79.43,
+        30.08
+      ],
+      "current_pd": 30.08,
+      "risk_level": "Trung bình",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.8149,
+          "display_val": "29.81",
+          "contribution": 0.9803,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0487,
+          "display_val": "4.9%",
+          "contribution": 0.7613,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -1.001,
+          "display_val": "-1.00",
+          "contribution": 0.6134,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Tập đoàn Công nghệ CMC",
+      "ticker": "CMG",
+      "sector": "Công nghệ",
+      "pd_scores_4q": [
+        52.67,
+        72.92,
+        46.35,
+        66.1
+      ],
+      "current_pd": 66.1,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.981,
+          "display_val": "29.98",
+          "contribution": 0.8904,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -0.9635,
+          "display_val": "-96.4%",
+          "contribution": 0.5959,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -0.9635,
+          "display_val": "-96.4%",
+          "contribution": 0.4751,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Công nghiệp Cao su Miền Nam",
+      "ticker": "CSM",
+      "sector": "Cao su",
+      "pd_scores_4q": [
+        98.61,
+        95.05,
+        99.78,
+        96.46
+      ],
+      "current_pd": 96.46,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 28.9384,
+          "display_val": "28.94",
+          "contribution": 1.4545,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -2.4496,
+          "display_val": "-2.45",
+          "contribution": 1.2902,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -2.4496,
+          "display_val": "-2.45",
+          "contribution": 1.0001,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Hóa chất Cơ bản Miền Nam",
+      "ticker": "CSV",
+      "sector": "Hóa chất",
+      "pd_scores_4q": [
+        71.67,
+        9.83,
+        63.8,
+        4.38
+      ],
+      "current_pd": 4.38,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 28.382,
+          "display_val": "28.38",
+          "contribution": 1.7556,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -1.6568,
+          "display_val": "-1.66",
+          "contribution": 0.9198,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -1.6568,
+          "display_val": "-1.66",
+          "contribution": 0.72,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Xây dựng Coteccons",
+      "ticker": "CTD",
+      "sector": "Xây dựng",
+      "pd_scores_4q": [
+        66.41,
+        53.25,
+        62.53,
+        59.88
+      ],
+      "current_pd": 59.88,
+      "risk_level": "Trung bình",
+      "top_factors": [
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.061,
+          "display_val": "6.1%",
+          "contribution": 0.6705,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        },
+        {
+          "feature": "roa_roll4q_mean",
+          "raw_val": 0.0034,
+          "display_val": "0.3%",
+          "contribution": 0.4422,
+          "label_vi": "ROA (TB 4Q)"
+        },
+        {
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.046,
+          "display_val": "4.6%",
+          "contribution": 0.3816,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Dược phẩm Bến Tre",
+      "ticker": "DBT",
+      "sector": "Dược phẩm",
+      "pd_scores_4q": [
+        96.16,
+        98.52,
+        98.12,
+        97.95
+      ],
+      "current_pd": 97.95,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 27.5437,
+          "display_val": "27.54",
+          "contribution": 2.2092,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.5095,
+          "display_val": "51.0%",
+          "contribution": 0.9055,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.0128,
+          "display_val": "1.3%",
+          "contribution": 0.8168,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Thế Giới Số",
+      "ticker": "DGW",
+      "sector": "Bán lẻ",
+      "pd_scores_4q": [
+        5.29,
+        0.99,
+        23.41,
+        0.53
+      ],
+      "current_pd": 0.53,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.9367,
+          "display_val": "29.94",
+          "contribution": 0.9144,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.1558,
+          "display_val": "15.6%",
+          "contribution": 0.3831,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 1.0701,
+          "display_val": "1.07",
+          "contribution": 0.2946,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Đông Hải Bến Tre",
+      "ticker": "DHC",
+      "sector": "Giấy - Bao bì",
+      "pd_scores_4q": [
+        68.24,
+        47.7,
+        41.96,
+        23.68
+      ],
+      "current_pd": 23.68,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 28.9733,
+          "display_val": "28.97",
+          "contribution": 1.4357,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -0.7507,
+          "display_val": "-75.1%",
+          "contribution": 0.4964,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -0.7507,
+          "display_val": "-75.1%",
+          "contribution": 0.3999,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        }
+      ]
+    },
+    {
+      "name": "Tổng Công ty Cổ phần Đầu tư Phát triển Xây dựng",
+      "ticker": "DIG",
+      "sector": "Bất động sản",
+      "pd_scores_4q": [
+        95.66,
+        87.35,
+        58.7,
+        89.89
+      ],
+      "current_pd": 89.89,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0082,
+          "display_val": "0.8%",
+          "contribution": 0.9209,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -1.6392,
+          "display_val": "-1.64",
+          "contribution": 0.9116,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -1.6392,
+          "display_val": "-1.64",
+          "contribution": 0.7138,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Đạt Phương",
+      "ticker": "DPG",
+      "sector": "Xây dựng",
+      "pd_scores_4q": [
+        8.27,
+        45.83,
+        47.74,
+        81.13
+      ],
+      "current_pd": 81.13,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -2.3925,
+          "display_val": "-2.39",
+          "contribution": 1.2635,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -2.3925,
+          "display_val": "-2.39",
+          "contribution": 0.9799,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        },
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.8725,
+          "display_val": "29.87",
+          "contribution": 0.9491,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        }
+      ]
+    },
+    {
+      "name": "Tổng Công ty Phân bón và Hóa chất Dầu khí",
+      "ticker": "DPM",
+      "sector": "Hóa chất",
+      "pd_scores_4q": [
+        19.75,
+        1.88,
+        4.3,
+        16.33
+      ],
+      "current_pd": 16.33,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "cfo_to_debt_roll4q_mean",
+          "raw_val": 0.1415,
+          "display_val": "14.1%",
+          "contribution": 1.1688,
+          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
+        },
+        {
+          "feature": "log_total_assets",
+          "raw_val": 30.5301,
+          "display_val": "30.53",
+          "contribution": 0.5933,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "long_term_debt_to_equity",
+          "raw_val": 0.0,
+          "display_val": "0.0%",
+          "contribution": 0.268,
+          "label_vi": "Nợ dài hạn / Vốn chủ"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Cao su Đà Nẵng",
+      "ticker": "DRC",
+      "sector": "Cao su",
+      "pd_scores_4q": [
+        97.66,
+        98.53,
+        99.05,
+        97.62
+      ],
+      "current_pd": 97.62,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.0024,
+          "display_val": "29.00",
+          "contribution": 1.4199,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -2.3017,
+          "display_val": "-2.30",
+          "contribution": 1.2211,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -2.3017,
+          "display_val": "-2.30",
+          "contribution": 0.9478,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Dịch vụ Bất động sản Đất Xanh",
+      "ticker": "DXS",
+      "sector": "Bất động sản",
+      "pd_scores_4q": [
+        37.2,
+        72.77,
+        70.56,
+        34.64
+      ],
+      "current_pd": 34.64,
+      "risk_level": "Trung bình",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 30.4366,
+          "display_val": "30.44",
+          "contribution": 0.6439,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.0698,
+          "display_val": "7.0%",
+          "contribution": 0.6438,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        },
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0856,
+          "display_val": "8.6%",
+          "contribution": 0.6159,
+          "label_vi": "Vòng quay tổng tài sản"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Đầu tư Phát triển Công nghệ Điện tử Viễn thông",
+      "ticker": "ELC",
+      "sector": "Công nghệ",
+      "pd_scores_4q": [
+        5.41,
+        20.73,
+        17.75,
+        22.94
+      ],
+      "current_pd": 22.94,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 28.4651,
+          "display_val": "28.47",
+          "contribution": 1.7106,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0496,
+          "display_val": "5.0%",
+          "contribution": 0.7576,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "roa_roll4q_mean",
+          "raw_val": 0.0011,
+          "display_val": "0.1%",
+          "contribution": 0.5068,
+          "label_vi": "ROA (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần FECON",
+      "ticker": "FCN",
+      "sector": "Xây dựng",
+      "pd_scores_4q": [
+        84.71,
+        89.62,
+        89.82,
+        89.26
+      ],
+      "current_pd": 89.26,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.9774,
+          "display_val": "29.98",
+          "contribution": 0.8923,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.0595,
+          "display_val": "5.9%",
+          "contribution": 0.6752,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.8078,
+          "display_val": "80.8%",
+          "contribution": 0.5804,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần FPT",
+      "ticker": "FPT",
+      "sector": "Công nghệ",
+      "pd_scores_4q": [
+        0.97,
+        0.75,
+        0.61,
+        0.06
+      ],
+      "current_pd": 0.06,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "is_retail",
+          "raw_val": 0.0,
+          "display_val": "0.0%",
+          "contribution": 0.2439,
+          "label_vi": "Đặc thù ngành Bán lẻ/Tiêu dùng"
+        },
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.182,
+          "display_val": "18.2%",
+          "contribution": 0.2365,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "long_term_debt_to_equity",
+          "raw_val": 0.04,
+          "display_val": "4.0%",
+          "contribution": 0.22,
+          "label_vi": "Nợ dài hạn / Vốn chủ"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Bán lẻ Kỹ thuật số FPT",
+      "ticker": "FRT",
+      "sector": "Bán lẻ",
+      "pd_scores_4q": [
+        26.75,
+        27.43,
+        13.07,
+        8.28
+      ],
+      "current_pd": 8.28,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.4716,
+          "display_val": "47.2%",
+          "contribution": 0.9468,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.0314,
+          "display_val": "3.1%",
+          "contribution": 0.7601,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        },
+        {
+          "feature": "log_total_assets",
+          "raw_val": 30.8902,
+          "display_val": "30.89",
+          "contribution": 0.3985,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        }
+      ]
+    },
+    {
+      "name": "Tổng Công ty Khí Việt Nam",
+      "ticker": "GAS",
+      "sector": "Dầu khí",
+      "pd_scores_4q": [
+        0.0,
+        0.01,
+        0.02,
+        0.0
+      ],
+      "current_pd": 0.0,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "is_retail",
+          "raw_val": 0.0,
+          "display_val": "0.0%",
+          "contribution": 0.2439,
+          "label_vi": "Đặc thù ngành Bán lẻ/Tiêu dùng"
+        },
+        {
+          "feature": "long_term_debt_to_equity",
+          "raw_val": 0.0219,
+          "display_val": "2.2%",
+          "contribution": 0.2418,
+          "label_vi": "Nợ dài hạn / Vốn chủ"
+        },
+        {
+          "feature": "current_ratio_roll4q_mean",
+          "raw_val": 4.0787,
+          "display_val": "4.08",
+          "contribution": 0.2065,
+          "label_vi": "Tỷ số thanh toán hiện hành (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Tập đoàn GELEX",
+      "ticker": "GEX",
+      "sector": "Công nghiệp",
+      "pd_scores_4q": [
+        93.47,
+        83.92,
+        87.32,
+        88.9
+      ],
+      "current_pd": 88.9,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "depreciation_amortization",
+          "raw_val": -13770113121295.0,
+          "display_val": "-13,770 tỷ VNĐ",
+          "contribution": 1.8804,
+          "label_vi": "Khấu hao"
+        },
+        {
+          "feature": "ebitda",
+          "raw_val": -12950967685908.0,
+          "display_val": "-12,951 tỷ VNĐ",
+          "contribution": 1.1853,
+          "label_vi": "EBITDA"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -1.2079,
+          "display_val": "-1.21",
+          "contribution": 0.71,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Sản xuất Kinh doanh Xuất nhập khẩu Bình Thạnh",
+      "ticker": "GIL",
+      "sector": "Dệt may",
+      "pd_scores_4q": [
+        5.73,
+        14.6,
+        0.3,
+        5.09
+      ],
+      "current_pd": 5.09,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 28.9728,
+          "display_val": "28.97",
+          "contribution": 1.4359,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0516,
+          "display_val": "5.2%",
+          "contribution": 0.7499,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -0.9676,
+          "display_val": "-96.8%",
+          "contribution": 0.5978,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Gemadept",
+      "ticker": "GMD",
+      "sector": "Logistics",
+      "pd_scores_4q": [
+        0.32,
+        0.48,
+        0.19,
+        0.08
+      ],
+      "current_pd": 0.08,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.072,
+          "display_val": "7.2%",
+          "contribution": 0.6696,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "cfo_to_debt_roll4q_mean",
+          "raw_val": 0.0852,
+          "display_val": "8.5%",
+          "contribution": 0.5452,
+          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
+        },
+        {
+          "feature": "log_total_assets",
+          "raw_val": 30.6358,
+          "display_val": "30.64",
+          "contribution": 0.5361,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Hoàng Anh Gia Lai",
+      "ticker": "HAG",
+      "sector": "Nông nghiệp",
+      "pd_scores_4q": [
+        45.99,
+        56.47,
+        62.02,
+        7.34
+      ],
+      "current_pd": 7.34,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.0397,
+          "display_val": "4.0%",
+          "contribution": 0.7351,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        },
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.068,
+          "display_val": "6.8%",
+          "contribution": 0.6851,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.9051,
+          "display_val": "90.5%",
+          "contribution": 0.4744,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Phát triển Nhà Bà Rịa - Vũng Tàu",
+      "ticker": "HDC",
+      "sector": "Bất động sản",
+      "pd_scores_4q": [
+        95.71,
+        0.0,
+        58.95,
+        74.52
+      ],
+      "current_pd": 74.52,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.3763,
+          "display_val": "29.38",
+          "contribution": 1.2176,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.0188,
+          "display_val": "1.9%",
+          "contribution": 0.7986,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        },
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0434,
+          "display_val": "4.3%",
+          "contribution": 0.782,
+          "label_vi": "Vòng quay tổng tài sản"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Tập đoàn Hòa Phát",
+      "ticker": "HPG",
+      "sector": "Thép",
+      "pd_scores_4q": [
+        1.44,
+        2.47,
+        2.12,
+        0.03
+      ],
+      "current_pd": 0.03,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.7045,
+          "display_val": "70.5%",
+          "contribution": 0.693,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        },
+        {
+          "feature": "inventory",
+          "raw_val": 43515585272210.0,
+          "display_val": "43,516 tỷ VNĐ",
+          "contribution": 0.5502,
+          "label_vi": "Hàng tồn kho"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.1326,
+          "display_val": "13.3%",
+          "contribution": 0.4533,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Tư vấn - Thương mại - Dịch vụ Địa ốc Hoàng Quân",
+      "ticker": "HQC",
+      "sector": "Bất động sản",
+      "pd_scores_4q": [
+        66.01,
+        92.08,
+        9.34,
+        95.59
+      ],
+      "current_pd": 95.59,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -1.975,
+          "display_val": "-1.98",
+          "contribution": 1.0685,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.8293,
+          "display_val": "29.83",
+          "contribution": 0.9725,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0006,
+          "display_val": "0.1%",
+          "contribution": 0.9507,
+          "label_vi": "Vòng quay tổng tài sản"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Xi Măng Hà Tiên 1",
+      "ticker": "HT1",
+      "sector": "Vật liệu xây dựng",
+      "pd_scores_4q": [
+        99.99,
+        99.92,
+        99.98,
+        99.87
+      ],
+      "current_pd": 99.87,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -5.3649,
+          "display_val": "-5.36",
+          "contribution": 2.6523,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -5.3649,
+          "display_val": "-5.36",
+          "contribution": 2.0301,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        },
+        {
+          "feature": "depreciation_amortization",
+          "raw_val": -10086119416028.0,
+          "display_val": "-10,086 tỷ VNĐ",
+          "contribution": 1.4033,
+          "label_vi": "Khấu hao"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Tasco",
+      "ticker": "HUT",
+      "sector": "Xây dựng",
+      "pd_scores_4q": [
+        49.22,
+        27.23,
+        72.89,
+        79.93
+      ],
+      "current_pd": 79.93,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "depreciation_amortization",
+          "raw_val": -9117878503587.0,
+          "display_val": "-9,118 tỷ VNĐ",
+          "contribution": 1.2779,
+          "label_vi": "Khấu hao"
+        },
+        {
+          "feature": "ebitda",
+          "raw_val": -9060326229017.0,
+          "display_val": "-9,060 tỷ VNĐ",
+          "contribution": 0.8839,
+          "label_vi": "EBITDA"
+        },
+        {
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.0126,
+          "display_val": "1.3%",
+          "contribution": 0.5385,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
+        }
+      ]
+    },
+    {
+      "name": "Tổng Công ty Hàng không Việt Nam",
+      "ticker": "HVN",
+      "sector": "Hàng không",
+      "pd_scores_4q": [
+        95.88,
+        9.72,
+        20.14,
+        0.71
+      ],
+      "current_pd": 0.71,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "retained_earnings_to_assets",
+          "raw_val": -0.2821,
+          "display_val": "-28.2%",
+          "contribution": 1.9248,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.5508,
+          "display_val": "55.1%",
+          "contribution": 0.8605,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        },
+        {
+          "feature": "cfo_to_debt_roll4q_mean",
+          "raw_val": 0.0796,
+          "display_val": "8.0%",
+          "contribution": 0.4832,
+          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Đầu tư và Phát triển Đa Quốc Gia I.D.I",
+      "ticker": "IDI",
+      "sector": "Thủy sản",
+      "pd_scores_4q": [
+        75.09,
+        79.53,
+        75.82,
+        89.8
+      ],
+      "current_pd": 89.8,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.9252,
+          "display_val": "29.93",
+          "contribution": 0.9206,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.1058,
+          "display_val": "10.6%",
+          "contribution": 0.5346,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -0.5967,
+          "display_val": "-59.7%",
+          "contribution": 0.4244,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Phát triển Hạ tầng Kỹ thuật",
+      "ticker": "IJC",
+      "sector": "Bất động sản KCN",
+      "pd_scores_4q": [
+        99.29,
+        84.99,
+        0.27,
+        20.36
+      ],
+      "current_pd": 20.36,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -2.2477,
+          "display_val": "-2.25",
+          "contribution": 1.1959,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -2.2477,
+          "display_val": "-2.25",
+          "contribution": 0.9288,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        },
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.9785,
+          "display_val": "29.98",
+          "contribution": 0.8917,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Dược phẩm Imexpharm",
+      "ticker": "IMP",
+      "sector": "Dược phẩm",
+      "pd_scores_4q": [
+        51.1,
+        40.42,
+        68.19,
+        67.19
+      ],
+      "current_pd": 67.19,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "cfo_to_debt_roll4q_mean",
+          "raw_val": 0.234,
+          "display_val": "23.4%",
+          "contribution": 2.1935,
+          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
+        },
+        {
+          "feature": "log_total_assets",
+          "raw_val": 28.6681,
+          "display_val": "28.67",
+          "contribution": 1.6008,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -1.2848,
+          "display_val": "-1.28",
+          "contribution": 0.746,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Đầu tư và Kinh doanh nhà Khang Điền",
+      "ticker": "KDH",
+      "sector": "Bất động sản",
+      "pd_scores_4q": [
+        1.34,
+        0.41,
+        0.93,
+        0.08
+      ],
+      "current_pd": 0.08,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0071,
+          "display_val": "0.7%",
+          "contribution": 0.9252,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "current_ratio_roll4q_mean",
+          "raw_val": 10.9928,
+          "display_val": "10.99",
+          "contribution": 0.8767,
+          "label_vi": "Tỷ số thanh toán hiện hành (TB 4Q)"
+        },
+        {
+          "feature": "asset_turnover_roll4q_mean",
+          "raw_val": 0.0071,
+          "display_val": "0.7%",
+          "contribution": 0.44,
+          "label_vi": "Vòng quay tổng tài sản (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Khoáng sản và Xây dựng Bình Dương",
+      "ticker": "KSB",
+      "sector": "Khoáng sản",
+      "pd_scores_4q": [
+        77.3,
+        57.81,
+        50.24,
+        28.27
+      ],
+      "current_pd": 28.27,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.343,
+          "display_val": "29.34",
+          "contribution": 1.2356,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0365,
+          "display_val": "3.6%",
+          "contribution": 0.8093,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -0.5157,
+          "display_val": "-51.6%",
+          "contribution": 0.3866,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Tập đoàn Masan",
+      "ticker": "MSN",
+      "sector": "Tiêu dùng",
+      "pd_scores_4q": [
+        4.75,
+        2.43,
+        1.4,
+        5.37
+      ],
+      "current_pd": 5.37,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.4824,
+          "display_val": "48.2%",
+          "contribution": 0.9351,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        },
+        {
+          "feature": "current_ratio",
+          "raw_val": 0.7544,
+          "display_val": "75.4%",
+          "contribution": 0.3821,
+          "label_vi": "Tỷ số thanh toán hiện hành"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.17,
+          "display_val": "17.0%",
+          "contribution": 0.3398,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Đầu tư Thế Giới Di Động",
+      "ticker": "MWG",
+      "sector": "Bán lẻ",
+      "pd_scores_4q": [
+        2.02,
+        1.62,
+        0.73,
+        0.31
+      ],
+      "current_pd": 0.31,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.0947,
+          "display_val": "9.5%",
+          "contribution": 0.5681,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 1.0244,
+          "display_val": "1.02",
+          "contribution": 0.3444,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        },
+        {
+          "feature": "long_term_debt_to_equity",
+          "raw_val": 0.0,
+          "display_val": "0.0%",
+          "contribution": 0.268,
+          "label_vi": "Nợ dài hạn / Vốn chủ"
+        }
+      ]
+    },
+    {
+      "name": "Tổng Công ty Đầu tư Phát triển Nhà và Đô thị Nam Hà Nội",
+      "ticker": "NHA",
+      "sector": "Bất động sản",
+      "pd_scores_4q": [
+        99.27,
+        93.01,
+        99.96,
+        99.76
+      ],
+      "current_pd": 99.76,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -4.6214,
+          "display_val": "-4.62",
+          "contribution": 2.3049,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "log_total_assets",
+          "raw_val": 27.8473,
+          "display_val": "27.85",
+          "contribution": 2.0449,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -4.6214,
+          "display_val": "-4.62",
+          "contribution": 1.7674,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Điện lực Dầu khí Nhơn Trạch 2",
+      "ticker": "NT2",
+      "sector": "Điện lực",
+      "pd_scores_4q": [
+        99.6,
+        99.91,
+        85.36,
+        99.87
+      ],
+      "current_pd": 99.87,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -4.7357,
+          "display_val": "-4.74",
+          "contribution": 2.3583,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -4.7357,
+          "display_val": "-4.74",
+          "contribution": 1.8077,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        },
+        {
+          "feature": "cfo_to_debt_roll4q_mean",
+          "raw_val": 0.1891,
+          "display_val": "18.9%",
+          "contribution": 1.6958,
+          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Tập đoàn Đầu tư Địa ốc No Va",
+      "ticker": "NVL",
+      "sector": "Bất động sản",
+      "pd_scores_4q": [
+        98.8,
+        99.77,
+        8.19,
+        94.63
+      ],
+      "current_pd": 94.63,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "inventory",
+          "raw_val": 154608590193270.0,
+          "display_val": "154,609 tỷ VNĐ",
+          "contribution": 3.5434,
+          "label_vi": "Hàng tồn kho"
+        },
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0142,
+          "display_val": "1.4%",
+          "contribution": 0.8972,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.5173,
+          "display_val": "51.7%",
+          "contribution": 0.897,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Tập đoàn PAN",
+      "ticker": "PAN",
+      "sector": "Nông nghiệp",
+      "pd_scores_4q": [
+        99.49,
+        96.55,
+        97.76,
+        12.54
+      ],
+      "current_pd": 12.54,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "cfo_to_debt_roll4q_mean",
+          "raw_val": 0.2035,
+          "display_val": "20.4%",
+          "contribution": 1.8562,
+          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
+        },
+        {
+          "feature": "log_total_assets",
+          "raw_val": 30.3533,
+          "display_val": "30.35",
+          "contribution": 0.689,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "depreciation_amortization",
+          "raw_val": -2451337592120.0,
+          "display_val": "-2,451 tỷ VNĐ",
+          "contribution": 0.4144,
+          "label_vi": "Khấu hao"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Phát triển Bất động sản Phát Đạt",
+      "ticker": "PDR",
+      "sector": "Bất động sản",
+      "pd_scores_4q": [
+        0.03,
+        81.34,
+        27.59,
+        2.76
+      ],
+      "current_pd": 2.76,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0039,
+          "display_val": "0.4%",
+          "contribution": 0.9376,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.0175,
+          "display_val": "1.7%",
+          "contribution": 0.8025,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.7917,
+          "display_val": "79.2%",
+          "contribution": 0.598,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        }
+      ]
+    },
+    {
+      "name": "Tổng Công ty Cổ phần Dịch vụ Tổng hợp Dầu khí",
+      "ticker": "PET",
+      "sector": "Dầu khí",
+      "pd_scores_4q": [
+        25.33,
+        11.08,
+        16.18,
+        19.45
+      ],
+      "current_pd": 19.45,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 30.2345,
+          "display_val": "30.23",
+          "contribution": 0.7532,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.0574,
+          "display_val": "5.7%",
+          "contribution": 0.6814,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        },
+        {
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.0423,
+          "display_val": "4.2%",
+          "contribution": 0.3986,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
+        }
+      ]
+    },
+    {
+      "name": "Tổng Công ty Phát điện 3 - CTCP",
+      "ticker": "PGV",
+      "sector": "Điện lực",
+      "pd_scores_4q": [
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "current_pd": 100.0,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "depreciation_amortization",
+          "raw_val": -88390587026632.0,
+          "display_val": "-88,391 tỷ VNĐ",
+          "contribution": 11.5454,
+          "label_vi": "Khấu hao"
+        },
+        {
+          "feature": "ebitda",
+          "raw_val": -87474544597971.0,
+          "display_val": "-87,475 tỷ VNĐ",
+          "contribution": 6.9586,
+          "label_vi": "EBITDA"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -8.4371,
+          "display_val": "-8.44",
+          "contribution": 4.0877,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Tập đoàn Xăng Dầu Việt Nam",
+      "ticker": "PLX",
+      "sector": "Dầu khí",
+      "pd_scores_4q": [
+        0.18,
+        0.12,
+        0.2,
+        1.65
+      ],
+      "current_pd": 1.65,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "cfo_to_debt_roll4q_mean",
+          "raw_val": 0.1215,
+          "display_val": "12.1%",
+          "contribution": 0.947,
+          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.6577,
+          "display_val": "65.8%",
+          "contribution": 0.744,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        },
+        {
+          "feature": "roa_roll4q_mean",
+          "raw_val": -0.0062,
+          "display_val": "-0.6%",
+          "contribution": 0.7097,
+          "label_vi": "ROA (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Vàng Bạc Đá Quý Phú Nhuận",
+      "ticker": "PNJ",
+      "sector": "Bán lẻ",
+      "pd_scores_4q": [
+        18.52,
+        73.4,
+        0.15,
+        14.06
+      ],
+      "current_pd": 14.06,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "cfo_to_debt_roll4q_mean",
+          "raw_val": 0.6723,
+          "display_val": "67.2%",
+          "contribution": 7.0496,
+          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
+        },
+        {
+          "feature": "log_total_assets",
+          "raw_val": 30.6113,
+          "display_val": "30.61",
+          "contribution": 0.5494,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.899,
+          "display_val": "89.9%",
+          "contribution": 0.481,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Thép Pomina",
+      "ticker": "POM",
+      "sector": "Thép",
+      "pd_scores_4q": [
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "current_pd": 100.0,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -9.2557,
+          "display_val": "-9.26",
+          "contribution": 4.4702,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -9.2557,
+          "display_val": "-9.26",
+          "contribution": 3.4047,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        },
+        {
+          "feature": "retained_earnings_to_assets",
+          "raw_val": -0.3589,
+          "display_val": "-35.9%",
+          "contribution": 2.2862,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
+        }
+      ]
+    },
+    {
+      "name": "Tổng Công ty Cổ phần Khoan và Dịch vụ Khoan Dầu khí",
+      "ticker": "PVD",
+      "sector": "Dầu khí",
+      "pd_scores_4q": [
+        99.91,
+        99.93,
+        99.68,
+        99.66
+      ],
+      "current_pd": 99.66,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -4.3079,
+          "display_val": "-4.31",
+          "contribution": 2.1584,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "depreciation_amortization",
+          "raw_val": -15062526967839.0,
+          "display_val": "-15,063 tỷ VNĐ",
+          "contribution": 2.0478,
+          "label_vi": "Khấu hao"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -4.3079,
+          "display_val": "-4.31",
+          "contribution": 1.6566,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        }
+      ]
+    },
+    {
+      "name": "Tổng Công ty Cổ phần Dịch vụ Kỹ thuật Dầu khí Việt Nam",
+      "ticker": "PVS",
+      "sector": "Dầu khí",
+      "pd_scores_4q": [
+        36.63,
+        42.18,
+        28.09,
+        53.95
+      ],
+      "current_pd": 53.95,
+      "risk_level": "Trung bình",
+      "top_factors": [
+        {
+          "feature": "depreciation_amortization",
+          "raw_val": -11337682500907.0,
+          "display_val": "-11,338 tỷ VNĐ",
+          "contribution": 1.5654,
+          "label_vi": "Khấu hao"
+        },
+        {
+          "feature": "ebitda",
+          "raw_val": -10806190265536.0,
+          "display_val": "-10,806 tỷ VNĐ",
+          "contribution": 1.0191,
+          "label_vi": "EBITDA"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -1.2423,
+          "display_val": "-1.24",
+          "contribution": 0.7261,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Tổng Công ty Cổ phần Vận tải Dầu khí",
+      "ticker": "PVT",
+      "sector": "Vận tải",
+      "pd_scores_4q": [
+        75.99,
+        76.12,
+        74.97,
+        79.7
+      ],
+      "current_pd": 79.7,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "depreciation_amortization",
+          "raw_val": -10534517138772.0,
+          "display_val": "-10,535 tỷ VNĐ",
+          "contribution": 1.4613,
+          "label_vi": "Khấu hao"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -2.4156,
+          "display_val": "-2.42",
+          "contribution": 1.2743,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -2.4156,
+          "display_val": "-2.42",
+          "contribution": 0.9881,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Cơ Điện Lạnh",
+      "ticker": "REE",
+      "sector": "Tiện ích",
+      "pd_scores_4q": [
+        0.06,
+        0.14,
+        0.55,
+        0.31
+      ],
+      "current_pd": 0.31,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0606,
+          "display_val": "6.1%",
+          "contribution": 0.7142,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "asset_turnover_roll4q_mean",
+          "raw_val": 0.0606,
+          "display_val": "6.1%",
+          "contribution": 0.3285,
+          "label_vi": "Vòng quay tổng tài sản (TB 4Q)"
+        },
+        {
+          "feature": "cfo_to_debt_roll4q_mean",
+          "raw_val": 0.0626,
+          "display_val": "6.3%",
+          "contribution": 0.2949,
+          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Xây dựng FLC Faros",
+      "ticker": "ROS",
+      "sector": "Xây dựng",
+      "pd_scores_4q": [
+        99.15,
+        90.77,
+        95.53,
+        91.11
+      ],
+      "current_pd": 91.11,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.0062,
+          "display_val": "0.6%",
+          "contribution": 0.8367,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        },
+        {
+          "feature": "log_total_assets",
+          "raw_val": 30.1161,
+          "display_val": "30.12",
+          "contribution": 0.8173,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0573,
+          "display_val": "5.7%",
+          "contribution": 0.7273,
+          "label_vi": "Vòng quay tổng tài sản"
+        }
+      ]
+    },
+    {
+      "name": "Tổng Công ty Cổ phần Bia - Rượu - Nước giải khát Sài Gòn",
+      "ticker": "SAB",
+      "sector": "Thực phẩm - Đồ uống",
+      "pd_scores_4q": [
+        1.13,
+        0.28,
+        0.66,
+        0.12
+      ],
+      "current_pd": 0.12,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "cfo_to_debt_roll4q_mean",
+          "raw_val": 0.1425,
+          "display_val": "14.3%",
+          "contribution": 1.1805,
+          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
+        },
+        {
+          "feature": "log_total_assets",
+          "raw_val": 31.0609,
+          "display_val": "31.06",
+          "contribution": 0.3061,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "long_term_debt_to_equity",
+          "raw_val": 0.0069,
+          "display_val": "0.7%",
+          "contribution": 0.2597,
+          "label_vi": "Nợ dài hạn / Vốn chủ"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Thành Thành Công - Biên Hòa",
+      "ticker": "SBT",
+      "sector": "Nông nghiệp",
+      "pd_scores_4q": [
+        30.93,
+        31.13,
+        34.02,
+        31.27
+      ],
+      "current_pd": 31.27,
+      "risk_level": "Trung bình",
+      "top_factors": [
+        {
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.0387,
+          "display_val": "3.9%",
+          "contribution": 0.4156,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
+        },
+        {
+          "feature": "roa_roll4q_mean",
+          "raw_val": 0.0063,
+          "display_val": "0.6%",
+          "contribution": 0.3618,
+          "label_vi": "ROA (TB 4Q)"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 1.0444,
+          "display_val": "1.04",
+          "contribution": 0.3226,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Địa ốc Sài Gòn Thương Tín",
+      "ticker": "SCR",
+      "sector": "Bất động sản",
+      "pd_scores_4q": [
+        92.61,
+        88.51,
+        46.94,
+        79.01
+      ],
+      "current_pd": 79.01,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0114,
+          "display_val": "1.1%",
+          "contribution": 0.9081,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "log_total_assets",
+          "raw_val": 30.2097,
+          "display_val": "30.21",
+          "contribution": 0.7667,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.0476,
+          "display_val": "4.8%",
+          "contribution": 0.7111,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Đầu tư Phát triển Đô thị và Khu công nghiệp Sông Đà",
+      "ticker": "SJS",
+      "sector": "Bất động sản KCN",
+      "pd_scores_4q": [
+        80.09,
+        99.89,
+        76.82,
+        62.51
+      ],
+      "current_pd": 62.51,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.363,
+          "display_val": "36.3%",
+          "contribution": 1.0651,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        },
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.7094,
+          "display_val": "29.71",
+          "contribution": 1.0374,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0396,
+          "display_val": "4.0%",
+          "contribution": 0.7969,
+          "label_vi": "Vòng quay tổng tài sản"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Đầu tư Thương mại SMC",
+      "ticker": "SMC",
+      "sector": "Thép",
+      "pd_scores_4q": [
+        82.66,
+        97.04,
+        10.52,
+        92.71
+      ],
+      "current_pd": 92.71,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.0774,
+          "display_val": "29.08",
+          "contribution": 1.3793,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.437,
+          "display_val": "43.7%",
+          "contribution": 0.9845,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.0108,
+          "display_val": "1.1%",
+          "contribution": 0.8227,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Chứng khoán SSI",
+      "ticker": "SSI",
+      "sector": "Tài chính",
+      "pd_scores_4q": [
+        26.31,
+        11.33,
+        79.94,
+        22.44
+      ],
+      "current_pd": 22.44,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0341,
+          "display_val": "3.4%",
+          "contribution": 0.8186,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.0172,
+          "display_val": "1.7%",
+          "contribution": 0.8032,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        },
+        {
+          "feature": "asset_turnover_roll4q_mean",
+          "raw_val": 0.0341,
+          "display_val": "3.4%",
+          "contribution": 0.3837,
+          "label_vi": "Vòng quay tổng tài sản (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Kho vận Miền Nam",
+      "ticker": "STG",
+      "sector": "Logistics",
+      "pd_scores_4q": [
+        2.94,
+        3.44,
+        0.79,
+        0.99
+      ],
+      "current_pd": 0.99,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 28.9725,
+          "display_val": "28.97",
+          "contribution": 1.4361,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -2.0434,
+          "display_val": "-2.04",
+          "contribution": 1.1004,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -2.0434,
+          "display_val": "-2.04",
+          "contribution": 0.8566,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Sợi Thế Kỷ",
+      "ticker": "STK",
+      "sector": "Dệt may",
+      "pd_scores_4q": [
+        99.89,
+        99.89,
+        99.92,
+        99.98
+      ],
+      "current_pd": 99.98,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -6.4161,
+          "display_val": "-6.42",
+          "contribution": 3.1434,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -6.4161,
+          "display_val": "-6.42",
+          "contribution": 2.4014,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        },
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.0497,
+          "display_val": "29.05",
+          "contribution": 1.3943,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Sonadezi Châu Đức",
+      "ticker": "SZC",
+      "sector": "Bất động sản KCN",
+      "pd_scores_4q": [
+        82.8,
+        97.43,
+        79.22,
+        97.01
+      ],
+      "current_pd": 97.01,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -2.4846,
+          "display_val": "-2.48",
+          "contribution": 1.3066,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.7512,
+          "display_val": "29.75",
+          "contribution": 1.0147,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -2.4846,
+          "display_val": "-2.48",
+          "contribution": 1.0125,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Đại lý Giao nhận Vận tải Xếp dỡ Tân Cảng",
+      "ticker": "TCL",
+      "sector": "Logistics",
+      "pd_scores_4q": [
+        44.51,
+        22.91,
+        10.84,
+        22.2
+      ],
+      "current_pd": 22.2,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 27.7803,
+          "display_val": "27.78",
+          "contribution": 2.0811,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "cfo_to_debt_roll4q_mean",
+          "raw_val": 0.1328,
+          "display_val": "13.3%",
+          "contribution": 1.0722,
+          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -1.5298,
+          "display_val": "-1.53",
+          "contribution": 0.8605,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Dệt may - Đầu tư - Thương mại Thành Công",
+      "ticker": "TCM",
+      "sector": "Dệt may",
+      "pd_scores_4q": [
+        61.05,
+        56.75,
+        89.74,
+        32.56
+      ],
+      "current_pd": 32.56,
+      "risk_level": "Trung bình",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 29.0745,
+          "display_val": "29.07",
+          "contribution": 1.3809,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -1.2482,
+          "display_val": "-1.25",
+          "contribution": 0.7289,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -1.2482,
+          "display_val": "-1.25",
+          "contribution": 0.5757,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Tập đoàn Thép Tiến Lên",
+      "ticker": "TLH",
+      "sector": "Thép",
+      "pd_scores_4q": [
+        96.76,
+        97.62,
+        85.36,
+        97.24
+      ],
+      "current_pd": 97.24,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 28.5954,
+          "display_val": "28.60",
+          "contribution": 1.6401,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.4084,
+          "display_val": "40.8%",
+          "contribution": 1.0157,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        },
+        {
+          "feature": "cfo_to_debt_roll4q_mean",
+          "raw_val": 0.1246,
+          "display_val": "12.5%",
+          "contribution": 0.9814,
+          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Traphaco",
+      "ticker": "TRA",
+      "sector": "Dược phẩm",
+      "pd_scores_4q": [
+        66.06,
+        70.23,
+        51.81,
+        67.64
+      ],
+      "current_pd": 67.64,
+      "risk_level": "Cao",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 28.5106,
+          "display_val": "28.51",
+          "contribution": 1.686,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -1.1873,
+          "display_val": "-1.19",
+          "contribution": 0.7004,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "ebitda_margin",
+          "raw_val": -1.1873,
+          "display_val": "-1.19",
+          "contribution": 0.5541,
+          "label_vi": "Biên lợi nhuận EBITDA"
+        }
+      ]
+    },
+    {
+      "name": "Tổng Công ty Cổ phần Xuất nhập khẩu và Xây dựng Việt Nam",
+      "ticker": "VCG",
+      "sector": "Xây dựng",
+      "pd_scores_4q": [
+        77.79,
+        0.61,
+        71.58,
+        52.15
+      ],
+      "current_pd": 52.15,
+      "risk_level": "Trung bình",
+      "top_factors": [
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.1124,
+          "display_val": "11.2%",
+          "contribution": 0.5105,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "ebitda_margin_roll4q_mean",
+          "raw_val": -0.669,
+          "display_val": "-66.9%",
+          "contribution": 0.4582,
+          "label_vi": "Biên LN EBITDA (TB 4Q)"
+        },
+        {
+          "feature": "depreciation_amortization",
+          "raw_val": -2716943145049.0,
+          "display_val": "-2,717 tỷ VNĐ",
+          "contribution": 0.4488,
+          "label_vi": "Khấu hao"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Ống thép Việt Đức",
+      "ticker": "VGS",
+      "sector": "Thép",
+      "pd_scores_4q": [
+        31.54,
+        26.51,
+        1.28,
+        32.84
+      ],
+      "current_pd": 32.84,
+      "risk_level": "Trung bình",
+      "top_factors": [
+        {
+          "feature": "log_total_assets",
+          "raw_val": 28.7751,
+          "display_val": "28.78",
+          "contribution": 1.5429,
+          "label_vi": "Quy mô tổng tài sản (Log)"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.0207,
+          "display_val": "2.1%",
+          "contribution": 0.7927,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        },
+        {
+          "feature": "revenue",
+          "raw_val": 1701200949719.0,
+          "display_val": "1,701 tỷ VNĐ",
+          "contribution": 0.3077,
+          "label_vi": "Doanh thu thuần"
+        }
+      ]
+    },
+    {
+      "name": "Tập đoàn Vingroup",
+      "ticker": "VIC",
+      "sector": "Bất động sản",
+      "pd_scores_4q": [
+        4.63,
+        0.58,
+        0.01,
+        0.31
+      ],
+      "current_pd": 0.31,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "inventory",
+          "raw_val": 217153958000000.0,
+          "display_val": "217,154 tỷ VNĐ",
+          "contribution": 5.2286,
+          "label_vi": "Hàng tồn kho"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.7214,
+          "display_val": "72.1%",
+          "contribution": 0.6746,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        },
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0885,
+          "display_val": "8.9%",
+          "contribution": 0.6044,
+          "label_vi": "Vòng quay tổng tài sản"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Sữa Việt Nam",
+      "ticker": "VNM",
+      "sector": "Thực phẩm - Đồ uống",
+      "pd_scores_4q": [
+        3.05,
+        0.75,
+        0.91,
+        0.67
+      ],
+      "current_pd": 0.67,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.1126,
+          "display_val": "11.3%",
+          "contribution": 0.5141,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
+        },
+        {
+          "feature": "ebit_to_long_term_debt",
+          "raw_val": 96.0947,
+          "display_val": "96.09",
+          "contribution": 0.3196,
+          "label_vi": "EBIT / Nợ dài hạn"
+        },
+        {
+          "feature": "long_term_debt_to_equity",
+          "raw_val": 0.0008,
+          "display_val": "0.1%",
+          "contribution": 0.267,
+          "label_vi": "Nợ dài hạn / Vốn chủ"
+        }
+      ]
+    },
+    {
+      "name": "Công ty Cổ phần Vincom Retail",
+      "ticker": "VRE",
+      "sector": "Bất động sản",
+      "pd_scores_4q": [
+        1.48,
+        0.04,
+        0.0,
+        0.0
+      ],
+      "current_pd": 0.0,
+      "risk_level": "Thấp",
+      "top_factors": [
+        {
+          "feature": "asset_turnover",
+          "raw_val": 0.0376,
+          "display_val": "3.8%",
+          "contribution": 0.8049,
+          "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "asset_turnover_roll4q_mean",
+          "raw_val": 0.0376,
+          "display_val": "3.8%",
+          "contribution": 0.3764,
+          "label_vi": "Vòng quay tổng tài sản (TB 4Q)"
+        },
+        {
+          "feature": "revenue",
+          "raw_val": 2293618000000.0,
+          "display_val": "2,294 tỷ VNĐ",
+          "contribution": 0.2971,
+          "label_vi": "Doanh thu thuần"
+        }
+      ]
+    }
+  ]
+}

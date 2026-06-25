@@ -1,0 +1,158 @@
+{
+  "Bán lẻ": {
+    "average_pd": 5.79,
+    "min_pd": 0.31,
+    "max_pd": 14.06,
+    "company_count": 4
+  },
+  "Bất động sản": {
+    "average_pd": 53.05,
+    "min_pd": 0.0,
+    "max_pd": 99.76,
+    "company_count": 13
+  },
+  "Bất động sản KCN": {
+    "average_pd": 66.51,
+    "min_pd": 20.36,
+    "max_pd": 97.01,
+    "company_count": 4
+  },
+  "Cao su": {
+    "average_pd": 97.04,
+    "min_pd": 96.46,
+    "max_pd": 97.62,
+    "company_count": 2
+  },
+  "Công nghiệp": {
+    "average_pd": 88.9,
+    "min_pd": 88.9,
+    "max_pd": 88.9,
+    "company_count": 1
+  },
+  "Công nghệ": {
+    "average_pd": 29.7,
+    "min_pd": 0.06,
+    "max_pd": 66.1,
+    "company_count": 3
+  },
+  "Dược phẩm": {
+    "average_pd": 77.59,
+    "min_pd": 67.19,
+    "max_pd": 97.95,
+    "company_count": 3
+  },
+  "Dầu khí": {
+    "average_pd": 30.0,
+    "min_pd": 0.0,
+    "max_pd": 99.66,
+    "company_count": 6
+  },
+  "Dệt may": {
+    "average_pd": 45.88,
+    "min_pd": 5.09,
+    "max_pd": 99.98,
+    "company_count": 3
+  },
+  "Giấy - Bao bì": {
+    "average_pd": 23.68,
+    "min_pd": 23.68,
+    "max_pd": 23.68,
+    "company_count": 1
+  },
+  "Hàng không": {
+    "average_pd": 0.71,
+    "min_pd": 0.71,
+    "max_pd": 0.71,
+    "company_count": 1
+  },
+  "Hóa chất": {
+    "average_pd": 10.35,
+    "min_pd": 4.38,
+    "max_pd": 16.33,
+    "company_count": 2
+  },
+  "Khoáng sản": {
+    "average_pd": 28.27,
+    "min_pd": 28.27,
+    "max_pd": 28.27,
+    "company_count": 1
+  },
+  "Logistics": {
+    "average_pd": 7.76,
+    "min_pd": 0.08,
+    "max_pd": 22.2,
+    "company_count": 3
+  },
+  "Nhựa - Bao bì": {
+    "average_pd": 66.85,
+    "min_pd": 66.85,
+    "max_pd": 66.85,
+    "company_count": 1
+  },
+  "Nông nghiệp": {
+    "average_pd": 17.05,
+    "min_pd": 7.34,
+    "max_pd": 31.27,
+    "company_count": 3
+  },
+  "Thép": {
+    "average_pd": 64.56,
+    "min_pd": 0.03,
+    "max_pd": 100.0,
+    "company_count": 5
+  },
+  "Thủy sản": {
+    "average_pd": 59.27,
+    "min_pd": 28.75,
+    "max_pd": 89.8,
+    "company_count": 2
+  },
+  "Thực phẩm - Đồ uống": {
+    "average_pd": 0.4,
+    "min_pd": 0.12,
+    "max_pd": 0.67,
+    "company_count": 2
+  },
+  "Tiêu dùng": {
+    "average_pd": 5.37,
+    "min_pd": 5.37,
+    "max_pd": 5.37,
+    "company_count": 1
+  },
+  "Tiện ích": {
+    "average_pd": 0.31,
+    "min_pd": 0.31,
+    "max_pd": 0.31,
+    "company_count": 1
+  },
+  "Tài chính": {
+    "average_pd": 22.44,
+    "min_pd": 22.44,
+    "max_pd": 22.44,
+    "company_count": 1
+  },
+  "Vận tải": {
+    "average_pd": 79.7,
+    "min_pd": 79.7,
+    "max_pd": 79.7,
+    "company_count": 1
+  },
+  "Vật liệu xây dựng": {
+    "average_pd": 99.87,
+    "min_pd": 99.87,
+    "max_pd": 99.87,
+    "company_count": 1
+  },
+  "Xây dựng": {
+    "average_pd": 75.58,
+    "min_pd": 52.15,
+    "max_pd": 91.11,
+    "company_count": 6
+  },
+  "Điện lực": {
+    "average_pd": 99.94,
+    "min_pd": 99.87,
+    "max_pd": 100.0,
+    "company_count": 2
+  }
+}
