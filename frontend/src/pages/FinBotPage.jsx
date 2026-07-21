@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { Bot, User, Send, Plus, History, X, Trash2 } from "lucide-react";
+import { API_BASE_URL } from "../config";
 
-const API_BASE = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api";
+const API_BASE = `${API_BASE_URL}/api`;
 
 const STARTERS_SME = [
   "PD score 28% nghĩa là gì?",
