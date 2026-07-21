@@ -1,3 +1,4 @@
+# Deprecated — file này không còn được dùng, backend chính là main.py.
 import os
 import sys
 import json
@@ -406,7 +407,7 @@ def get_sector_benchmarks():
 
 
 def call_gemini_api(system_instruction: str, user_message: str) -> str:
-    api_key = os.environ.get("GEMINI_API_KEY", "YOUR_GEMINI_API_KEY_HERE")
+    api_key = os.environ.get("GEMINI_API_KEY", "")
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key={api_key}"
     headers = {"Content-Type": "application/json"}
     
@@ -420,6 +421,8 @@ def call_gemini_api(system_instruction: str, user_message: str) -> str:
     }
     
     import urllib.request
+    import time
+    
     req = urllib.request.Request(
         url, 
         data=json.dumps(body).encode("utf-8"), 
@@ -427,15 +430,19 @@ def call_gemini_api(system_instruction: str, user_message: str) -> str:
         method="POST"
     )
     
-    try:
-        with urllib.request.urlopen(req, timeout=20) as response:
-            res = json.loads(response.read().decode("utf-8"))
-            return res["candidates"][0]["content"]["parts"][0]["text"]
-    except Exception as e:
-        print("Gemini API call failed:", e)
-        if hasattr(e, 'read'):
-            print(e.read().decode('utf-8'))
-        raise HTTPException(status_code=500, detail=f"Gemini API call failed: {str(e)}")
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            with urllib.request.urlopen(req, timeout=20) as response:
+                res = json.loads(response.read().decode("utf-8"))
+                return res["candidates"][0]["content"]["parts"][0]["text"]
+        except Exception as e:
+            print(f"Gemini API call failed on attempt {attempt + 1}:", e)
+            if hasattr(e, 'read'):
+                print(e.read().decode('utf-8'))
+            if attempt == max_retries - 1:
+                raise HTTPException(status_code=500, detail=f"Gemini API call failed after {max_retries} attempts: {str(e)}")
+            time.sleep(2)
 
 
 @app.post("/chat")

@@ -50,7 +50,7 @@ const Landing = () => {
         zIndex: 50
       }}>
         <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#000000', letterSpacing: '-0.03em' }}>
-          AURA RISK
+          Risk Tech
         </div>
         <Link to="/dashboard" className="btn-primary" style={{ padding: '0.6rem 1.8rem', fontSize: '0.875rem' }}>
           Khởi chạy hệ thống <ChevronRight size={16} />

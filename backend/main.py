@@ -248,11 +248,10 @@ def health_check():
 def list_companies():
     df = _raw_df.copy()
     
-    latest = (
-        df.sort_values(["ticker", "year", "quarter"])
-        .groupby("ticker")
-        .tail(1)[["ticker", "year", "quarter"]]
-    )
+    # Sắp xếp để lấy history
+    df = df.sort_values(["ticker", "year", "quarter"])
+    
+    latest = df.groupby("ticker").tail(1)[["ticker", "year", "quarter"]]
     
     demo_json_path = os.path.join(PARENT_DIR, 'frontend', 'src', 'demoData.json')
     companies_meta = {}
@@ -273,19 +272,74 @@ def list_companies():
             print("Error parsing demoData.json:", e)
 
     out_list = []
-    for r in latest.to_dict(orient="records"):
-        ticker = r["ticker"]
+    
+    def safe_div(a, b):
+        if pd.isna(b) or b == 0:
+            return 0.0
+        return float(a / b)
+
+    for ticker, group in df.groupby("ticker"):
+        # Lấy tối đa 4 quý gần nhất
+        history_df = group.tail(4)
+        
+        history = {
+            "revenue": [],
+            "total_assets": [],
+            "ebitda_margin": [],
+            "roa": [],
+            "de_ratio": [],
+            "debt_ratio": [],
+            "cash_ratio_est": []
+        }
+        
+        for _, row in history_df.iterrows():
+            rev = float(row.get("revenue", 0)) / 1e9  # Tỷ VNĐ
+            ta = float(row.get("total_assets", 0)) / 1e9 # Tỷ VNĐ
+            ebit = float(row.get("ebit", 0))
+            da = float(row.get("depreciation_amortization", 0))
+            ni = float(row.get("net_income", 0))
+            tl = float(row.get("total_liabilities", 0))
+            te = float(row.get("total_equity", 0))
+            cash = float(row.get("cash_and_equiv", 0))
+            cl = float(row.get("current_liabilities", 0))
+            
+            history["revenue"].append(rev)
+            history["total_assets"].append(ta)
+            
+            ebitda_margin = safe_div(ebit + da, row.get("revenue", 0)) * 100
+            history["ebitda_margin"].append(ebitda_margin)
+            
+            roa = safe_div(ni, row.get("total_assets", 0)) * 100
+            history["roa"].append(roa)
+            
+            de_ratio = safe_div(tl, te)
+            history["de_ratio"].append(de_ratio)
+            
+            debt_ratio = safe_div(tl, row.get("total_assets", 0))
+            history["debt_ratio"].append(debt_ratio)
+            
+            cash_ratio = safe_div(cash, cl)
+            history["cash_ratio_est"].append(cash_ratio)
+
+        # Pad zero if less than 4 quarters
+        for key in history:
+            while len(history[key]) < 4:
+                history[key].insert(0, 0.0)
+
         meta = companies_meta.get(ticker, {})
+        last_row = group.iloc[-1]
+        
         out_list.append({
             "ticker": ticker,
-            "year": r["year"],
-            "quarter": r["quarter"],
+            "year": int(last_row["year"]),
+            "quarter": int(last_row["quarter"]),
             "name": meta.get("name", f"Công ty Cổ phần {ticker}"),
             "sector": meta.get("sector", "Khác"),
             "current_pd": meta.get("current_pd", 0.0),
             "risk_level": meta.get("risk_level", "Thấp"),
             "top_factors": meta.get("top_factors", []),
-            "pd_scores_4q": meta.get("pd_scores_4q", [])
+            "pd_scores_4q": meta.get("pd_scores_4q", []),
+            "financial_history": history
         })
 
     return {
@@ -370,7 +424,7 @@ def predict_by_ticker(ticker: str, model_name: str = "logreg"):
     last_row = df.sort_values(["year", "quarter"]).iloc[-1].to_dict()
     raw_row = {
         k: v for k, v in last_row.items()
-        if k not in ("ticker", "year", "quarter", "label_distress")
+        if k not in ("year", "quarter", "label_distress")
     }
 
     try:
@@ -392,6 +446,7 @@ def predict_by_ticker(ticker: str, model_name: str = "logreg"):
 class ChatRequest(BaseModel):
     message: str
     context: Optional[dict] = None
+    history: Optional[List[dict]] = None
 
 
 def get_sector_benchmarks():
@@ -405,21 +460,44 @@ def get_sector_benchmarks():
     return {}
 
 
-def call_gemini_api(system_instruction: str, user_message: str) -> str:
-    api_key = os.environ.get("GEMINI_API_KEY", "YOUR_GEMINI_API_KEY_HERE")
+def call_gemini_api(system_instruction: str, user_message: str, history: List[dict] = None) -> str:
+    api_key = os.environ.get("GEMINI_API_KEY", "")
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key={api_key}"
     headers = {"Content-Type": "application/json"}
     
+    contents = []
+    
+    if history:
+        for msg in history:
+            role = "model" if msg.get("role") == "assistant" else "user"
+            content_text = msg.get("content", "")
+            
+            if contents and contents[-1]["role"] == role:
+                contents[-1]["parts"][0]["text"] += "\n" + content_text
+            else:
+                contents.append({
+                    "role": role,
+                    "parts": [{"text": content_text}]
+                })
+                
+    if contents and contents[-1]["role"] == "user":
+        contents[-1]["parts"][0]["text"] += "\n" + user_message
+    else:
+        contents.append({
+            "role": "user",
+            "parts": [{"text": user_message}]
+        })
+    
     body = {
-        "contents": [
-            {"parts": [{"text": user_message}]}
-        ],
+        "contents": contents,
         "systemInstruction": {
             "parts": [{"text": system_instruction}]
         }
     }
     
     import urllib.request
+    import time
+    
     req = urllib.request.Request(
         url, 
         data=json.dumps(body).encode("utf-8"), 
@@ -427,15 +505,19 @@ def call_gemini_api(system_instruction: str, user_message: str) -> str:
         method="POST"
     )
     
-    try:
-        with urllib.request.urlopen(req, timeout=20) as response:
-            res = json.loads(response.read().decode("utf-8"))
-            return res["candidates"][0]["content"]["parts"][0]["text"]
-    except Exception as e:
-        print("Gemini API call failed:", e)
-        if hasattr(e, 'read'):
-            print(e.read().decode('utf-8'))
-        raise HTTPException(status_code=500, detail=f"Gemini API call failed: {str(e)}")
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            with urllib.request.urlopen(req, timeout=20) as response:
+                res = json.loads(response.read().decode("utf-8"))
+                return res["candidates"][0]["content"]["parts"][0]["text"]
+        except Exception as e:
+            print(f"Gemini API call failed on attempt {attempt + 1}:", e)
+            if hasattr(e, 'read'):
+                print(e.read().decode('utf-8'))
+            if attempt == max_retries - 1:
+                raise HTTPException(status_code=500, detail=f"Gemini API call failed after {max_retries} attempts: {str(e)}")
+            time.sleep(2)
 
 
 @app.post("/chat")
@@ -509,7 +591,7 @@ Khi trả lời câu hỏi, bạn phải tuân thủ nghiêm ngặt các quy t�
       - Đánh giá cơ cấu tài trợ nguồn vốn của doanh nghiệp qua chỉ số đòn bẩy nợ phải trả/vốn chủ sở hữu (D/E) hoặc nợ/tổng tài sản. Phân tích mức độ phụ thuộc vào đòn bẩy tài chính từ vốn vay bên ngoài so với sự cam kết từ vốn góp chủ sở hữu.
 """
         
-        response_text = call_gemini_api(system_instruction, req.message)
+        response_text = call_gemini_api(system_instruction, req.message, req.history)
         return {"response": response_text}
         
     except HTTPException as he:
@@ -518,6 +600,97 @@ Khi trả lời câu hỏi, bạn phải tuân thủ nghiêm ngặt các quy t�
         import traceback
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
+
+
+# ------------------------------------------------------------------------------
+# SQL Explorer Endpoint
+# ------------------------------------------------------------------------------
+class SqlRequest(BaseModel):
+    query: str = Field(..., description="SQL SELECT query to execute")
+
+
+@app.post("/sql")
+@app.post("/api/sql")
+def execute_sql(req: SqlRequest):
+    query = req.query.strip()
+    if not query:
+        raise HTTPException(status_code=400, detail="Truy vấn SQL không được để trống.")
+
+    # Safety: only allow SELECT statements
+    query_upper = query.upper().lstrip()
+    forbidden = ["INSERT", "UPDATE", "DELETE", "DROP", "ALTER", "CREATE", "TRUNCATE", "EXEC", "EXECUTE", "GRANT", "REVOKE"]
+    for keyword in forbidden:
+        if query_upper.startswith(keyword):
+            raise HTTPException(
+                status_code=400,
+                detail=f"Chỉ cho phép lệnh SELECT. Lệnh '{keyword}' bị cấm."
+            )
+
+    if not query_upper.startswith("SELECT"):
+        raise HTTPException(status_code=400, detail="Chỉ cho phép lệnh SELECT.")
+
+    try:
+        # Use pandasql to run SQL against the DataFrame
+        try:
+            from pandasql import sqldf
+        except ImportError:
+            # Fallback: use sqlite3 directly
+            import sqlite3
+            import io
+            conn = sqlite3.connect(":memory:")
+            companies = _raw_df.copy()
+            companies.to_sql("companies", conn, index=False, if_exists="replace")
+            result_df = pd.read_sql_query(query, conn)
+            conn.close()
+            columns = list(result_df.columns)
+            rows = result_df.head(200).to_dict(orient="records")
+            return {
+                "columns": columns,
+                "rows": rows,
+                "total_rows": len(result_df),
+                "truncated": len(result_df) > 200,
+            }
+
+        companies = _raw_df.copy()
+        result_df = sqldf(query, {"companies": companies})
+
+        if result_df is None or result_df.empty:
+            return {
+                "columns": [],
+                "rows": [],
+                "total_rows": 0,
+                "truncated": False,
+            }
+
+        columns = list(result_df.columns)
+        rows = result_df.head(200).to_dict(orient="records")
+
+        return {
+            "columns": columns,
+            "rows": rows,
+            "total_rows": len(result_df),
+            "truncated": len(result_df) > 200,
+        }
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Lỗi SQL: {str(e)}")
+
+# ------------------------------------------------------------------------------
+# Phục vụ Frontend React (Một link duy nhất)
+# ------------------------------------------------------------------------------
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+
+frontend_dist = os.path.join(PARENT_DIR, "frontend", "dist")
+if os.path.exists(frontend_dist):
+    app.mount("/assets", StaticFiles(directory=os.path.join(frontend_dist, "assets")), name="assets")
+    
+    # Catch-all route cho React Router
+    @app.get("/{catchall:path}")
+    def serve_frontend(catchall: str):
+        file_path = os.path.join(frontend_dist, catchall)
+        if os.path.exists(file_path) and os.path.isfile(file_path):
+            return FileResponse(file_path)
+        return FileResponse(os.path.join(frontend_dist, "index.html"))
 
 
 if __name__ == "__main__":

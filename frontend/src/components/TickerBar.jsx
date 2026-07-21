@@ -82,7 +82,7 @@ const TickerBar = () => {
           100% { transform: translateX(-50%); }
         }
         .marquee-container {
-          animation: scroll 40s linear infinite;
+          animation: scroll 120s linear infinite;
         }
         .marquee-container:hover {
           animation-play-state: paused;

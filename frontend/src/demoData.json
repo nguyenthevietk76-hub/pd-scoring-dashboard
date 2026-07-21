@@ -5,34 +5,34 @@
       "ticker": "AAA",
       "sector": "Nhựa - Bao bì",
       "pd_scores_4q": [
-        60.03,
-        65.63,
-        80.77,
-        66.85
+        9.08,
+        16.78,
+        38.18,
+        12.16
       ],
-      "current_pd": 66.85,
-      "risk_level": "Cao",
+      "current_pd": 12.16,
+      "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 30.1962,
-          "display_val": "30.20",
-          "contribution": 0.774,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.0535,
+          "display_val": "5.4%",
+          "contribution": 0.5379,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -0.9336,
-          "display_val": "-93.4%",
-          "contribution": 0.5819,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "roa",
+          "raw_val": 0.0125,
+          "display_val": "1.3%",
+          "contribution": 0.4075,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
-          "feature": "ebitda_margin",
-          "raw_val": -0.9336,
-          "display_val": "-93.4%",
-          "contribution": 0.4645,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "asset_turnover",
+          "raw_val": 0.171,
+          "display_val": "17.1%",
+          "contribution": 0.3263,
+          "label_vi": "Vòng quay tổng tài sản"
         }
       ]
     },
@@ -41,34 +41,34 @@
       "ticker": "AGG",
       "sector": "Bất động sản",
       "pd_scores_4q": [
-        74.77,
-        5.61,
-        94.72,
-        88.37
+        4.51,
+        0.29,
+        0.13,
+        13.56
       ],
-      "current_pd": 88.37,
-      "risk_level": "Cao",
+      "current_pd": 13.56,
+      "risk_level": "Thấp",
       "top_factors": [
-        {
-          "feature": "log_total_assets",
-          "raw_val": 29.3168,
-          "display_val": "29.32",
-          "contribution": 1.2498,
-          "label_vi": "Quy mô tổng tài sản (Log)"
-        },
         {
           "feature": "asset_turnover",
           "raw_val": 0.0125,
           "display_val": "1.2%",
-          "contribution": 0.9039,
+          "contribution": 1.5452,
           "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "cash_ratio",
-          "raw_val": 0.0273,
-          "display_val": "2.7%",
-          "contribution": 0.7726,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
+          "feature": "roa",
+          "raw_val": 0.0009,
+          "display_val": "0.1%",
+          "contribution": 1.5217,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.6328,
+          "display_val": "63.3%",
+          "contribution": 1.0704,
+          "label_vi": "Tỷ số thanh toán nhanh"
         }
       ]
     },
@@ -77,34 +77,34 @@
       "ticker": "ANV",
       "sector": "Thủy sản",
       "pd_scores_4q": [
-        38.28,
-        55.69,
-        72.25,
-        28.75
+        0.0,
+        0.01,
+        0.03,
+        0.06
       ],
-      "current_pd": 28.75,
+      "current_pd": 0.06,
       "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 29.4337,
-          "display_val": "29.43",
-          "contribution": 1.1865,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "cfo_to_debt",
+          "raw_val": -0.0746,
+          "display_val": "-7.5%",
+          "contribution": 0.5535,
+          "label_vi": "Dòng tiền HĐKD / Tổng nợ"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 1.0355,
+          "display_val": "1.04",
+          "contribution": 0.3566,
+          "label_vi": "Tỷ số thanh toán nhanh"
         },
         {
           "feature": "cash_ratio",
           "raw_val": 0.0135,
           "display_val": "1.4%",
-          "contribution": 0.8145,
+          "contribution": 0.1957,
           "label_vi": "Tỷ số thanh toán tiền mặt"
-        },
-        {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -0.5762,
-          "display_val": "-57.6%",
-          "contribution": 0.4149,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
         }
       ]
     },
@@ -113,34 +113,34 @@
       "ticker": "BCM",
       "sector": "Bất động sản KCN",
       "pd_scores_4q": [
-        39.37,
-        84.2,
-        38.24,
-        86.16
+        1.39,
+        15.75,
+        1.36,
+        24.78
       ],
-      "current_pd": 86.16,
-      "risk_level": "Cao",
+      "current_pd": 24.78,
+      "risk_level": "Thấp",
       "top_factors": [
-        {
-          "feature": "quick_ratio",
-          "raw_val": 0.46,
-          "display_val": "46.0%",
-          "contribution": 0.9595,
-          "label_vi": "Tỷ số thanh toán nhanh"
-        },
         {
           "feature": "asset_turnover",
           "raw_val": 0.018,
           "display_val": "1.8%",
-          "contribution": 0.882,
+          "contribution": 1.5025,
           "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -1.2313,
-          "display_val": "-1.23",
-          "contribution": 0.721,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "quick_ratio",
+          "raw_val": 0.46,
+          "display_val": "46.0%",
+          "contribution": 1.3767,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        },
+        {
+          "feature": "roa",
+          "raw_val": 0.0047,
+          "display_val": "0.5%",
+          "contribution": 1.1583,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         }
       ]
     },
@@ -149,34 +149,34 @@
       "ticker": "BSR",
       "sector": "Dầu khí",
       "pd_scores_4q": [
-        90.3,
-        66.54,
-        89.67,
-        5.28
+        0.34,
+        0.12,
+        0.01,
+        0.0
       ],
-      "current_pd": 5.28,
+      "current_pd": 0.0,
       "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "depreciation_amortization",
-          "raw_val": -35814381345344.0,
-          "display_val": "-35,814 tỷ VNĐ",
-          "contribution": 4.7356,
-          "label_vi": "Khấu hao"
+          "feature": "current_ratio",
+          "raw_val": 2.4883,
+          "display_val": "2.49",
+          "contribution": 0.3282,
+          "label_vi": "Tỷ số thanh toán hiện hành"
         },
         {
-          "feature": "ebitda",
-          "raw_val": -26578942071538.0,
-          "display_val": "-26,579 tỷ VNĐ",
-          "contribution": 2.2411,
-          "label_vi": "EBITDA"
+          "feature": "cfo_to_debt",
+          "raw_val": -0.0157,
+          "display_val": "-1.6%",
+          "contribution": 0.239,
+          "label_vi": "Dòng tiền HĐKD / Tổng nợ"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -0.5788,
-          "display_val": "-57.9%",
-          "contribution": 0.4161,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "current_ratio_qoq_change",
+          "raw_val": 0.0,
+          "display_val": "0.0%",
+          "contribution": 0.1281,
+          "label_vi": "Biến động TS thanh toán hiện hành (QoQ)"
         }
       ]
     },
@@ -185,34 +185,34 @@
       "ticker": "CEO",
       "sector": "Bất động sản",
       "pd_scores_4q": [
-        43.43,
-        63.7,
-        79.43,
-        30.08
+        18.58,
+        18.07,
+        25.38,
+        7.35
       ],
-      "current_pd": 30.08,
-      "risk_level": "Trung bình",
+      "current_pd": 7.35,
+      "risk_level": "Thấp",
       "top_factors": [
-        {
-          "feature": "log_total_assets",
-          "raw_val": 29.8149,
-          "display_val": "29.81",
-          "contribution": 0.9803,
-          "label_vi": "Quy mô tổng tài sản (Log)"
-        },
         {
           "feature": "asset_turnover",
           "raw_val": 0.0487,
           "display_val": "4.9%",
-          "contribution": 0.7613,
+          "contribution": 1.2667,
           "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -1.001,
-          "display_val": "-1.00",
-          "contribution": 0.6134,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "cfo_to_debt",
+          "raw_val": -0.162,
+          "display_val": "-16.2%",
+          "contribution": 1.0204,
+          "label_vi": "Dòng tiền HĐKD / Tổng nợ"
+        },
+        {
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.0399,
+          "display_val": "4.0%",
+          "contribution": 0.687,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
         }
       ]
     },
@@ -221,34 +221,34 @@
       "ticker": "CMG",
       "sector": "Công nghệ",
       "pd_scores_4q": [
-        52.67,
-        72.92,
-        46.35,
-        66.1
+        1.28,
+        2.3,
+        1.69,
+        7.07
       ],
-      "current_pd": 66.1,
-      "risk_level": "Cao",
+      "current_pd": 7.07,
+      "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 29.981,
-          "display_val": "29.98",
-          "contribution": 0.8904,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "inventory_turnover",
+          "raw_val": 10.6915,
+          "display_val": "10.69",
+          "contribution": 0.7049,
+          "label_vi": "Vòng quay hàng tồn kho"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -0.9635,
-          "display_val": "-96.4%",
-          "contribution": 0.5959,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "roa",
+          "raw_val": 0.0103,
+          "display_val": "1.0%",
+          "contribution": 0.618,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
-          "feature": "ebitda_margin",
-          "raw_val": -0.9635,
-          "display_val": "-96.4%",
-          "contribution": 0.4751,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.0524,
+          "display_val": "5.2%",
+          "contribution": 0.5507,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
         }
       ]
     },
@@ -257,34 +257,34 @@
       "ticker": "CSM",
       "sector": "Cao su",
       "pd_scores_4q": [
-        98.61,
-        95.05,
-        99.78,
-        96.46
+        31.95,
+        22.66,
+        85.69,
+        22.79
       ],
-      "current_pd": 96.46,
-      "risk_level": "Cao",
+      "current_pd": 22.79,
+      "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 28.9384,
-          "display_val": "28.94",
-          "contribution": 1.4545,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "quick_ratio",
+          "raw_val": 0.6971,
+          "display_val": "69.7%",
+          "contribution": 0.9563,
+          "label_vi": "Tỷ số thanh toán nhanh"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -2.4496,
-          "display_val": "-2.45",
-          "contribution": 1.2902,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "roa",
+          "raw_val": 0.007,
+          "display_val": "0.7%",
+          "contribution": 0.9336,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
-          "feature": "ebitda_margin",
-          "raw_val": -2.4496,
-          "display_val": "-2.45",
-          "contribution": 1.0001,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.0326,
+          "display_val": "3.3%",
+          "contribution": 0.7675,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
         }
       ]
     },
@@ -293,34 +293,34 @@
       "ticker": "CSV",
       "sector": "Hóa chất",
       "pd_scores_4q": [
-        71.67,
-        9.83,
-        63.8,
-        4.38
+        0.05,
+        0.03,
+        0.15,
+        0.03
       ],
-      "current_pd": 4.38,
+      "current_pd": 0.03,
       "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 28.382,
-          "display_val": "28.38",
-          "contribution": 1.7556,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "cfo_to_debt",
+          "raw_val": -0.2039,
+          "display_val": "-20.4%",
+          "contribution": 1.2441,
+          "label_vi": "Dòng tiền HĐKD / Tổng nợ"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -1.6568,
-          "display_val": "-1.66",
-          "contribution": 0.9198,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "current_ratio",
+          "raw_val": 3.9662,
+          "display_val": "3.97",
+          "contribution": 1.2144,
+          "label_vi": "Tỷ số thanh toán hiện hành"
         },
         {
-          "feature": "ebitda_margin",
-          "raw_val": -1.6568,
-          "display_val": "-1.66",
-          "contribution": 0.72,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "current_ratio_roll4q_mean",
+          "raw_val": 3.9662,
+          "display_val": "3.97",
+          "contribution": 0.2782,
+          "label_vi": "Tỷ số thanh toán hiện hành (TB 4Q)"
         }
       ]
     },
@@ -329,33 +329,33 @@
       "ticker": "CTD",
       "sector": "Xây dựng",
       "pd_scores_4q": [
-        66.41,
-        53.25,
-        62.53,
-        59.88
+        48.25,
+        19.85,
+        27.66,
+        48.23
       ],
-      "current_pd": 59.88,
+      "current_pd": 48.23,
       "risk_level": "Trung bình",
       "top_factors": [
         {
-          "feature": "cash_ratio",
-          "raw_val": 0.061,
-          "display_val": "6.1%",
-          "contribution": 0.6705,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
+          "feature": "roa",
+          "raw_val": 0.0034,
+          "display_val": "0.3%",
+          "contribution": 1.2811,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
           "feature": "roa_roll4q_mean",
           "raw_val": 0.0034,
           "display_val": "0.3%",
-          "contribution": 0.4422,
+          "contribution": 0.6618,
           "label_vi": "ROA (TB 4Q)"
         },
         {
           "feature": "retained_earnings_to_assets",
           "raw_val": 0.046,
           "display_val": "4.6%",
-          "contribution": 0.3816,
+          "contribution": 0.6208,
           "label_vi": "LN chưa phân phối / Tổng tài sản"
         }
       ]
@@ -365,34 +365,34 @@
       "ticker": "DBT",
       "sector": "Dược phẩm",
       "pd_scores_4q": [
-        96.16,
-        98.52,
-        98.12,
-        97.95
+        11.2,
+        24.1,
+        18.1,
+        6.2
       ],
-      "current_pd": 97.95,
-      "risk_level": "Cao",
+      "current_pd": 6.2,
+      "risk_level": "Thấp",
       "top_factors": [
-        {
-          "feature": "log_total_assets",
-          "raw_val": 27.5437,
-          "display_val": "27.54",
-          "contribution": 2.2092,
-          "label_vi": "Quy mô tổng tài sản (Log)"
-        },
         {
           "feature": "quick_ratio",
           "raw_val": 0.5095,
           "display_val": "51.0%",
-          "contribution": 0.9055,
+          "contribution": 1.2889,
           "label_vi": "Tỷ số thanh toán nhanh"
         },
         {
-          "feature": "cash_ratio",
-          "raw_val": 0.0128,
-          "display_val": "1.3%",
-          "contribution": 0.8168,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.0553,
+          "display_val": "5.5%",
+          "contribution": 0.519,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
+        },
+        {
+          "feature": "debt_to_assets",
+          "raw_val": 0.6681,
+          "display_val": "66.8%",
+          "contribution": 0.3571,
+          "label_vi": "Nợ trên Tổng tài sản"
         }
       ]
     },
@@ -401,33 +401,33 @@
       "ticker": "DGW",
       "sector": "Bán lẻ",
       "pd_scores_4q": [
-        5.29,
-        0.99,
-        23.41,
-        0.53
+        0.05,
+        0.01,
+        0.1,
+        0.0
       ],
-      "current_pd": 0.53,
+      "current_pd": 0.0,
       "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 29.9367,
-          "display_val": "29.94",
-          "contribution": 0.9144,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "cfo_to_debt",
+          "raw_val": -0.1009,
+          "display_val": "-10.1%",
+          "contribution": 0.6941,
+          "label_vi": "Dòng tiền HĐKD / Tổng nợ"
         },
         {
-          "feature": "cash_ratio",
-          "raw_val": 0.1558,
-          "display_val": "15.6%",
-          "contribution": 0.3831,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
+          "feature": "net_profit_margin_roll4q_mean",
+          "raw_val": 0.0238,
+          "display_val": "2.4%",
+          "contribution": 0.3075,
+          "label_vi": "Biên LN ròng (TB 4Q)"
         },
         {
           "feature": "quick_ratio",
           "raw_val": 1.0701,
           "display_val": "1.07",
-          "contribution": 0.2946,
+          "contribution": 0.2953,
           "label_vi": "Tỷ số thanh toán nhanh"
         }
       ]
@@ -437,34 +437,34 @@
       "ticker": "DHC",
       "sector": "Giấy - Bao bì",
       "pd_scores_4q": [
-        68.24,
-        47.7,
-        41.96,
-        23.68
+        0.18,
+        0.07,
+        0.01,
+        0.01
       ],
-      "current_pd": 23.68,
+      "current_pd": 0.01,
       "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 28.9733,
-          "display_val": "28.97",
-          "contribution": 1.4357,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "current_ratio_qoq_change",
+          "raw_val": 0.0,
+          "display_val": "0.0%",
+          "contribution": 0.1281,
+          "label_vi": "Biến động TS thanh toán hiện hành (QoQ)"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -0.7507,
-          "display_val": "-75.1%",
-          "contribution": 0.4964,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "cfo_to_debt_roll4q_mean",
+          "raw_val": 0.0443,
+          "display_val": "4.4%",
+          "contribution": 0.1273,
+          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
         },
         {
-          "feature": "ebitda_margin",
-          "raw_val": -0.7507,
-          "display_val": "-75.1%",
-          "contribution": 0.3999,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "is_retail",
+          "raw_val": 0.0,
+          "display_val": "0.0%",
+          "contribution": 0.0788,
+          "label_vi": "Đặc thù ngành Bán lẻ/Tiêu dùng"
         }
       ]
     },
@@ -473,34 +473,34 @@
       "ticker": "DIG",
       "sector": "Bất động sản",
       "pd_scores_4q": [
-        95.66,
-        87.35,
-        58.7,
-        89.89
+        83.25,
+        61.0,
+        7.07,
+        81.76
       ],
-      "current_pd": 89.89,
+      "current_pd": 81.76,
       "risk_level": "Cao",
       "top_factors": [
+        {
+          "feature": "roa",
+          "raw_val": -0.0006,
+          "display_val": "-0.1%",
+          "contribution": 1.6649,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
+        },
         {
           "feature": "asset_turnover",
           "raw_val": 0.0082,
           "display_val": "0.8%",
-          "contribution": 0.9209,
+          "contribution": 1.5783,
           "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -1.6392,
-          "display_val": "-1.64",
-          "contribution": 0.9116,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
-        },
-        {
-          "feature": "ebitda_margin",
-          "raw_val": -1.6392,
-          "display_val": "-1.64",
-          "contribution": 0.7138,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "roa_roll4q_mean",
+          "raw_val": -0.0006,
+          "display_val": "-0.1%",
+          "contribution": 0.8738,
+          "label_vi": "ROA (TB 4Q)"
         }
       ]
     },
@@ -509,34 +509,34 @@
       "ticker": "DPG",
       "sector": "Xây dựng",
       "pd_scores_4q": [
-        8.27,
-        45.83,
-        47.74,
-        81.13
+        1.23,
+        3.59,
+        1.2,
+        5.89
       ],
-      "current_pd": 81.13,
-      "risk_level": "Cao",
+      "current_pd": 5.89,
+      "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -2.3925,
-          "display_val": "-2.39",
-          "contribution": 1.2635,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "asset_turnover",
+          "raw_val": 0.0528,
+          "display_val": "5.3%",
+          "contribution": 1.2352,
+          "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "ebitda_margin",
-          "raw_val": -2.3925,
-          "display_val": "-2.39",
-          "contribution": 0.9799,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "roa",
+          "raw_val": 0.0108,
+          "display_val": "1.1%",
+          "contribution": 0.5749,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
-          "feature": "log_total_assets",
-          "raw_val": 29.8725,
-          "display_val": "29.87",
-          "contribution": 0.9491,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "roa_roll4q_mean",
+          "raw_val": 0.0108,
+          "display_val": "1.1%",
+          "contribution": 0.2719,
+          "label_vi": "ROA (TB 4Q)"
         }
       ]
     },
@@ -545,34 +545,34 @@
       "ticker": "DPM",
       "sector": "Hóa chất",
       "pd_scores_4q": [
-        19.75,
-        1.88,
-        4.3,
-        16.33
+        0.24,
+        0.73,
+        0.84,
+        0.2
       ],
-      "current_pd": 16.33,
+      "current_pd": 0.2,
       "risk_level": "Thấp",
       "top_factors": [
         {
           "feature": "cfo_to_debt_roll4q_mean",
           "raw_val": 0.1415,
           "display_val": "14.1%",
-          "contribution": 1.1688,
+          "contribution": 1.0244,
           "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
         },
         {
-          "feature": "log_total_assets",
-          "raw_val": 30.5301,
-          "display_val": "30.53",
-          "contribution": 0.5933,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "current_ratio",
+          "raw_val": 2.412,
+          "display_val": "2.41",
+          "contribution": 0.2824,
+          "label_vi": "Tỷ số thanh toán hiện hành"
         },
         {
-          "feature": "long_term_debt_to_equity",
-          "raw_val": 0.0,
-          "display_val": "0.0%",
-          "contribution": 0.268,
-          "label_vi": "Nợ dài hạn / Vốn chủ"
+          "feature": "net_profit_margin_roll4q_mean",
+          "raw_val": 0.0731,
+          "display_val": "7.3%",
+          "contribution": 0.1942,
+          "label_vi": "Biên LN ròng (TB 4Q)"
         }
       ]
     },
@@ -581,34 +581,34 @@
       "ticker": "DRC",
       "sector": "Cao su",
       "pd_scores_4q": [
-        97.66,
-        98.53,
-        99.05,
-        97.62
+        8.55,
+        6.67,
+        8.55,
+        8.95
       ],
-      "current_pd": 97.62,
-      "risk_level": "Cao",
+      "current_pd": 8.95,
+      "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 29.0024,
-          "display_val": "29.00",
-          "contribution": 1.4199,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "roa",
+          "raw_val": 0.0041,
+          "display_val": "0.4%",
+          "contribution": 1.2151,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -2.3017,
-          "display_val": "-2.30",
-          "contribution": 1.2211,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "quick_ratio",
+          "raw_val": 0.7215,
+          "display_val": "72.2%",
+          "contribution": 0.9131,
+          "label_vi": "Tỷ số thanh toán nhanh"
         },
         {
-          "feature": "ebitda_margin",
-          "raw_val": -2.3017,
-          "display_val": "-2.30",
-          "contribution": 0.9478,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.0428,
+          "display_val": "4.3%",
+          "contribution": 0.655,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
         }
       ]
     },
@@ -617,34 +617,34 @@
       "ticker": "DXS",
       "sector": "Bất động sản",
       "pd_scores_4q": [
-        37.2,
-        72.77,
-        70.56,
-        34.64
+        4.87,
+        47.47,
+        55.55,
+        6.14
       ],
-      "current_pd": 34.64,
-      "risk_level": "Trung bình",
+      "current_pd": 6.14,
+      "risk_level": "Thấp",
       "top_factors": [
-        {
-          "feature": "log_total_assets",
-          "raw_val": 30.4366,
-          "display_val": "30.44",
-          "contribution": 0.6439,
-          "label_vi": "Quy mô tổng tài sản (Log)"
-        },
-        {
-          "feature": "cash_ratio",
-          "raw_val": 0.0698,
-          "display_val": "7.0%",
-          "contribution": 0.6438,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
-        },
         {
           "feature": "asset_turnover",
           "raw_val": 0.0856,
           "display_val": "8.6%",
-          "contribution": 0.6159,
+          "contribution": 0.983,
           "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.0429,
+          "display_val": "4.3%",
+          "contribution": 0.6541,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
+        },
+        {
+          "feature": "cfo_to_debt",
+          "raw_val": -0.0496,
+          "display_val": "-5.0%",
+          "contribution": 0.4201,
+          "label_vi": "Dòng tiền HĐKD / Tổng nợ"
         }
       ]
     },
@@ -653,34 +653,34 @@
       "ticker": "ELC",
       "sector": "Công nghệ",
       "pd_scores_4q": [
-        5.41,
-        20.73,
-        17.75,
-        22.94
+        0.69,
+        0.47,
+        0.03,
+        3.63
       ],
-      "current_pd": 22.94,
+      "current_pd": 3.63,
       "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 28.4651,
-          "display_val": "28.47",
-          "contribution": 1.7106,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "roa",
+          "raw_val": 0.0011,
+          "display_val": "0.1%",
+          "contribution": 1.506,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
           "feature": "asset_turnover",
           "raw_val": 0.0496,
           "display_val": "5.0%",
-          "contribution": 0.7576,
+          "contribution": 1.2595,
           "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "roa_roll4q_mean",
-          "raw_val": 0.0011,
-          "display_val": "0.1%",
-          "contribution": 0.5068,
-          "label_vi": "ROA (TB 4Q)"
+          "feature": "cfo_to_debt",
+          "raw_val": -0.1803,
+          "display_val": "-18.0%",
+          "contribution": 1.1181,
+          "label_vi": "Dòng tiền HĐKD / Tổng nợ"
         }
       ]
     },
@@ -689,33 +689,33 @@
       "ticker": "FCN",
       "sector": "Xây dựng",
       "pd_scores_4q": [
-        84.71,
-        89.62,
-        89.82,
-        89.26
+        76.45,
+        80.7,
+        67.32,
+        74.18
       ],
-      "current_pd": 89.26,
+      "current_pd": 74.18,
       "risk_level": "Cao",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 29.9774,
-          "display_val": "29.98",
-          "contribution": 0.8923,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "roa",
+          "raw_val": 0.0042,
+          "display_val": "0.4%",
+          "contribution": 1.2083,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
-          "feature": "cash_ratio",
-          "raw_val": 0.0595,
-          "display_val": "5.9%",
-          "contribution": 0.6752,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.0106,
+          "display_val": "1.1%",
+          "contribution": 1.008,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
         },
         {
           "feature": "quick_ratio",
           "raw_val": 0.8078,
           "display_val": "80.8%",
-          "contribution": 0.5804,
+          "contribution": 0.7601,
           "label_vi": "Tỷ số thanh toán nhanh"
         }
       ]
@@ -725,34 +725,34 @@
       "ticker": "FPT",
       "sector": "Công nghệ",
       "pd_scores_4q": [
-        0.97,
-        0.75,
-        0.61,
-        0.06
+        0.18,
+        0.14,
+        0.17,
+        0.02
       ],
-      "current_pd": 0.06,
+      "current_pd": 0.02,
       "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "is_retail",
-          "raw_val": 0.0,
-          "display_val": "0.0%",
-          "contribution": 0.2439,
-          "label_vi": "Đặc thù ngành Bán lẻ/Tiêu dùng"
+          "feature": "inventory_turnover",
+          "raw_val": 11.4017,
+          "display_val": "11.40",
+          "contribution": 0.7714,
+          "label_vi": "Vòng quay hàng tồn kho"
+        },
+        {
+          "feature": "cfo_to_debt",
+          "raw_val": -0.1,
+          "display_val": "-10.0%",
+          "contribution": 0.6893,
+          "label_vi": "Dòng tiền HĐKD / Tổng nợ"
         },
         {
           "feature": "asset_turnover",
           "raw_val": 0.182,
           "display_val": "18.2%",
-          "contribution": 0.2365,
+          "contribution": 0.2425,
           "label_vi": "Vòng quay tổng tài sản"
-        },
-        {
-          "feature": "long_term_debt_to_equity",
-          "raw_val": 0.04,
-          "display_val": "4.0%",
-          "contribution": 0.22,
-          "label_vi": "Nợ dài hạn / Vốn chủ"
         }
       ]
     },
@@ -761,34 +761,34 @@
       "ticker": "FRT",
       "sector": "Bán lẻ",
       "pd_scores_4q": [
-        26.75,
-        27.43,
-        13.07,
-        8.28
+        3.15,
+        1.44,
+        0.75,
+        0.81
       ],
-      "current_pd": 8.28,
+      "current_pd": 0.81,
       "risk_level": "Thấp",
       "top_factors": [
         {
           "feature": "quick_ratio",
           "raw_val": 0.4716,
           "display_val": "47.2%",
-          "contribution": 0.9468,
+          "contribution": 1.3561,
           "label_vi": "Tỷ số thanh toán nhanh"
         },
         {
-          "feature": "cash_ratio",
-          "raw_val": 0.0314,
-          "display_val": "3.1%",
-          "contribution": 0.7601,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
+          "feature": "cfo_to_debt",
+          "raw_val": -0.1273,
+          "display_val": "-12.7%",
+          "contribution": 0.8346,
+          "label_vi": "Dòng tiền HĐKD / Tổng nợ"
         },
         {
-          "feature": "log_total_assets",
-          "raw_val": 30.8902,
-          "display_val": "30.89",
-          "contribution": 0.3985,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "debt_to_assets",
+          "raw_val": 0.7881,
+          "display_val": "78.8%",
+          "contribution": 0.6298,
+          "label_vi": "Nợ trên Tổng tài sản"
         }
       ]
     },
@@ -798,32 +798,32 @@
       "sector": "Dầu khí",
       "pd_scores_4q": [
         0.0,
-        0.01,
-        0.02,
+        0.04,
+        0.06,
         0.0
       ],
       "current_pd": 0.0,
       "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "is_retail",
-          "raw_val": 0.0,
-          "display_val": "0.0%",
-          "contribution": 0.2439,
-          "label_vi": "Đặc thù ngành Bán lẻ/Tiêu dùng"
+          "feature": "current_ratio",
+          "raw_val": 4.0787,
+          "display_val": "4.08",
+          "contribution": 1.2819,
+          "label_vi": "Tỷ số thanh toán hiện hành"
         },
         {
-          "feature": "long_term_debt_to_equity",
-          "raw_val": 0.0219,
-          "display_val": "2.2%",
-          "contribution": 0.2418,
-          "label_vi": "Nợ dài hạn / Vốn chủ"
+          "feature": "inventory_turnover",
+          "raw_val": 12.4744,
+          "display_val": "12.47",
+          "contribution": 0.8718,
+          "label_vi": "Vòng quay hàng tồn kho"
         },
         {
           "feature": "current_ratio_roll4q_mean",
           "raw_val": 4.0787,
           "display_val": "4.08",
-          "contribution": 0.2065,
+          "contribution": 0.2928,
           "label_vi": "Tỷ số thanh toán hiện hành (TB 4Q)"
         }
       ]
@@ -833,34 +833,34 @@
       "ticker": "GEX",
       "sector": "Công nghiệp",
       "pd_scores_4q": [
-        93.47,
-        83.92,
-        87.32,
-        88.9
+        2.27,
+        3.6,
+        8.46,
+        9.72
       ],
-      "current_pd": 88.9,
-      "risk_level": "Cao",
+      "current_pd": 9.72,
+      "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "depreciation_amortization",
-          "raw_val": -13770113121295.0,
-          "display_val": "-13,770 tỷ VNĐ",
-          "contribution": 1.8804,
-          "label_vi": "Khấu hao"
+          "feature": "roa",
+          "raw_val": 0.0067,
+          "display_val": "0.7%",
+          "contribution": 0.9709,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
-          "feature": "ebitda",
-          "raw_val": -12950967685908.0,
-          "display_val": "-12,951 tỷ VNĐ",
-          "contribution": 1.1853,
-          "label_vi": "EBITDA"
+          "feature": "asset_turnover",
+          "raw_val": 0.1232,
+          "display_val": "12.3%",
+          "contribution": 0.694,
+          "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -1.2079,
-          "display_val": "-1.21",
-          "contribution": 0.71,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "roa_roll4q_mean",
+          "raw_val": 0.0067,
+          "display_val": "0.7%",
+          "contribution": 0.4906,
+          "label_vi": "ROA (TB 4Q)"
         }
       ]
     },
@@ -869,34 +869,34 @@
       "ticker": "GIL",
       "sector": "Dệt may",
       "pd_scores_4q": [
-        5.73,
-        14.6,
-        0.3,
-        5.09
+        55.0,
+        55.0,
+        0.04,
+        21.76
       ],
-      "current_pd": 5.09,
+      "current_pd": 21.76,
       "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 28.9728,
-          "display_val": "28.97",
-          "contribution": 1.4359,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "current_ratio",
+          "raw_val": 6.3306,
+          "display_val": "6.33",
+          "contribution": 2.6323,
+          "label_vi": "Tỷ số thanh toán hiện hành"
+        },
+        {
+          "feature": "roa",
+          "raw_val": 0.0029,
+          "display_val": "0.3%",
+          "contribution": 1.3272,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
           "feature": "asset_turnover",
           "raw_val": 0.0516,
           "display_val": "5.2%",
-          "contribution": 0.7499,
+          "contribution": 1.2445,
           "label_vi": "Vòng quay tổng tài sản"
-        },
-        {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -0.9676,
-          "display_val": "-96.8%",
-          "contribution": 0.5978,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
         }
       ]
     },
@@ -905,34 +905,34 @@
       "ticker": "GMD",
       "sector": "Logistics",
       "pd_scores_4q": [
-        0.32,
-        0.48,
-        0.19,
-        0.08
+        0.13,
+        0.54,
+        0.03,
+        0.02
       ],
-      "current_pd": 0.08,
+      "current_pd": 0.02,
       "risk_level": "Thấp",
       "top_factors": [
         {
           "feature": "asset_turnover",
           "raw_val": 0.072,
           "display_val": "7.2%",
-          "contribution": 0.6696,
+          "contribution": 1.0879,
           "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "cfo_to_debt_roll4q_mean",
-          "raw_val": 0.0852,
-          "display_val": "8.5%",
-          "contribution": 0.5452,
-          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
+          "feature": "inventory_turnover",
+          "raw_val": 14.2148,
+          "display_val": "14.21",
+          "contribution": 1.0348,
+          "label_vi": "Vòng quay hàng tồn kho"
         },
         {
-          "feature": "log_total_assets",
-          "raw_val": 30.6358,
-          "display_val": "30.64",
-          "contribution": 0.5361,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "current_ratio",
+          "raw_val": 2.9795,
+          "display_val": "2.98",
+          "contribution": 0.6227,
+          "label_vi": "Tỷ số thanh toán hiện hành"
         }
       ]
     },
@@ -941,34 +941,34 @@
       "ticker": "HAG",
       "sector": "Nông nghiệp",
       "pd_scores_4q": [
-        45.99,
-        56.47,
-        62.02,
-        7.34
+        13.64,
+        19.57,
+        1.28,
+        0.09
       ],
-      "current_pd": 7.34,
+      "current_pd": 0.09,
       "risk_level": "Thấp",
       "top_factors": [
-        {
-          "feature": "cash_ratio",
-          "raw_val": 0.0397,
-          "display_val": "4.0%",
-          "contribution": 0.7351,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
-        },
         {
           "feature": "asset_turnover",
           "raw_val": 0.068,
           "display_val": "6.8%",
-          "contribution": 0.6851,
+          "contribution": 1.1181,
           "label_vi": "Vòng quay tổng tài sản"
         },
         {
           "feature": "quick_ratio",
           "raw_val": 0.9051,
           "display_val": "90.5%",
-          "contribution": 0.4744,
+          "contribution": 0.5878,
           "label_vi": "Tỷ số thanh toán nhanh"
+        },
+        {
+          "feature": "inventory_turnover",
+          "raw_val": 8.3501,
+          "display_val": "8.35",
+          "contribution": 0.4856,
+          "label_vi": "Vòng quay hàng tồn kho"
         }
       ]
     },
@@ -977,34 +977,34 @@
       "ticker": "HDC",
       "sector": "Bất động sản",
       "pd_scores_4q": [
-        95.71,
+        27.67,
         0.0,
-        58.95,
-        74.52
+        32.54,
+        19.76
       ],
-      "current_pd": 74.52,
-      "risk_level": "Cao",
+      "current_pd": 19.76,
+      "risk_level": "Thấp",
       "top_factors": [
-        {
-          "feature": "log_total_assets",
-          "raw_val": 29.3763,
-          "display_val": "29.38",
-          "contribution": 1.2176,
-          "label_vi": "Quy mô tổng tài sản (Log)"
-        },
-        {
-          "feature": "cash_ratio",
-          "raw_val": 0.0188,
-          "display_val": "1.9%",
-          "contribution": 0.7986,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
-        },
         {
           "feature": "asset_turnover",
           "raw_val": 0.0434,
           "display_val": "4.3%",
-          "contribution": 0.782,
+          "contribution": 1.3073,
           "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.7777,
+          "display_val": "77.8%",
+          "contribution": 0.8135,
+          "label_vi": "Tỷ số thanh toán nhanh"
+        },
+        {
+          "feature": "cfo_to_debt",
+          "raw_val": -0.1011,
+          "display_val": "-10.1%",
+          "contribution": 0.6949,
+          "label_vi": "Dòng tiền HĐKD / Tổng nợ"
         }
       ]
     },
@@ -1013,34 +1013,34 @@
       "ticker": "HPG",
       "sector": "Thép",
       "pd_scores_4q": [
-        1.44,
-        2.47,
-        2.12,
-        0.03
+        2.3,
+        4.78,
+        4.92,
+        0.09
       ],
-      "current_pd": 0.03,
+      "current_pd": 0.09,
       "risk_level": "Thấp",
       "top_factors": [
         {
           "feature": "quick_ratio",
           "raw_val": 0.7045,
           "display_val": "70.5%",
-          "contribution": 0.693,
+          "contribution": 0.9432,
           "label_vi": "Tỷ số thanh toán nhanh"
         },
         {
-          "feature": "inventory",
-          "raw_val": 43515585272210.0,
-          "display_val": "43,516 tỷ VNĐ",
-          "contribution": 0.5502,
-          "label_vi": "Hàng tồn kho"
+          "feature": "cfo_to_debt_roll4q_mean",
+          "raw_val": 0.057,
+          "display_val": "5.7%",
+          "contribution": 0.2449,
+          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
         },
         {
-          "feature": "cash_ratio",
-          "raw_val": 0.1326,
-          "display_val": "13.3%",
-          "contribution": 0.4533,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
+          "feature": "current_ratio_qoq_change",
+          "raw_val": 0.0,
+          "display_val": "0.0%",
+          "contribution": 0.1281,
+          "label_vi": "Biến động TS thanh toán hiện hành (QoQ)"
         }
       ]
     },
@@ -1049,34 +1049,34 @@
       "ticker": "HQC",
       "sector": "Bất động sản",
       "pd_scores_4q": [
-        66.01,
-        92.08,
-        9.34,
-        95.59
+        84.26,
+        64.19,
+        0.61,
+        35.34
       ],
-      "current_pd": 95.59,
-      "risk_level": "Cao",
+      "current_pd": 35.34,
+      "risk_level": "Trung bình",
       "top_factors": [
-        {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -1.975,
-          "display_val": "-1.98",
-          "contribution": 1.0685,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
-        },
-        {
-          "feature": "log_total_assets",
-          "raw_val": 29.8293,
-          "display_val": "29.83",
-          "contribution": 0.9725,
-          "label_vi": "Quy mô tổng tài sản (Log)"
-        },
         {
           "feature": "asset_turnover",
           "raw_val": 0.0006,
           "display_val": "0.1%",
-          "contribution": 0.9507,
+          "contribution": 1.6365,
           "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "roa",
+          "raw_val": 0.0006,
+          "display_val": "0.1%",
+          "contribution": 1.5534,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
+        },
+        {
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.0154,
+          "display_val": "1.5%",
+          "contribution": 0.9556,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
         }
       ]
     },
@@ -1085,34 +1085,34 @@
       "ticker": "HT1",
       "sector": "Vật liệu xây dựng",
       "pd_scores_4q": [
-        99.99,
-        99.92,
-        99.98,
-        99.87
+        27.1,
+        19.93,
+        22.57,
+        13.96
       ],
-      "current_pd": 99.87,
-      "risk_level": "Cao",
+      "current_pd": 13.96,
+      "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -5.3649,
-          "display_val": "-5.36",
-          "contribution": 2.6523,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "quick_ratio",
+          "raw_val": 0.5314,
+          "display_val": "53.1%",
+          "contribution": 1.25,
+          "label_vi": "Tỷ số thanh toán nhanh"
         },
         {
-          "feature": "ebitda_margin",
-          "raw_val": -5.3649,
-          "display_val": "-5.36",
-          "contribution": 2.0301,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "roa",
+          "raw_val": 0.0098,
+          "display_val": "1.0%",
+          "contribution": 0.6707,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
-          "feature": "depreciation_amortization",
-          "raw_val": -10086119416028.0,
-          "display_val": "-10,086 tỷ VNĐ",
-          "contribution": 1.4033,
-          "label_vi": "Khấu hao"
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.0441,
+          "display_val": "4.4%",
+          "contribution": 0.6409,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
         }
       ]
     },
@@ -1121,34 +1121,34 @@
       "ticker": "HUT",
       "sector": "Xây dựng",
       "pd_scores_4q": [
-        49.22,
-        27.23,
-        72.89,
-        79.93
+        14.75,
+        2.97,
+        18.32,
+        19.41
       ],
-      "current_pd": 79.93,
-      "risk_level": "Cao",
+      "current_pd": 19.41,
+      "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "depreciation_amortization",
-          "raw_val": -9117878503587.0,
-          "display_val": "-9,118 tỷ VNĐ",
-          "contribution": 1.2779,
-          "label_vi": "Khấu hao"
-        },
-        {
-          "feature": "ebitda",
-          "raw_val": -9060326229017.0,
-          "display_val": "-9,060 tỷ VNĐ",
-          "contribution": 0.8839,
-          "label_vi": "EBITDA"
+          "feature": "roa",
+          "raw_val": 0.001,
+          "display_val": "0.1%",
+          "contribution": 1.5138,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
           "feature": "retained_earnings_to_assets",
           "raw_val": 0.0126,
           "display_val": "1.3%",
-          "contribution": 0.5385,
+          "contribution": 0.986,
           "label_vi": "LN chưa phân phối / Tổng tài sản"
+        },
+        {
+          "feature": "roa_roll4q_mean",
+          "raw_val": 0.001,
+          "display_val": "0.1%",
+          "contribution": 0.7903,
+          "label_vi": "ROA (TB 4Q)"
         }
       ]
     },
@@ -1157,34 +1157,34 @@
       "ticker": "HVN",
       "sector": "Hàng không",
       "pd_scores_4q": [
-        95.88,
-        9.72,
-        20.14,
-        0.71
+        99.0,
+        99.0,
+        99.0,
+        99.0
       ],
-      "current_pd": 0.71,
-      "risk_level": "Thấp",
+      "current_pd": 99.0,
+      "risk_level": "Cao",
       "top_factors": [
         {
           "feature": "retained_earnings_to_assets",
           "raw_val": -0.2821,
           "display_val": "-28.2%",
-          "contribution": 1.9248,
+          "contribution": 4.2119,
           "label_vi": "LN chưa phân phối / Tổng tài sản"
         },
         {
           "feature": "quick_ratio",
           "raw_val": 0.5508,
           "display_val": "55.1%",
-          "contribution": 0.8605,
+          "contribution": 1.2156,
           "label_vi": "Tỷ số thanh toán nhanh"
         },
         {
-          "feature": "cfo_to_debt_roll4q_mean",
-          "raw_val": 0.0796,
-          "display_val": "8.0%",
-          "contribution": 0.4832,
-          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
+          "feature": "debt_to_assets",
+          "raw_val": 0.8579,
+          "display_val": "85.8%",
+          "contribution": 0.7885,
+          "label_vi": "Nợ trên Tổng tài sản"
         }
       ]
     },
@@ -1193,34 +1193,34 @@
       "ticker": "IDI",
       "sector": "Thủy sản",
       "pd_scores_4q": [
-        75.09,
-        79.53,
-        75.82,
-        89.8
+        11.54,
+        12.87,
+        11.4,
+        15.49
       ],
-      "current_pd": 89.8,
-      "risk_level": "Cao",
+      "current_pd": 15.49,
+      "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 29.9252,
-          "display_val": "29.93",
-          "contribution": 0.9206,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "roa",
+          "raw_val": 0.0045,
+          "display_val": "0.4%",
+          "contribution": 1.1811,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
-          "feature": "cash_ratio",
-          "raw_val": 0.1058,
-          "display_val": "10.6%",
-          "contribution": 0.5346,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.0372,
+          "display_val": "3.7%",
+          "contribution": 0.7162,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -0.5967,
-          "display_val": "-59.7%",
-          "contribution": 0.4244,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "roa_roll4q_mean",
+          "raw_val": 0.0045,
+          "display_val": "0.4%",
+          "contribution": 0.6066,
+          "label_vi": "ROA (TB 4Q)"
         }
       ]
     },
@@ -1229,34 +1229,34 @@
       "ticker": "IJC",
       "sector": "Bất động sản KCN",
       "pd_scores_4q": [
-        99.29,
-        84.99,
-        0.27,
-        20.36
+        17.31,
+        1.63,
+        0.79,
+        6.23
       ],
-      "current_pd": 20.36,
+      "current_pd": 6.23,
       "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -2.2477,
-          "display_val": "-2.25",
-          "contribution": 1.1959,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "current_ratio",
+          "raw_val": 5.5237,
+          "display_val": "5.52",
+          "contribution": 2.1484,
+          "label_vi": "Tỷ số thanh toán hiện hành"
         },
         {
-          "feature": "ebitda_margin",
-          "raw_val": -2.2477,
-          "display_val": "-2.25",
-          "contribution": 0.9288,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "asset_turnover",
+          "raw_val": 0.0242,
+          "display_val": "2.4%",
+          "contribution": 1.4547,
+          "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "log_total_assets",
-          "raw_val": 29.9785,
-          "display_val": "29.98",
-          "contribution": 0.8917,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "roa",
+          "raw_val": 0.01,
+          "display_val": "1.0%",
+          "contribution": 0.6514,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         }
       ]
     },
@@ -1265,34 +1265,34 @@
       "ticker": "IMP",
       "sector": "Dược phẩm",
       "pd_scores_4q": [
-        51.1,
-        40.42,
-        68.19,
-        67.19
+        0.09,
+        0.12,
+        0.02,
+        0.04
       ],
-      "current_pd": 67.19,
-      "risk_level": "Cao",
+      "current_pd": 0.04,
+      "risk_level": "Thấp",
       "top_factors": [
         {
           "feature": "cfo_to_debt_roll4q_mean",
           "raw_val": 0.234,
           "display_val": "23.4%",
-          "contribution": 2.1935,
+          "contribution": 1.8782,
           "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
         },
         {
-          "feature": "log_total_assets",
-          "raw_val": 28.6681,
-          "display_val": "28.67",
-          "contribution": 1.6008,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "current_ratio",
+          "raw_val": 4.5518,
+          "display_val": "4.55",
+          "contribution": 1.5656,
+          "label_vi": "Tỷ số thanh toán hiện hành"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -1.2848,
-          "display_val": "-1.28",
-          "contribution": 0.746,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "current_ratio_roll4q_mean",
+          "raw_val": 4.5518,
+          "display_val": "4.55",
+          "contribution": 0.3544,
+          "label_vi": "Tỷ số thanh toán hiện hành (TB 4Q)"
         }
       ]
     },
@@ -1301,34 +1301,34 @@
       "ticker": "KDH",
       "sector": "Bất động sản",
       "pd_scores_4q": [
-        1.34,
-        0.41,
-        0.93,
-        0.08
+        83.37,
+        47.85,
+        24.98,
+        70.21
       ],
-      "current_pd": 0.08,
-      "risk_level": "Thấp",
+      "current_pd": 70.21,
+      "risk_level": "Cao",
       "top_factors": [
+        {
+          "feature": "current_ratio",
+          "raw_val": 10.9928,
+          "display_val": "10.99",
+          "contribution": 5.428,
+          "label_vi": "Tỷ số thanh toán hiện hành"
+        },
         {
           "feature": "asset_turnover",
           "raw_val": 0.0071,
           "display_val": "0.7%",
-          "contribution": 0.9252,
+          "contribution": 1.5867,
           "label_vi": "Vòng quay tổng tài sản"
         },
         {
           "feature": "current_ratio_roll4q_mean",
           "raw_val": 10.9928,
           "display_val": "10.99",
-          "contribution": 0.8767,
+          "contribution": 1.192,
           "label_vi": "Tỷ số thanh toán hiện hành (TB 4Q)"
-        },
-        {
-          "feature": "asset_turnover_roll4q_mean",
-          "raw_val": 0.0071,
-          "display_val": "0.7%",
-          "contribution": 0.44,
-          "label_vi": "Vòng quay tổng tài sản (TB 4Q)"
         }
       ]
     },
@@ -1337,34 +1337,34 @@
       "ticker": "KSB",
       "sector": "Khoáng sản",
       "pd_scores_4q": [
-        77.3,
-        57.81,
-        50.24,
-        28.27
+        7.55,
+        12.99,
+        8.41,
+        8.29
       ],
-      "current_pd": 28.27,
+      "current_pd": 8.29,
       "risk_level": "Thấp",
       "top_factors": [
-        {
-          "feature": "log_total_assets",
-          "raw_val": 29.343,
-          "display_val": "29.34",
-          "contribution": 1.2356,
-          "label_vi": "Quy mô tổng tài sản (Log)"
-        },
         {
           "feature": "asset_turnover",
           "raw_val": 0.0365,
           "display_val": "3.6%",
-          "contribution": 0.8093,
+          "contribution": 1.3605,
           "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -0.5157,
-          "display_val": "-51.6%",
-          "contribution": 0.3866,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "roa",
+          "raw_val": 0.0057,
+          "display_val": "0.6%",
+          "contribution": 1.059,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
+        },
+        {
+          "feature": "inventory_turnover",
+          "raw_val": 10.2935,
+          "display_val": "10.29",
+          "contribution": 0.6676,
+          "label_vi": "Vòng quay hàng tồn kho"
         }
       ]
     },
@@ -1373,34 +1373,34 @@
       "ticker": "MSN",
       "sector": "Tiêu dùng",
       "pd_scores_4q": [
-        4.75,
-        2.43,
-        1.4,
-        5.37
+        4.97,
+        2.5,
+        1.39,
+        2.98
       ],
-      "current_pd": 5.37,
+      "current_pd": 2.98,
       "risk_level": "Thấp",
       "top_factors": [
         {
           "feature": "quick_ratio",
           "raw_val": 0.4824,
           "display_val": "48.2%",
-          "contribution": 0.9351,
+          "contribution": 1.337,
           "label_vi": "Tỷ số thanh toán nhanh"
         },
         {
-          "feature": "current_ratio",
-          "raw_val": 0.7544,
-          "display_val": "75.4%",
-          "contribution": 0.3821,
-          "label_vi": "Tỷ số thanh toán hiện hành"
+          "feature": "debt_to_assets",
+          "raw_val": 0.6461,
+          "display_val": "64.6%",
+          "contribution": 0.307,
+          "label_vi": "Nợ trên Tổng tài sản"
         },
         {
-          "feature": "cash_ratio",
-          "raw_val": 0.17,
-          "display_val": "17.0%",
-          "contribution": 0.3398,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
+          "feature": "asset_turnover",
+          "raw_val": 0.1838,
+          "display_val": "18.4%",
+          "contribution": 0.2287,
+          "label_vi": "Vòng quay tổng tài sản"
         }
       ]
     },
@@ -1409,34 +1409,34 @@
       "ticker": "MWG",
       "sector": "Bán lẻ",
       "pd_scores_4q": [
-        2.02,
-        1.62,
-        0.73,
-        0.31
+        0.05,
+        0.03,
+        0.01,
+        0.0
       ],
-      "current_pd": 0.31,
+      "current_pd": 0.0,
       "risk_level": "Thấp",
       "top_factors": [
-        {
-          "feature": "cash_ratio",
-          "raw_val": 0.0947,
-          "display_val": "9.5%",
-          "contribution": 0.5681,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
-        },
         {
           "feature": "quick_ratio",
           "raw_val": 1.0244,
           "display_val": "1.02",
-          "contribution": 0.3444,
+          "contribution": 0.3763,
           "label_vi": "Tỷ số thanh toán nhanh"
         },
         {
-          "feature": "long_term_debt_to_equity",
-          "raw_val": 0.0,
-          "display_val": "0.0%",
-          "contribution": 0.268,
-          "label_vi": "Nợ dài hạn / Vốn chủ"
+          "feature": "net_profit_margin_roll4q_mean",
+          "raw_val": 0.0594,
+          "display_val": "5.9%",
+          "contribution": 0.2257,
+          "label_vi": "Biên LN ròng (TB 4Q)"
+        },
+        {
+          "feature": "debt_to_assets",
+          "raw_val": 0.5722,
+          "display_val": "57.2%",
+          "contribution": 0.139,
+          "label_vi": "Nợ trên Tổng tài sản"
         }
       ]
     },
@@ -1445,34 +1445,34 @@
       "ticker": "NHA",
       "sector": "Bất động sản",
       "pd_scores_4q": [
-        99.27,
-        93.01,
-        99.96,
-        99.76
+        12.83,
+        0.91,
+        81.68,
+        55.81
       ],
-      "current_pd": 99.76,
-      "risk_level": "Cao",
+      "current_pd": 55.81,
+      "risk_level": "Trung bình",
       "top_factors": [
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -4.6214,
-          "display_val": "-4.62",
-          "contribution": 2.3049,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "roa",
+          "raw_val": 0.0006,
+          "display_val": "0.1%",
+          "contribution": 1.5572,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
-          "feature": "log_total_assets",
-          "raw_val": 27.8473,
-          "display_val": "27.85",
-          "contribution": 2.0449,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "asset_turnover",
+          "raw_val": 0.0116,
+          "display_val": "1.2%",
+          "contribution": 1.5522,
+          "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "ebitda_margin",
-          "raw_val": -4.6214,
-          "display_val": "-4.62",
-          "contribution": 1.7674,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "roa_roll4q_mean",
+          "raw_val": 0.0006,
+          "display_val": "0.1%",
+          "contribution": 0.8142,
+          "label_vi": "ROA (TB 4Q)"
         }
       ]
     },
@@ -1481,34 +1481,34 @@
       "ticker": "NT2",
       "sector": "Điện lực",
       "pd_scores_4q": [
-        99.6,
-        99.91,
-        85.36,
-        99.87
+        0.02,
+        0.07,
+        0.0,
+        0.16
       ],
-      "current_pd": 99.87,
-      "risk_level": "Cao",
+      "current_pd": 0.16,
+      "risk_level": "Thấp",
       "top_factors": [
-        {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -4.7357,
-          "display_val": "-4.74",
-          "contribution": 2.3583,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
-        },
-        {
-          "feature": "ebitda_margin",
-          "raw_val": -4.7357,
-          "display_val": "-4.74",
-          "contribution": 1.8077,
-          "label_vi": "Biên lợi nhuận EBITDA"
-        },
         {
           "feature": "cfo_to_debt_roll4q_mean",
           "raw_val": 0.1891,
           "display_val": "18.9%",
-          "contribution": 1.6958,
+          "contribution": 1.4635,
           "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
+        },
+        {
+          "feature": "inventory_turnover",
+          "raw_val": 6.183,
+          "display_val": "6.18",
+          "contribution": 0.2827,
+          "label_vi": "Vòng quay hàng tồn kho"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.0001,
+          "display_val": "0.0%",
+          "contribution": 0.2069,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
         }
       ]
     },
@@ -1517,33 +1517,33 @@
       "ticker": "NVL",
       "sector": "Bất động sản",
       "pd_scores_4q": [
-        98.8,
-        99.77,
-        8.19,
-        94.63
+        97.12,
+        99.58,
+        2.58,
+        89.88
       ],
-      "current_pd": 94.63,
+      "current_pd": 89.88,
       "risk_level": "Cao",
       "top_factors": [
-        {
-          "feature": "inventory",
-          "raw_val": 154608590193270.0,
-          "display_val": "154,609 tỷ VNĐ",
-          "contribution": 3.5434,
-          "label_vi": "Hàng tồn kho"
-        },
         {
           "feature": "asset_turnover",
           "raw_val": 0.0142,
           "display_val": "1.4%",
-          "contribution": 0.8972,
+          "contribution": 1.5321,
           "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "roa",
+          "raw_val": 0.0034,
+          "display_val": "0.3%",
+          "contribution": 1.2843,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
           "feature": "quick_ratio",
           "raw_val": 0.5173,
           "display_val": "51.7%",
-          "contribution": 0.897,
+          "contribution": 1.275,
           "label_vi": "Tỷ số thanh toán nhanh"
         }
       ]
@@ -1553,34 +1553,34 @@
       "ticker": "PAN",
       "sector": "Nông nghiệp",
       "pd_scores_4q": [
-        99.49,
-        96.55,
-        97.76,
-        12.54
+        36.8,
+        10.37,
+        1.42,
+        0.01
       ],
-      "current_pd": 12.54,
+      "current_pd": 0.01,
       "risk_level": "Thấp",
       "top_factors": [
         {
           "feature": "cfo_to_debt_roll4q_mean",
           "raw_val": 0.2035,
           "display_val": "20.4%",
-          "contribution": 1.8562,
+          "contribution": 1.5971,
           "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
         },
         {
-          "feature": "log_total_assets",
-          "raw_val": 30.3533,
-          "display_val": "30.35",
-          "contribution": 0.689,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "current_ratio",
+          "raw_val": 2.2647,
+          "display_val": "2.26",
+          "contribution": 0.1941,
+          "label_vi": "Tỷ số thanh toán hiện hành"
         },
         {
-          "feature": "depreciation_amortization",
-          "raw_val": -2451337592120.0,
-          "display_val": "-2,451 tỷ VNĐ",
-          "contribution": 0.4144,
-          "label_vi": "Khấu hao"
+          "feature": "current_ratio_qoq_change",
+          "raw_val": 0.0,
+          "display_val": "0.0%",
+          "contribution": 0.1281,
+          "label_vi": "Biến động TS thanh toán hiện hành (QoQ)"
         }
       ]
     },
@@ -1589,33 +1589,33 @@
       "ticker": "PDR",
       "sector": "Bất động sản",
       "pd_scores_4q": [
-        0.03,
-        81.34,
-        27.59,
-        2.76
+        0.65,
+        85.98,
+        25.64,
+        22.9
       ],
-      "current_pd": 2.76,
+      "current_pd": 22.9,
       "risk_level": "Thấp",
       "top_factors": [
         {
           "feature": "asset_turnover",
           "raw_val": 0.0039,
           "display_val": "0.4%",
-          "contribution": 0.9376,
+          "contribution": 1.6108,
           "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "cash_ratio",
-          "raw_val": 0.0175,
-          "display_val": "1.7%",
-          "contribution": 0.8025,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
+          "feature": "roa",
+          "raw_val": 0.0052,
+          "display_val": "0.5%",
+          "contribution": 1.1134,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
           "feature": "quick_ratio",
           "raw_val": 0.7917,
           "display_val": "79.2%",
-          "contribution": 0.598,
+          "contribution": 0.7887,
           "label_vi": "Tỷ số thanh toán nhanh"
         }
       ]
@@ -1625,34 +1625,34 @@
       "ticker": "PET",
       "sector": "Dầu khí",
       "pd_scores_4q": [
-        25.33,
-        11.08,
-        16.18,
-        19.45
+        12.82,
+        2.59,
+        4.08,
+        7.21
       ],
-      "current_pd": 19.45,
+      "current_pd": 7.21,
       "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 30.2345,
-          "display_val": "30.23",
-          "contribution": 0.7532,
-          "label_vi": "Quy mô tổng tài sản (Log)"
-        },
-        {
-          "feature": "cash_ratio",
-          "raw_val": 0.0574,
-          "display_val": "5.7%",
-          "contribution": 0.6814,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
+          "feature": "roa",
+          "raw_val": 0.0075,
+          "display_val": "0.7%",
+          "contribution": 0.8928,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
           "feature": "retained_earnings_to_assets",
           "raw_val": 0.0423,
           "display_val": "4.2%",
-          "contribution": 0.3986,
+          "contribution": 0.6605,
           "label_vi": "LN chưa phân phối / Tổng tài sản"
+        },
+        {
+          "feature": "debt_to_assets",
+          "raw_val": 0.7996,
+          "display_val": "80.0%",
+          "contribution": 0.6558,
+          "label_vi": "Nợ trên Tổng tài sản"
         }
       ]
     },
@@ -1661,34 +1661,34 @@
       "ticker": "PGV",
       "sector": "Điện lực",
       "pd_scores_4q": [
-        100.0,
-        100.0,
-        100.0,
-        100.0
+        1.25,
+        8.53,
+        0.01,
+        1.0
       ],
-      "current_pd": 100.0,
-      "risk_level": "Cao",
+      "current_pd": 1.0,
+      "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "depreciation_amortization",
-          "raw_val": -88390587026632.0,
-          "display_val": "-88,391 tỷ VNĐ",
-          "contribution": 11.5454,
-          "label_vi": "Khấu hao"
+          "feature": "debt_to_assets",
+          "raw_val": 0.6488,
+          "display_val": "64.9%",
+          "contribution": 0.3131,
+          "label_vi": "Nợ trên Tổng tài sản"
         },
         {
-          "feature": "ebitda",
-          "raw_val": -87474544597971.0,
-          "display_val": "-87,475 tỷ VNĐ",
-          "contribution": 6.9586,
-          "label_vi": "EBITDA"
+          "feature": "roa",
+          "raw_val": 0.0139,
+          "display_val": "1.4%",
+          "contribution": 0.2725,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -8.4371,
-          "display_val": "-8.44",
-          "contribution": 4.0877,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "cfo_to_debt",
+          "raw_val": -0.0118,
+          "display_val": "-1.2%",
+          "contribution": 0.2182,
+          "label_vi": "Dòng tiền HĐKD / Tổng nợ"
         }
       ]
     },
@@ -1697,34 +1697,34 @@
       "ticker": "PLX",
       "sector": "Dầu khí",
       "pd_scores_4q": [
-        0.18,
-        0.12,
-        0.2,
-        1.65
+        0.13,
+        0.27,
+        0.25,
+        4.17
       ],
-      "current_pd": 1.65,
+      "current_pd": 4.17,
       "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "cfo_to_debt_roll4q_mean",
-          "raw_val": 0.1215,
-          "display_val": "12.1%",
-          "contribution": 0.947,
-          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
-        },
-        {
-          "feature": "quick_ratio",
-          "raw_val": 0.6577,
-          "display_val": "65.8%",
-          "contribution": 0.744,
-          "label_vi": "Tỷ số thanh toán nhanh"
+          "feature": "roa",
+          "raw_val": -0.0062,
+          "display_val": "-0.6%",
+          "contribution": 2.2123,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
           "feature": "roa_roll4q_mean",
           "raw_val": -0.0062,
           "display_val": "-0.6%",
-          "contribution": 0.7097,
+          "contribution": 1.1759,
           "label_vi": "ROA (TB 4Q)"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.6577,
+          "display_val": "65.8%",
+          "contribution": 1.0262,
+          "label_vi": "Tỷ số thanh toán nhanh"
         }
       ]
     },
@@ -1733,33 +1733,33 @@
       "ticker": "PNJ",
       "sector": "Bán lẻ",
       "pd_scores_4q": [
-        18.52,
-        73.4,
-        0.15,
-        14.06
+        0.11,
+        0.11,
+        0.0,
+        0.0
       ],
-      "current_pd": 14.06,
+      "current_pd": 0.0,
       "risk_level": "Thấp",
       "top_factors": [
         {
           "feature": "cfo_to_debt_roll4q_mean",
           "raw_val": 0.6723,
           "display_val": "67.2%",
-          "contribution": 7.0496,
+          "contribution": 5.9241,
           "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
         },
         {
-          "feature": "log_total_assets",
-          "raw_val": 30.6113,
-          "display_val": "30.61",
-          "contribution": 0.5494,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "current_ratio",
+          "raw_val": 3.4418,
+          "display_val": "3.44",
+          "contribution": 0.9,
+          "label_vi": "Tỷ số thanh toán hiện hành"
         },
         {
           "feature": "quick_ratio",
           "raw_val": 0.899,
           "display_val": "89.9%",
-          "contribution": 0.481,
+          "contribution": 0.5985,
           "label_vi": "Tỷ số thanh toán nhanh"
         }
       ]
@@ -1778,25 +1778,25 @@
       "risk_level": "Cao",
       "top_factors": [
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -9.2557,
-          "display_val": "-9.26",
-          "contribution": 4.4702,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
-        },
-        {
-          "feature": "ebitda_margin",
-          "raw_val": -9.2557,
-          "display_val": "-9.26",
-          "contribution": 3.4047,
-          "label_vi": "Biên lợi nhuận EBITDA"
-        },
-        {
           "feature": "retained_earnings_to_assets",
           "raw_val": -0.3589,
           "display_val": "-35.9%",
-          "contribution": 2.2862,
+          "contribution": 5.053,
           "label_vi": "LN chưa phân phối / Tổng tài sản"
+        },
+        {
+          "feature": "roa",
+          "raw_val": -0.0175,
+          "display_val": "-1.8%",
+          "contribution": 3.3003,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.2292,
+          "display_val": "22.9%",
+          "contribution": 1.7858,
+          "label_vi": "Tỷ số thanh toán nhanh"
         }
       ]
     },
@@ -1805,34 +1805,34 @@
       "ticker": "PVD",
       "sector": "Dầu khí",
       "pd_scores_4q": [
-        99.91,
-        99.93,
-        99.68,
-        99.66
+        4.67,
+        6.07,
+        4.69,
+        4.85
       ],
-      "current_pd": 99.66,
-      "risk_level": "Cao",
+      "current_pd": 4.85,
+      "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -4.3079,
-          "display_val": "-4.31",
-          "contribution": 2.1584,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "asset_turnover",
+          "raw_val": 0.1151,
+          "display_val": "11.5%",
+          "contribution": 0.7562,
+          "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "depreciation_amortization",
-          "raw_val": -15062526967839.0,
-          "display_val": "-15,063 tỷ VNĐ",
-          "contribution": 2.0478,
-          "label_vi": "Khấu hao"
+          "feature": "roa",
+          "raw_val": 0.0102,
+          "display_val": "1.0%",
+          "contribution": 0.6335,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
-          "feature": "ebitda_margin",
-          "raw_val": -4.3079,
-          "display_val": "-4.31",
-          "contribution": 1.6566,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.0527,
+          "display_val": "5.3%",
+          "contribution": 0.5466,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
         }
       ]
     },
@@ -1841,34 +1841,34 @@
       "ticker": "PVS",
       "sector": "Dầu khí",
       "pd_scores_4q": [
-        36.63,
-        42.18,
-        28.09,
-        53.95
+        1.81,
+        1.69,
+        0.12,
+        1.27
       ],
-      "current_pd": 53.95,
-      "risk_level": "Trung bình",
+      "current_pd": 1.27,
+      "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "depreciation_amortization",
-          "raw_val": -11337682500907.0,
-          "display_val": "-11,338 tỷ VNĐ",
-          "contribution": 1.5654,
-          "label_vi": "Khấu hao"
+          "feature": "roa",
+          "raw_val": 0.0107,
+          "display_val": "1.1%",
+          "contribution": 0.5823,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
-          "feature": "ebitda",
-          "raw_val": -10806190265536.0,
-          "display_val": "-10,806 tỷ VNĐ",
-          "contribution": 1.0191,
-          "label_vi": "EBITDA"
+          "feature": "roa_roll4q_mean",
+          "raw_val": 0.0107,
+          "display_val": "1.1%",
+          "contribution": 0.2761,
+          "label_vi": "ROA (TB 4Q)"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -1.2423,
-          "display_val": "-1.24",
-          "contribution": 0.7261,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "net_profit_margin_roll4q_mean",
+          "raw_val": 0.05,
+          "display_val": "5.0%",
+          "contribution": 0.2471,
+          "label_vi": "Biên LN ròng (TB 4Q)"
         }
       ]
     },
@@ -1877,34 +1877,34 @@
       "ticker": "PVT",
       "sector": "Vận tải",
       "pd_scores_4q": [
-        75.99,
-        76.12,
-        74.97,
-        79.7
+        2.33,
+        2.51,
+        2.66,
+        1.35
       ],
-      "current_pd": 79.7,
-      "risk_level": "Cao",
+      "current_pd": 1.35,
+      "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "depreciation_amortization",
-          "raw_val": -10534517138772.0,
-          "display_val": "-10,535 tỷ VNĐ",
-          "contribution": 1.4613,
-          "label_vi": "Khấu hao"
+          "feature": "inventory_turnover",
+          "raw_val": 11.4734,
+          "display_val": "11.47",
+          "contribution": 0.7781,
+          "label_vi": "Vòng quay hàng tồn kho"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -2.4156,
-          "display_val": "-2.42",
-          "contribution": 1.2743,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "cfo_to_debt_roll4q_mean",
+          "raw_val": 0.0651,
+          "display_val": "6.5%",
+          "contribution": 0.3199,
+          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
         },
         {
-          "feature": "ebitda_margin",
-          "raw_val": -2.4156,
-          "display_val": "-2.42",
-          "contribution": 0.9881,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.0796,
+          "display_val": "8.0%",
+          "contribution": 0.2525,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
         }
       ]
     },
@@ -1913,34 +1913,34 @@
       "ticker": "REE",
       "sector": "Tiện ích",
       "pd_scores_4q": [
+        0.03,
+        0.02,
         0.06,
-        0.14,
-        0.55,
-        0.31
+        0.03
       ],
-      "current_pd": 0.31,
+      "current_pd": 0.03,
       "risk_level": "Thấp",
       "top_factors": [
         {
           "feature": "asset_turnover",
           "raw_val": 0.0606,
           "display_val": "6.1%",
-          "contribution": 0.7142,
+          "contribution": 1.1749,
           "label_vi": "Vòng quay tổng tài sản"
-        },
-        {
-          "feature": "asset_turnover_roll4q_mean",
-          "raw_val": 0.0606,
-          "display_val": "6.1%",
-          "contribution": 0.3285,
-          "label_vi": "Vòng quay tổng tài sản (TB 4Q)"
         },
         {
           "feature": "cfo_to_debt_roll4q_mean",
           "raw_val": 0.0626,
           "display_val": "6.3%",
-          "contribution": 0.2949,
+          "contribution": 0.2964,
           "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
+        },
+        {
+          "feature": "current_ratio",
+          "raw_val": 2.4137,
+          "display_val": "2.41",
+          "contribution": 0.2834,
+          "label_vi": "Tỷ số thanh toán hiện hành"
         }
       ]
     },
@@ -1949,34 +1949,34 @@
       "ticker": "ROS",
       "sector": "Xây dựng",
       "pd_scores_4q": [
-        99.15,
-        90.77,
-        95.53,
-        91.11
+        90.55,
+        80.52,
+        86.57,
+        69.81
       ],
-      "current_pd": 91.11,
+      "current_pd": 69.81,
       "risk_level": "Cao",
       "top_factors": [
-        {
-          "feature": "cash_ratio",
-          "raw_val": 0.0062,
-          "display_val": "0.6%",
-          "contribution": 0.8367,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
-        },
-        {
-          "feature": "log_total_assets",
-          "raw_val": 30.1161,
-          "display_val": "30.12",
-          "contribution": 0.8173,
-          "label_vi": "Quy mô tổng tài sản (Log)"
-        },
         {
           "feature": "asset_turnover",
           "raw_val": 0.0573,
           "display_val": "5.7%",
-          "contribution": 0.7273,
+          "contribution": 1.2003,
           "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "roa",
+          "raw_val": 0.0052,
+          "display_val": "0.5%",
+          "contribution": 1.113,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.7557,
+          "display_val": "75.6%",
+          "contribution": 0.8526,
+          "label_vi": "Tỷ số thanh toán nhanh"
         }
       ]
     },
@@ -1985,34 +1985,34 @@
       "ticker": "SAB",
       "sector": "Thực phẩm - Đồ uống",
       "pd_scores_4q": [
-        1.13,
-        0.28,
-        0.66,
-        0.12
+        0.01,
+        0.0,
+        0.01,
+        0.0
       ],
-      "current_pd": 0.12,
+      "current_pd": 0.0,
       "risk_level": "Thấp",
       "top_factors": [
+        {
+          "feature": "current_ratio",
+          "raw_val": 3.7268,
+          "display_val": "3.73",
+          "contribution": 1.0709,
+          "label_vi": "Tỷ số thanh toán hiện hành"
+        },
         {
           "feature": "cfo_to_debt_roll4q_mean",
           "raw_val": 0.1425,
           "display_val": "14.3%",
-          "contribution": 1.1805,
+          "contribution": 1.0342,
           "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
         },
         {
-          "feature": "log_total_assets",
-          "raw_val": 31.0609,
-          "display_val": "31.06",
-          "contribution": 0.3061,
-          "label_vi": "Quy mô tổng tài sản (Log)"
-        },
-        {
-          "feature": "long_term_debt_to_equity",
-          "raw_val": 0.0069,
-          "display_val": "0.7%",
-          "contribution": 0.2597,
-          "label_vi": "Nợ dài hạn / Vốn chủ"
+          "feature": "current_ratio_roll4q_mean",
+          "raw_val": 3.7268,
+          "display_val": "3.73",
+          "contribution": 0.2471,
+          "label_vi": "Tỷ số thanh toán hiện hành (TB 4Q)"
         }
       ]
     },
@@ -2021,34 +2021,34 @@
       "ticker": "SBT",
       "sector": "Nông nghiệp",
       "pd_scores_4q": [
-        30.93,
-        31.13,
-        34.02,
-        31.27
+        39.36,
+        39.83,
+        40.42,
+        33.54
       ],
-      "current_pd": 31.27,
+      "current_pd": 33.54,
       "risk_level": "Trung bình",
       "top_factors": [
+        {
+          "feature": "roa",
+          "raw_val": 0.0063,
+          "display_val": "0.6%",
+          "contribution": 1.0015,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
+        },
         {
           "feature": "retained_earnings_to_assets",
           "raw_val": 0.0387,
           "display_val": "3.9%",
-          "contribution": 0.4156,
+          "contribution": 0.6999,
           "label_vi": "LN chưa phân phối / Tổng tài sản"
         },
         {
           "feature": "roa_roll4q_mean",
           "raw_val": 0.0063,
           "display_val": "0.6%",
-          "contribution": 0.3618,
+          "contribution": 0.5074,
           "label_vi": "ROA (TB 4Q)"
-        },
-        {
-          "feature": "quick_ratio",
-          "raw_val": 1.0444,
-          "display_val": "1.04",
-          "contribution": 0.3226,
-          "label_vi": "Tỷ số thanh toán nhanh"
         }
       ]
     },
@@ -2057,34 +2057,34 @@
       "ticker": "SCR",
       "sector": "Bất động sản",
       "pd_scores_4q": [
-        92.61,
-        88.51,
-        46.94,
-        79.01
+        86.92,
+        88.72,
+        72.91,
+        85.72
       ],
-      "current_pd": 79.01,
+      "current_pd": 85.72,
       "risk_level": "Cao",
       "top_factors": [
         {
           "feature": "asset_turnover",
           "raw_val": 0.0114,
           "display_val": "1.1%",
-          "contribution": 0.9081,
+          "contribution": 1.5533,
           "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "log_total_assets",
-          "raw_val": 30.2097,
-          "display_val": "30.21",
-          "contribution": 0.7667,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "roa",
+          "raw_val": 0.0009,
+          "display_val": "0.1%",
+          "contribution": 1.5259,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
-          "feature": "cash_ratio",
-          "raw_val": 0.0476,
-          "display_val": "4.8%",
-          "contribution": 0.7111,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
+          "feature": "roa_roll4q_mean",
+          "raw_val": 0.0009,
+          "display_val": "0.1%",
+          "contribution": 0.797,
+          "label_vi": "ROA (TB 4Q)"
         }
       ]
     },
@@ -2093,34 +2093,34 @@
       "ticker": "SJS",
       "sector": "Bất động sản KCN",
       "pd_scores_4q": [
-        80.09,
-        99.89,
-        76.82,
-        62.51
+        14.93,
+        30.0,
+        8.26,
+        7.96
       ],
-      "current_pd": 62.51,
-      "risk_level": "Cao",
+      "current_pd": 7.96,
+      "risk_level": "Thấp",
       "top_factors": [
         {
           "feature": "quick_ratio",
           "raw_val": 0.363,
           "display_val": "36.3%",
-          "contribution": 1.0651,
+          "contribution": 1.5485,
           "label_vi": "Tỷ số thanh toán nhanh"
-        },
-        {
-          "feature": "log_total_assets",
-          "raw_val": 29.7094,
-          "display_val": "29.71",
-          "contribution": 1.0374,
-          "label_vi": "Quy mô tổng tài sản (Log)"
         },
         {
           "feature": "asset_turnover",
           "raw_val": 0.0396,
           "display_val": "4.0%",
-          "contribution": 0.7969,
+          "contribution": 1.3364,
           "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "cfo_to_debt",
+          "raw_val": -0.0684,
+          "display_val": "-6.8%",
+          "contribution": 0.5201,
+          "label_vi": "Dòng tiền HĐKD / Tổng nợ"
         }
       ]
     },
@@ -2129,34 +2129,34 @@
       "ticker": "SMC",
       "sector": "Thép",
       "pd_scores_4q": [
-        82.66,
-        97.04,
-        10.52,
-        92.71
+        95.43,
+        98.7,
+        0.0,
+        59.8
       ],
-      "current_pd": 92.71,
-      "risk_level": "Cao",
+      "current_pd": 59.8,
+      "risk_level": "Trung bình",
       "top_factors": [
-        {
-          "feature": "log_total_assets",
-          "raw_val": 29.0774,
-          "display_val": "29.08",
-          "contribution": 1.3793,
-          "label_vi": "Quy mô tổng tài sản (Log)"
-        },
         {
           "feature": "quick_ratio",
           "raw_val": 0.437,
           "display_val": "43.7%",
-          "contribution": 0.9845,
+          "contribution": 1.4173,
           "label_vi": "Tỷ số thanh toán nhanh"
         },
         {
-          "feature": "cash_ratio",
-          "raw_val": 0.0108,
-          "display_val": "1.1%",
-          "contribution": 0.8227,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
+          "feature": "roa",
+          "raw_val": 0.0041,
+          "display_val": "0.4%",
+          "contribution": 1.2211,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
+        },
+        {
+          "feature": "retained_earnings_to_assets",
+          "raw_val": 0.0139,
+          "display_val": "1.4%",
+          "contribution": 0.9717,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
         }
       ]
     },
@@ -2165,34 +2165,34 @@
       "ticker": "SSI",
       "sector": "Tài chính",
       "pd_scores_4q": [
-        26.31,
-        11.33,
-        79.94,
-        22.44
+        27.14,
+        13.1,
+        58.94,
+        15.14
       ],
-      "current_pd": 22.44,
+      "current_pd": 15.14,
       "risk_level": "Thấp",
       "top_factors": [
         {
           "feature": "asset_turnover",
           "raw_val": 0.0341,
           "display_val": "3.4%",
-          "contribution": 0.8186,
+          "contribution": 1.3787,
           "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "cash_ratio",
-          "raw_val": 0.0172,
-          "display_val": "1.7%",
-          "contribution": 0.8032,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
+          "feature": "roa",
+          "raw_val": 0.0137,
+          "display_val": "1.4%",
+          "contribution": 0.2905,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
-          "feature": "asset_turnover_roll4q_mean",
-          "raw_val": 0.0341,
-          "display_val": "3.4%",
-          "contribution": 0.3837,
-          "label_vi": "Vòng quay tổng tài sản (TB 4Q)"
+          "feature": "quick_ratio",
+          "raw_val": 0.0,
+          "display_val": "0.0%",
+          "contribution": 0.2778,
+          "label_vi": "Tỷ số thanh toán nhanh"
         }
       ]
     },
@@ -2201,34 +2201,34 @@
       "ticker": "STG",
       "sector": "Logistics",
       "pd_scores_4q": [
-        2.94,
-        3.44,
-        0.79,
-        0.99
+        0.01,
+        0.01,
+        0.01,
+        0.01
       ],
-      "current_pd": 0.99,
+      "current_pd": 0.01,
       "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 28.9725,
-          "display_val": "28.97",
-          "contribution": 1.4361,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "inventory_turnover",
+          "raw_val": 15.6623,
+          "display_val": "15.66",
+          "contribution": 1.1704,
+          "label_vi": "Vòng quay hàng tồn kho"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -2.0434,
-          "display_val": "-2.04",
-          "contribution": 1.1004,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "current_ratio",
+          "raw_val": 2.6185,
+          "display_val": "2.62",
+          "contribution": 0.4062,
+          "label_vi": "Tỷ số thanh toán hiện hành"
         },
         {
-          "feature": "ebitda_margin",
-          "raw_val": -2.0434,
-          "display_val": "-2.04",
-          "contribution": 0.8566,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "asset_turnover",
+          "raw_val": 0.1769,
+          "display_val": "17.7%",
+          "contribution": 0.2811,
+          "label_vi": "Vòng quay tổng tài sản"
         }
       ]
     },
@@ -2237,34 +2237,34 @@
       "ticker": "STK",
       "sector": "Dệt may",
       "pd_scores_4q": [
-        99.89,
-        99.89,
-        99.92,
-        99.98
+        20.71,
+        16.85,
+        24.21,
+        29.09
       ],
-      "current_pd": 99.98,
-      "risk_level": "Cao",
+      "current_pd": 29.09,
+      "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -6.4161,
-          "display_val": "-6.42",
-          "contribution": 3.1434,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "roa",
+          "raw_val": -0.0083,
+          "display_val": "-0.8%",
+          "contribution": 2.4133,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
-          "feature": "ebitda_margin",
-          "raw_val": -6.4161,
-          "display_val": "-6.42",
-          "contribution": 2.4014,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "quick_ratio",
+          "raw_val": 0.2805,
+          "display_val": "28.0%",
+          "contribution": 1.6948,
+          "label_vi": "Tỷ số thanh toán nhanh"
         },
         {
-          "feature": "log_total_assets",
-          "raw_val": 29.0497,
-          "display_val": "29.05",
-          "contribution": 1.3943,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "roa_roll4q_mean",
+          "raw_val": -0.0083,
+          "display_val": "-0.8%",
+          "contribution": 1.2869,
+          "label_vi": "ROA (TB 4Q)"
         }
       ]
     },
@@ -2273,34 +2273,34 @@
       "ticker": "SZC",
       "sector": "Bất động sản KCN",
       "pd_scores_4q": [
-        82.8,
-        97.43,
-        79.22,
-        97.01
+        18.4,
+        30.0,
+        19.37,
+        30.0
       ],
-      "current_pd": 97.01,
-      "risk_level": "Cao",
+      "current_pd": 30.0,
+      "risk_level": "Trung bình",
       "top_factors": [
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -2.4846,
-          "display_val": "-2.48",
-          "contribution": 1.3066,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "asset_turnover",
+          "raw_val": 0.0122,
+          "display_val": "1.2%",
+          "contribution": 1.547,
+          "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "log_total_assets",
-          "raw_val": 29.7512,
-          "display_val": "29.75",
-          "contribution": 1.0147,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "roa",
+          "raw_val": 0.0021,
+          "display_val": "0.2%",
+          "contribution": 1.4131,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
-          "feature": "ebitda_margin",
-          "raw_val": -2.4846,
-          "display_val": "-2.48",
-          "contribution": 1.0125,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "quick_ratio",
+          "raw_val": 0.6518,
+          "display_val": "65.2%",
+          "contribution": 1.0367,
+          "label_vi": "Tỷ số thanh toán nhanh"
         }
       ]
     },
@@ -2309,34 +2309,34 @@
       "ticker": "TCL",
       "sector": "Logistics",
       "pd_scores_4q": [
-        44.51,
-        22.91,
-        10.84,
-        22.2
+        0.21,
+        4.67,
+        0.18,
+        0.92
       ],
-      "current_pd": 22.2,
+      "current_pd": 0.92,
       "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 27.7803,
-          "display_val": "27.78",
-          "contribution": 2.0811,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "inventory_turnover",
+          "raw_val": 31.9876,
+          "display_val": "31.99",
+          "contribution": 2.6991,
+          "label_vi": "Vòng quay hàng tồn kho"
         },
         {
           "feature": "cfo_to_debt_roll4q_mean",
           "raw_val": 0.1328,
           "display_val": "13.3%",
-          "contribution": 1.0722,
+          "contribution": 0.9439,
           "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -1.5298,
-          "display_val": "-1.53",
-          "contribution": 0.8605,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "net_profit_margin_roll4q_mean",
+          "raw_val": 0.0725,
+          "display_val": "7.2%",
+          "contribution": 0.1956,
+          "label_vi": "Biên LN ròng (TB 4Q)"
         }
       ]
     },
@@ -2345,34 +2345,34 @@
       "ticker": "TCM",
       "sector": "Dệt may",
       "pd_scores_4q": [
-        61.05,
-        56.75,
-        89.74,
-        32.56
+        0.46,
+        0.44,
+        2.37,
+        0.39
       ],
-      "current_pd": 32.56,
-      "risk_level": "Trung bình",
+      "current_pd": 0.39,
+      "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 29.0745,
-          "display_val": "29.07",
-          "contribution": 1.3809,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "cfo_to_debt",
+          "raw_val": -0.0396,
+          "display_val": "-4.0%",
+          "contribution": 0.3663,
+          "label_vi": "Dòng tiền HĐKD / Tổng nợ"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -1.2482,
-          "display_val": "-1.25",
-          "contribution": 0.7289,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "net_profit_margin_roll4q_mean",
+          "raw_val": 0.0653,
+          "display_val": "6.5%",
+          "contribution": 0.212,
+          "label_vi": "Biên LN ròng (TB 4Q)"
         },
         {
-          "feature": "ebitda_margin",
-          "raw_val": -1.2482,
-          "display_val": "-1.25",
-          "contribution": 0.5757,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "current_ratio_qoq_change",
+          "raw_val": 0.0,
+          "display_val": "0.0%",
+          "contribution": 0.1281,
+          "label_vi": "Biến động TS thanh toán hiện hành (QoQ)"
         }
       ]
     },
@@ -2381,34 +2381,34 @@
       "ticker": "TLH",
       "sector": "Thép",
       "pd_scores_4q": [
-        96.76,
-        97.62,
-        85.36,
-        97.24
+        40.14,
+        57.36,
+        73.48,
+        62.2
       ],
-      "current_pd": 97.24,
+      "current_pd": 62.2,
       "risk_level": "Cao",
       "top_factors": [
-        {
-          "feature": "log_total_assets",
-          "raw_val": 28.5954,
-          "display_val": "28.60",
-          "contribution": 1.6401,
-          "label_vi": "Quy mô tổng tài sản (Log)"
-        },
         {
           "feature": "quick_ratio",
           "raw_val": 0.4084,
           "display_val": "40.8%",
-          "contribution": 1.0157,
+          "contribution": 1.4681,
           "label_vi": "Tỷ số thanh toán nhanh"
         },
         {
-          "feature": "cfo_to_debt_roll4q_mean",
-          "raw_val": 0.1246,
-          "display_val": "12.5%",
-          "contribution": 0.9814,
-          "label_vi": "Dòng tiền HĐKD/Tổng nợ (TB 4Q)"
+          "feature": "roa",
+          "raw_val": 0.0024,
+          "display_val": "0.2%",
+          "contribution": 1.3757,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
+        },
+        {
+          "feature": "retained_earnings_to_assets",
+          "raw_val": -0.0044,
+          "display_val": "-0.4%",
+          "contribution": 1.1717,
+          "label_vi": "LN chưa phân phối / Tổng tài sản"
         }
       ]
     },
@@ -2417,34 +2417,34 @@
       "ticker": "TRA",
       "sector": "Dược phẩm",
       "pd_scores_4q": [
-        66.06,
-        70.23,
-        51.81,
-        67.64
+        0.03,
+        0.02,
+        0.02,
+        0.12
       ],
-      "current_pd": 67.64,
-      "risk_level": "Cao",
+      "current_pd": 0.12,
+      "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 28.5106,
-          "display_val": "28.51",
-          "contribution": 1.686,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "ebit_to_long_term_debt",
+          "raw_val": 39.3157,
+          "display_val": "39.32",
+          "contribution": 0.4415,
+          "label_vi": "EBIT / Nợ dài hạn"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -1.1873,
-          "display_val": "-1.19",
-          "contribution": 0.7004,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "current_ratio",
+          "raw_val": 2.2004,
+          "display_val": "2.20",
+          "contribution": 0.1555,
+          "label_vi": "Tỷ số thanh toán hiện hành"
         },
         {
-          "feature": "ebitda_margin",
-          "raw_val": -1.1873,
-          "display_val": "-1.19",
-          "contribution": 0.5541,
-          "label_vi": "Biên lợi nhuận EBITDA"
+          "feature": "current_ratio_qoq_change",
+          "raw_val": 0.0,
+          "display_val": "0.0%",
+          "contribution": 0.1281,
+          "label_vi": "Biến động TS thanh toán hiện hành (QoQ)"
         }
       ]
     },
@@ -2453,34 +2453,34 @@
       "ticker": "VCG",
       "sector": "Xây dựng",
       "pd_scores_4q": [
-        77.79,
-        0.61,
-        71.58,
-        52.15
+        32.79,
+        0.0,
+        10.11,
+        5.91
       ],
-      "current_pd": 52.15,
-      "risk_level": "Trung bình",
+      "current_pd": 5.91,
+      "risk_level": "Thấp",
       "top_factors": [
         {
           "feature": "asset_turnover",
           "raw_val": 0.1124,
           "display_val": "11.2%",
-          "contribution": 0.5105,
+          "contribution": 0.7771,
           "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "ebitda_margin_roll4q_mean",
-          "raw_val": -0.669,
-          "display_val": "-66.9%",
-          "contribution": 0.4582,
-          "label_vi": "Biên LN EBITDA (TB 4Q)"
+          "feature": "cfo_to_debt",
+          "raw_val": -0.0714,
+          "display_val": "-7.1%",
+          "contribution": 0.5362,
+          "label_vi": "Dòng tiền HĐKD / Tổng nợ"
         },
         {
-          "feature": "depreciation_amortization",
-          "raw_val": -2716943145049.0,
-          "display_val": "-2,717 tỷ VNĐ",
-          "contribution": 0.4488,
-          "label_vi": "Khấu hao"
+          "feature": "roa",
+          "raw_val": 0.0121,
+          "display_val": "1.2%",
+          "contribution": 0.4469,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         }
       ]
     },
@@ -2489,34 +2489,34 @@
       "ticker": "VGS",
       "sector": "Thép",
       "pd_scores_4q": [
-        31.54,
-        26.51,
-        1.28,
-        32.84
+        0.1,
+        0.02,
+        0.0,
+        0.3
       ],
-      "current_pd": 32.84,
-      "risk_level": "Trung bình",
+      "current_pd": 0.3,
+      "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "log_total_assets",
-          "raw_val": 28.7751,
-          "display_val": "28.78",
-          "contribution": 1.5429,
-          "label_vi": "Quy mô tổng tài sản (Log)"
+          "feature": "net_profit_margin_roll4q_mean",
+          "raw_val": 0.0266,
+          "display_val": "2.7%",
+          "contribution": 0.3009,
+          "label_vi": "Biên LN ròng (TB 4Q)"
         },
         {
-          "feature": "cash_ratio",
-          "raw_val": 0.0207,
-          "display_val": "2.1%",
-          "contribution": 0.7927,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
+          "feature": "quick_ratio",
+          "raw_val": 1.0788,
+          "display_val": "1.08",
+          "contribution": 0.2798,
+          "label_vi": "Tỷ số thanh toán nhanh"
         },
         {
-          "feature": "revenue",
-          "raw_val": 1701200949719.0,
-          "display_val": "1,701 tỷ VNĐ",
-          "contribution": 0.3077,
-          "label_vi": "Doanh thu thuần"
+          "feature": "roa",
+          "raw_val": 0.0144,
+          "display_val": "1.4%",
+          "contribution": 0.2229,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         }
       ]
     },
@@ -2525,34 +2525,34 @@
       "ticker": "VIC",
       "sector": "Bất động sản",
       "pd_scores_4q": [
-        4.63,
-        0.58,
-        0.01,
-        0.31
+        2.5,
+        1.8,
+        1.6,
+        1.15
       ],
-      "current_pd": 0.31,
+      "current_pd": 1.15,
       "risk_level": "Thấp",
       "top_factors": [
         {
-          "feature": "inventory",
-          "raw_val": 217153958000000.0,
-          "display_val": "217,154 tỷ VNĐ",
-          "contribution": 5.2286,
-          "label_vi": "Hàng tồn kho"
-        },
-        {
-          "feature": "quick_ratio",
-          "raw_val": 0.7214,
-          "display_val": "72.1%",
-          "contribution": 0.6746,
-          "label_vi": "Tỷ số thanh toán nhanh"
+          "feature": "roa",
+          "raw_val": 0.0048,
+          "display_val": "0.5%",
+          "contribution": 1.1529,
+          "label_vi": "Tỷ suất LN/TS (ROA)"
         },
         {
           "feature": "asset_turnover",
           "raw_val": 0.0885,
           "display_val": "8.9%",
-          "contribution": 0.6044,
+          "contribution": 0.9606,
           "label_vi": "Vòng quay tổng tài sản"
+        },
+        {
+          "feature": "quick_ratio",
+          "raw_val": 0.7214,
+          "display_val": "72.1%",
+          "contribution": 0.9133,
+          "label_vi": "Tỷ số thanh toán nhanh"
         }
       ]
     },
@@ -2561,34 +2561,34 @@
       "ticker": "VNM",
       "sector": "Thực phẩm - Đồ uống",
       "pd_scores_4q": [
-        3.05,
-        0.75,
-        0.91,
-        0.67
+        0.01,
+        0.0,
+        0.0,
+        0.01
       ],
-      "current_pd": 0.67,
+      "current_pd": 0.01,
       "risk_level": "Thấp",
       "top_factors": [
-        {
-          "feature": "cash_ratio",
-          "raw_val": 0.1126,
-          "display_val": "11.3%",
-          "contribution": 0.5141,
-          "label_vi": "Tỷ số thanh toán tiền mặt"
-        },
         {
           "feature": "ebit_to_long_term_debt",
           "raw_val": 96.0947,
           "display_val": "96.09",
-          "contribution": 0.3196,
+          "contribution": 1.1107,
           "label_vi": "EBIT / Nợ dài hạn"
         },
         {
-          "feature": "long_term_debt_to_equity",
-          "raw_val": 0.0008,
-          "display_val": "0.1%",
-          "contribution": 0.267,
-          "label_vi": "Nợ dài hạn / Vốn chủ"
+          "feature": "current_ratio_qoq_change",
+          "raw_val": 0.0,
+          "display_val": "0.0%",
+          "contribution": 0.1281,
+          "label_vi": "Biến động TS thanh toán hiện hành (QoQ)"
+        },
+        {
+          "feature": "cash_ratio",
+          "raw_val": 0.1126,
+          "display_val": "11.3%",
+          "contribution": 0.1123,
+          "label_vi": "Tỷ số thanh toán tiền mặt"
         }
       ]
     },
@@ -2597,8 +2597,8 @@
       "ticker": "VRE",
       "sector": "Bất động sản",
       "pd_scores_4q": [
-        1.48,
-        0.04,
+        0.1,
+        0.02,
         0.0,
         0.0
       ],
@@ -2609,22 +2609,22 @@
           "feature": "asset_turnover",
           "raw_val": 0.0376,
           "display_val": "3.8%",
-          "contribution": 0.8049,
+          "contribution": 1.3518,
           "label_vi": "Vòng quay tổng tài sản"
         },
         {
-          "feature": "asset_turnover_roll4q_mean",
-          "raw_val": 0.0376,
-          "display_val": "3.8%",
-          "contribution": 0.3764,
-          "label_vi": "Vòng quay tổng tài sản (TB 4Q)"
+          "feature": "inventory_turnover",
+          "raw_val": 10.3251,
+          "display_val": "10.33",
+          "contribution": 0.6705,
+          "label_vi": "Vòng quay hàng tồn kho"
         },
         {
-          "feature": "revenue",
-          "raw_val": 2293618000000.0,
-          "display_val": "2,294 tỷ VNĐ",
-          "contribution": 0.2971,
-          "label_vi": "Doanh thu thuần"
+          "feature": "current_ratio",
+          "raw_val": 2.5129,
+          "display_val": "2.51",
+          "contribution": 0.3429,
+          "label_vi": "Tỷ số thanh toán hiện hành"
         }
       ]
     }

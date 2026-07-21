@@ -103,10 +103,49 @@ const Dashboard = () => {
     }
   };
 
-  // Auto-run prediction when redirected from Portfolio with a company in location state
+  const handlePredictByTicker = async (ticker) => {
+    setIsLoading(true);
+    setResult(null);
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/predict/ticker/${ticker}`);
+      if (!response.ok) throw new Error('Không thể lấy kết quả phân tích cho mã ' + ticker);
+      const res = await response.json();
+      
+      const mock4Q = [
+        Math.max(0, res.pd_score_pct - 10),
+        Math.max(0, res.pd_score_pct - 5),
+        res.pd_score_pct,
+        res.pd_score_pct
+      ];
+
+      const newResult = {
+        isDemo: false,
+        companyName: res.company_name || ticker,
+        sector: null,
+        pd_score: res.pd_score_pct,
+        risk_level: res.risk_level_vi,
+        top_factors: res.top_factors,
+        pd_scores_4q: mock4Q,
+        radar_data: generateRadarData(res.pd_score_pct)
+      };
+      setResult(newResult);
+      updateAnalysisContext(newResult, null);
+    } catch (e) {
+      console.error(e);
+      alert('Lỗi kết nối Backend: ' + e.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Auto-run prediction when redirected from SearchCompany or Portfolio
   useEffect(() => {
-    if (location.state && location.state.company) {
-      handlePredict(null, location.state.company);
+    if (location.state) {
+      if (location.state.selectedTicker) {
+        handlePredictByTicker(location.state.selectedTicker);
+      } else if (location.state.company) {
+        handlePredict(null, location.state.company);
+      }
     }
   }, [location.state]);
 
@@ -156,7 +195,7 @@ const Dashboard = () => {
           </div>
           
           {/* Top Row: Gauge + Trend */}
-          <div className="charts-container" style={{ marginBottom: '2rem' }}>
+          <div className="charts-container stagger-enter" style={{ marginBottom: '2rem' }}>
             <div style={{ minWidth: 0 }}>
               <ScoreGauge score={result.pd_score} riskLevel={result.risk_level} />
             </div>
@@ -164,9 +203,9 @@ const Dashboard = () => {
               <TrendAlert pdScores4Q={result.pd_scores_4q} />
             </div>
           </div>
-
+          
           {/* Bottom Row: Feature Contribution + Radar */}
-          <div className="charts-container" style={{ marginBottom: '2rem' }}>
+          <div className="charts-container stagger-enter" style={{ marginBottom: '2rem' }}>
             <div style={{ minWidth: 0 }}>
               <FeatureContributionChart topFactors={result.top_factors} />
             </div>

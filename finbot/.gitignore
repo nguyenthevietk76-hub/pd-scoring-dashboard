@@ -1,0 +1,17 @@
+# Environment variables
+.env
+
+# ChromaDB vector store
+data/chroma_db/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Log files
+finbot.log
+
+# Virtual environment
+venv/
+.venv/

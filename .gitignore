@@ -36,3 +36,11 @@ walkthrough.md
 *.png
 *.jpg
 *.jpeg
+
+# Local testing and agent custom configurations
+.agents/
+out*.json
+skills-lock.json
+test_chat.py
+remove_emojis.py
+remove_icons.py

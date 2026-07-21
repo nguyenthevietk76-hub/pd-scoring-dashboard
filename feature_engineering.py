@@ -257,7 +257,23 @@ def preprocess(df: pd.DataFrame, label_col: str = "label_distress",
     y = df[label_col].copy()
 
     # Chọn các cột số, loại id_cols, label_col và các cột nhiễu (toàn NaN hoặc variance = 0)
-    drop_cols = list(id_cols) + [label_col] + ['revenue_growth_yoy', 'gdp_growth', 'cpi_inflation', 'lending_rate']
+    # Loại bỏ các cột nguyên thủy dạng số tuyệt đối (VND) để tránh spurious correlation do chênh lệch quy mô (như tổng tài sản, hàng tồn kho)
+    raw_financial_cols = [
+        'revenue', 'net_income', 'ebit', 'depreciation_amortization',
+        'current_assets', 'current_liabilities', 'total_assets', 'total_liabilities',
+        'total_equity', 'long_term_debt', 'operating_cash_flow', 'cash_and_equiv',
+        'inventory', 'retained_earnings', 'ebitda'
+    ]
+    
+    # Loại bỏ các cột làm nhiễu mô hình hoặc gây bias ngành nghề (theo user feedback)
+    buggy_cols = [
+        'log_total_assets',
+        'ebitda_margin_roll4q_mean',
+        'ebitda_margin',
+        'ebitda_margin_qoq_change'
+    ]
+    
+    drop_cols = list(id_cols) + [label_col] + ['revenue_growth_yoy', 'gdp_growth', 'cpi_inflation', 'lending_rate'] + raw_financial_cols + buggy_cols
     feature_cols = [
         c for c in df.columns
         if c not in drop_cols and pd.api.types.is_numeric_dtype(df[c])

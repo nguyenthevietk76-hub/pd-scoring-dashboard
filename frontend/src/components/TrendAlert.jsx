@@ -20,7 +20,7 @@ const TrendAlert = ({ pdScores4Q }) => {
   // Logic hiển thị cảnh báo
   const diff = currentScore - prevScore;
   const isSuddenIncrease = diff > 15;
-  const isHighRisk = currentScore > 60;
+  const isHighRisk = currentScore > 15;
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -52,14 +52,14 @@ const TrendAlert = ({ pdScores4Q }) => {
       {isHighRisk && (
         <div className="alert-banner danger" style={{ width: '100%', marginBottom: '1rem', backgroundColor: 'rgba(239, 68, 68, 0.05)', border: '1px solid rgba(239, 68, 68, 0.12)' }}>
           <AlertCircle size={20} />
-          <span style={{ color: '#b91c1c', fontWeight: 600 }}>🔴 Cảnh báo: Xác suất vỡ nợ hiện tại đang ở mức cao nguy hiểm ({currentScore.toFixed(1)}%).</span>
+          <span style={{ color: '#b91c1c', fontWeight: 600 }}> Cảnh báo: Xác suất vỡ nợ hiện tại đang ở mức cao nguy hiểm ({currentScore.toFixed(1)}%).</span>
         </div>
       )}
       
       {isSuddenIncrease && !isHighRisk && (
         <div className="alert-banner warning" style={{ width: '100%', marginBottom: '1rem', backgroundColor: 'rgba(245, 158, 11, 0.05)', border: '1px solid rgba(245, 158, 11, 0.12)' }}>
           <AlertTriangle size={20} />
-          <span style={{ color: '#b45309', fontWeight: 600 }}>⚠️ Cảnh báo: Điểm rủi ro tăng vọt (+{diff.toFixed(1)}%) so với quý liền trước.</span>
+          <span style={{ color: '#b45309', fontWeight: 600 }}>️ Cảnh báo: Điểm rủi ro tăng vọt (+{diff.toFixed(1)}%) so với quý liền trước.</span>
         </div>
       )}
 
@@ -70,7 +70,7 @@ const TrendAlert = ({ pdScores4Q }) => {
             <XAxis dataKey="name" tick={{ fill: 'var(--ink-500)', fontSize: 12 }} axisLine={false} tickLine={false} />
             <YAxis domain={[0, 100]} tick={{ fill: 'var(--ink-500)', fontSize: 12 }} axisLine={false} tickLine={false} />
             <Tooltip content={<CustomTooltip />} />
-            <ReferenceLine y={60} stroke="var(--danger)" strokeDasharray="3 3" label={{ position: 'insideTopLeft', value: 'Ngưỡng rủi ro (60%)', fill: 'var(--danger)', fontSize: 10, fontWeight: 600 }} />
+            <ReferenceLine y={15} stroke="var(--danger)" strokeDasharray="3 3" label={{ position: 'insideTopLeft', value: 'Ngưỡng rủi ro (15%)', fill: 'var(--danger)', fontSize: 10, fontWeight: 600 }} />
             <Line 
               type="monotone" 
               dataKey="score" 

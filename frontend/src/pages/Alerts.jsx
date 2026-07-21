@@ -68,7 +68,7 @@ const Alerts = () => {
 
       {alertsList.length === 0 ? (
         <div className="card card-glow" style={{ textAlign: 'center', color: 'var(--ink-500)', padding: '4rem', fontSize: '1.1rem' }}>
-          ✓ Hệ thống hoạt động bình thường. Không ghi nhận cảnh báo rủi ro trọng yếu nào.
+           Hệ thống hoạt động bình thường. Không ghi nhận cảnh báo rủi ro trọng yếu nào.
         </div>
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2rem' }}>

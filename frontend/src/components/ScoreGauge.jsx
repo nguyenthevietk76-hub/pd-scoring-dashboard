@@ -36,14 +36,14 @@ const ScoreGauge = ({ score, riskLevel }) => {
 
   // Colors based on thresholds
   let fillColors;
-  if (score < 30) fillColors = ['var(--success)', 'transparent'];
-  else if (score < 60) fillColors = ['var(--warning)', 'transparent'];
+  if (score < 5) fillColors = ['var(--success)', 'transparent'];
+  else if (score < 15) fillColors = ['var(--warning)', 'transparent'];
   else fillColors = ['var(--danger)', 'transparent'];
 
   let badgeClass = '';
   let BadgeIcon = null;
-  if (score < 30) { badgeClass = 'badge-low'; BadgeIcon = CheckCircle; }
-  else if (score < 60) { badgeClass = 'badge-medium'; BadgeIcon = AlertTriangle; }
+  if (score < 5) { badgeClass = 'badge-low'; BadgeIcon = CheckCircle; }
+  else if (score < 15) { badgeClass = 'badge-medium'; BadgeIcon = AlertTriangle; }
   else { badgeClass = 'badge-high'; BadgeIcon = AlertOctagon; }
 
   return (

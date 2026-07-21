@@ -1,136 +1,105 @@
-# Dự Án Dự Báo Xác Suất Vỡ Nợ Doanh Nghiệp (Probability of Distress - PD)
-## AI-Quantum Challenge 2026 - Nhóm 3 (AI cho Quản trị Rủi ro và Tuân thủ)
+# 🚀 PD Scoring Dashboard - AI-Quantum Challenge 2026
 
-Hệ thống dự báo Xác suất Vỡ nợ (Probability of Distress - PD) cho các doanh nghiệp niêm yết tại Việt Nam, kết hợp mô hình Học máy (Machine Learning) ở Backend và Dashboard tương tác trực quan ở Frontend. 
-
-Dự án hiện hỗ trợ đầy đủ dữ liệu báo cáo tài chính chuẩn hóa của **73 doanh nghiệp** lớn nhỏ thuộc **26 ngành nghề** tại Việt Nam (bao gồm 23 mã gốc ban đầu và 50 mã cập nhật mới, đã bổ sung dữ liệu dòng tiền sạch từ `vnstock`).
+## 📖 Giới thiệu dự án
+Hệ thống dự báo **Xác suất Vỡ nợ (Probability of Distress - PD)** cho doanh nghiệp. Dự án được xây dựng và phát triển để phục vụ **AI-Quantum Challenge 2026 - Nhóm 3 (AI cho Quản trị Rủi ro và Tuân thủ)**.
+Hệ thống tích hợp các mô hình Học máy (Machine Learning) tiên tiến, dữ liệu tài chính thực tế và một trợ lý ảo (Finbot) giúp phân tích rủi ro một cách trực quan, chính xác qua giao diện Dashboard hiện đại.
 
 ---
 
-## 📂 Bố Cục Dự Án (Repository Structure)
+## 🏗 Bố cục hệ thống (System Architecture & Layout)
+Dự án được tổ chức theo kiến trúc Backend - Frontend tách biệt cùng các module xử lý dữ liệu độc lập:
 
-Bố cục thư mục được sắp xếp thông minh giúp dễ dàng cài đặt và tích hợp:
+- **`/backend/`**: 
+  - Chứa mã nguồn API Server (FastAPI).
+  - Cung cấp các endpoints giao tiếp với Frontend (dự báo, dữ liệu công ty).
+  - Tích hợp Finbot (trợ lý ảo AI) để truy xuất thông tin và hỗ trợ phân tích.
+- **`/frontend/`**: 
+  - Giao diện người dùng (Dashboard) được xây dựng bằng **React 19** và **Vite**.
+  - Trực quan hóa dữ liệu bằng **Recharts**, sử dụng **Lucide React** cho biểu tượng.
+- **`/models/`**: Thư mục chứa các mô hình Machine Learning đã được huấn luyện và lưu trữ lại (Ví dụ: Random Forest, XGBoost, Scaler).
+- **`/data/`**: Thư mục lưu trữ dữ liệu thô và dữ liệu đã qua xử lý phục vụ dự báo.
+- **Các Scripts ở thư mục gốc**:
+  - `fetch_vnstock_data.py`: Lấy dữ liệu chứng khoán/tài chính.
+  - `prepare_data.py` & `feature_engineering.py`: Tiền xử lý, làm sạch và trích xuất đặc trưng (Feature Engineering).
+  - `train_models.py` & `update_scaler.py`: Huấn luyện mô hình và cập nhật bộ chuẩn hóa dữ liệu.
 
-```text
-├── backend/                  # Mã nguồn Backend (FastAPI)
-│   ├── main.py               # API Server khởi chạy ứng dụng FastAPI (cổng 8000)
-│   ├── predict.py            # Logic dự báo PD bằng các mô hình ML đã train
-│   ├── generate_demo_data.py # Script sinh dữ liệu demoData.json cho Frontend
-│   └── sector_benchmark.json # Chỉ số trung vị so sánh theo 26 ngành nghề
-│
-├── frontend/                 # Mã nguồn Frontend (React + Vite + TailwindCSS)
-│   ├── src/
-│   │   ├── demoData.json     # File dữ liệu chuẩn hóa của 73 doanh nghiệp để load offline
-│   │   ├── sector_benchmark.json # Bản sao lưu benchmark ngành cho Frontend
-│   │   └── ...               # Giao diện và các component Dashboard
-│   ├── package.json          # File cấu hình thư viện NodeJS
-│   └── ...
-│
-├── data/                     # Thư mục chứa dữ liệu CSV
-│   ├── raw_bctc_quarterly.csv # Dữ liệu BCTC chuẩn hóa cuối cùng của 73 doanh nghiệp (đầy đủ các cột)
-│   └── ...                   # Các file dữ liệu backup và raw khác
-│
-├── models/                   # Các file model ML đã huấn luyện (Joblib format)
-│   ├── logreg_pd_model.pkl   # Mô hình Logistic Regression
-│   ├── rf_pd_model.pkl       # Mô hình Random Forest
-│   ├── imputer.pkl           # Bộ xử lý dữ liệu khuyết (Imputation)
-│   └── scaler.pkl            # Bộ chuẩn hóa đặc trưng (MinMax Scaler)
-│
-├── requirements.txt          # Các thư viện Python cần cài đặt cho Backend
-├── train_models.py           # Script huấn luyện lại các mô hình ML
-└── fetch_vnstock_data.py     # Script tải dữ liệu báo cáo tài chính từ vnstock
+---
+
+## 🛠 Công nghệ sử dụng
+- **Backend & Data**: Python 3.9+, FastAPI, Pandas, Scikit-learn, Uvicorn, Vnstock, ChromaDB, Sentence-Transformers.
+- **Frontend**: React 19, Vite, React Router DOM, Recharts.
+
+---
+
+## 🚀 Hướng dẫn khởi động dự án chi tiết
+
+Để hệ thống hoạt động đầy đủ tính năng, bạn cần khởi chạy cả Backend và Frontend chạy song song ở hai cửa sổ Terminal (hoặc Command Prompt) khác nhau.
+
+### Bước 1: Cài đặt và Khởi động Backend
+Mở Terminal / Command Prompt thứ nhất và thực hiện:
+
+```bash
+# 1. Di chuyển vào thư mục gốc của dự án
+cd "c:\Users\nguye\OneDrive\Tài liệu\Đề Thi"
+
+# 2. Tạo môi trường ảo (Virtual Environment)
+python -m venv venv
+
+# 3. Kích hoạt môi trường ảo
+# Trên Windows:
+.\venv\Scripts\activate
+# Trên macOS/Linux:
+# source venv/bin/activate
+
+# 4. Cài đặt các thư viện cần thiết
+pip install -r requirements.txt
+
+# 5. Chuyển vào thư mục backend và chạy server
+cd backend
+uvicorn main:app --reload --port 8000
 ```
+✅ **Kết quả**: Backend sẽ chạy tại địa chỉ `http://localhost:8000`. 
+Tài liệu API (Swagger UI) có thể truy cập tại `http://localhost:8000/docs`.
+
+### Bước 2: Cài đặt và Khởi động Frontend
+Mở Terminal / Command Prompt thứ hai và thực hiện:
+
+```bash
+# 1. Di chuyển vào thư mục frontend
+cd "c:\Users\nguye\OneDrive\Tài liệu\Đề Thi\frontend"
+
+# 2. Cài đặt các thư viện (Node Modules)
+npm install
+
+# 3. Khởi chạy giao diện web
+npm run dev
+```
+✅ **Kết quả**: Frontend Dashboard sẽ chạy tại địa chỉ `http://localhost:5173`. Bạn hãy mở trình duyệt và truy cập vào link này để sử dụng hệ thống.
 
 ---
 
-## ⚡ Hướng Dẫn Cài Đặt và Khởi Chạy Nhanh (Quick Start)
+## 🔄 Hướng dẫn cập nhật và huấn luyện lại Mô hình (Tùy chọn)
 
-Dự án có thể chạy hoàn toàn offline bằng dữ liệu demo đã sinh sẵn trong Frontend, hoặc chạy kết nối thời gian thực thông qua Backend API.
+Trong trường hợp bạn đã nâng cấp hệ thống, thêm dữ liệu mới và cần huấn luyện lại mô hình AI:
+Mở Terminal (đảm bảo đã kích hoạt môi trường ảo `venv` ở Bước 1) và chạy tuần tự các lệnh sau ở **thư mục gốc**:
 
-### Yêu cầu hệ thống
-* **Python** 3.8 trở lên
-* **Node.js** 16 trở lên
+```bash
+# 1. Kéo dữ liệu mới nhất
+python fetch_vnstock_data.py
 
----
+# 2. Làm sạch và tiền xử lý dữ liệu
+python prepare_data.py
 
-### 1. Cài đặt & Chạy Backend (Cổng 8000)
+# 3. Tính toán các chỉ số và trích xuất đặc trưng
+python feature_engineering.py
 
-Mở terminal tại thư mục gốc của dự án và chạy các lệnh sau:
+# 4. Huấn luyện lại mô hình dự báo
+python train_models.py
 
-1. **Tạo môi trường ảo (Khuyên dùng):**
-   ```bash
-   python -m venv venv
-   # Kích hoạt trên Windows:
-   .\venv\Scripts\activate
-   # Kích hoạt trên macOS/Linux:
-   source venv/bin/activate
-   ```
-
-2. **Cài đặt thư viện:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Khởi chạy API Server:**
-   ```bash
-   cd backend
-   python main.py
-   ```
-   *Backend sẽ chạy tại: **http://localhost:8000***
-   *Tài liệu API tương tác (Swagger UI) có tại: **http://localhost:8000/docs***
+# 5. Cập nhật lại bộ chuẩn hóa (Scaler)
+python update_scaler.py
+```
+*Lưu ý: Quá trình chạy có thể tốn thời gian tùy thuộc vào lượng dữ liệu.*
 
 ---
-
-### 2. Cài đặt & Chạy Frontend (Cổng 5173)
-
-Mở một terminal mới tại thư mục gốc của dự án:
-
-1. **Di chuyển vào thư mục frontend:**
-   ```bash
-   cd frontend
-   ```
-
-2. **Cài đặt các thư viện Node.js:**
-   ```bash
-   npm install
-   ```
-
-3. **Khởi chạy local dev server:**
-   ```bash
-   npm run dev
-   ```
-   *Dashboard sẽ mở tại: **http://localhost:5173***
-
----
-
-## 🛠️ Một Số Script Hữu Ích
-
-Nếu bạn muốn huấn luyện lại mô hình hoặc cập nhật dữ liệu mới:
-
-* **Tự động sinh lại dữ liệu demo (`demoData.json`):**
-  Khi dữ liệu CSV trong thư mục `data/` thay đổi, chạy lệnh sau ở thư mục gốc để cập nhật lại dashboard:
-  ```bash
-  python backend/generate_demo_data.py
-  ```
-* **Huấn luyện lại mô hình Machine Learning:**
-  Nếu bạn muốn cập nhật trọng số mô hình dựa trên tập dữ liệu mới:
-  ```bash
-  python train_models.py
-  ```
-* **Tải dữ liệu mới từ VNSTOCK:**
-  Để tải dữ liệu tài chính của các mã chứng khoán mới từ API vnstock:
-  ```bash
-  python fetch_vnstock_data.py
-  ```
-
----
-
-## 📝 Giới thiệu về Thuật toán & Phương pháp tính toán PD
-
-Mô hình tính toán Xác suất vỡ nợ (Probability of Distress - PD) dựa trên cấu trúc các chỉ số tài chính cơ bản của doanh nghiệp:
-1. **Khả năng thanh toán (Solvency):** `Total Debt / Total Assets`, `Current Ratio`.
-2. **Khả năng sinh lời (Profitability):** `ROA`, `ROE`, `EBIT / Total Assets`.
-3. **Hiệu suất hoạt động (Activity):** `Asset Turnover`.
-4. **Dòng tiền (Cash Flow):** `Operating Cash Flow / Total Debt`, `Cash & Equivalents / Total Assets`.
-
-Hệ thống cho phép người dùng chuyển đổi linh hoạt giữa mô hình **Logistic Regression (LogReg)** (diễn giải trực quan tốt, trọng số rõ ràng) và **Random Forest (RF)** (bám sát phi tuyến, chính xác cao) ngay trên Dashboard giao diện người dùng.
+**Chúc bạn và Nhóm 3 có một kỳ thi AI-Quantum Challenge 2026 thành công rực rỡ! 🏆**

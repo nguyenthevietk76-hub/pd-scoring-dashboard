@@ -13,8 +13,22 @@ const InputForm = ({ onSubmit, isLoading }) => {
     operating_cash_flow: ''
   });
 
+  const formatNumber = (val) => {
+    if (!val && val !== 0) return '';
+    const parts = val.toString().split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return parts.join('.');
+  };
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    let { name, value } = e.target;
+    // Remove commas for financial fields to store raw numbers
+    if (!['name', 'taxCode'].includes(name)) {
+      value = value.replace(/,/g, '');
+      // Allow only digits, optional minus sign at start, and one decimal point
+      value = value.replace(/[^\d.-]/g, '');
+    }
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleLoadDemo = () => {
@@ -95,9 +109,9 @@ const InputForm = ({ onSubmit, isLoading }) => {
               Tổng tài sản
             </label>
             <input 
-              type="number" 
+              type="text" 
               name="total_assets" 
-              value={formData.total_assets} 
+              value={formatNumber(formData.total_assets)} 
               onChange={handleChange} 
               className="input-pill" 
               placeholder="0.0"
@@ -108,9 +122,9 @@ const InputForm = ({ onSubmit, isLoading }) => {
               Doanh thu
             </label>
             <input 
-              type="number" 
+              type="text" 
               name="revenue" 
-              value={formData.revenue} 
+              value={formatNumber(formData.revenue)} 
               onChange={handleChange} 
               className="input-pill" 
               placeholder="0.0"
@@ -121,9 +135,9 @@ const InputForm = ({ onSubmit, isLoading }) => {
               Nợ ngắn hạn
             </label>
             <input 
-              type="number" 
+              type="text" 
               name="current_liabilities" 
-              value={formData.current_liabilities} 
+              value={formatNumber(formData.current_liabilities)} 
               onChange={handleChange} 
               className="input-pill" 
               placeholder="0.0"
@@ -134,9 +148,9 @@ const InputForm = ({ onSubmit, isLoading }) => {
               Nợ dài hạn
             </label>
             <input 
-              type="number" 
+              type="text" 
               name="long_term_debt" 
-              value={formData.long_term_debt} 
+              value={formatNumber(formData.long_term_debt)} 
               onChange={handleChange} 
               className="input-pill" 
               placeholder="0.0"
@@ -147,9 +161,9 @@ const InputForm = ({ onSubmit, isLoading }) => {
               Dòng tiền từ HĐ kinh doanh (CFO)
             </label>
             <input 
-              type="number" 
+              type="text" 
               name="operating_cash_flow" 
-              value={formData.operating_cash_flow} 
+              value={formatNumber(formData.operating_cash_flow)} 
               onChange={handleChange} 
               className="input-pill" 
               placeholder="0.0"

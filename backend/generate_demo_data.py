@@ -268,7 +268,7 @@ def run():
             latest_res = None
             
             for _, row in ticker_df.iterrows():
-                row_dict = row.drop(['ticker', 'year', 'quarter', 'label_distress']).to_dict()
+                row_dict = row.drop(['label_distress']).to_dict()
                 res = predict_pd(row_dict, model_name='logreg')
                 
                 pd_score_pct = round(res['pd_score'] * 100, 2)

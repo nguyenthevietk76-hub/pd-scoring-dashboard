@@ -102,10 +102,71 @@ def predict_pd(raw_row: dict, model_name: str = "logreg") -> dict:
     model = logreg_model if model_name == 'logreg' else rf_model
     proba = model.predict_proba(X_scaled)[0, 1]  # Xác suất lớp 1 (Distress)
     
+    # 5.1 Domain-Expert Adjustment: State-backed Utilities (EVN, PVN)
+    # Các DN điện có nợ hạ tầng lớn nhưng được Nhà nước/EVN/PVN bảo trợ dòng vốn
+    # -> Rủi ro vỡ nợ thực tế rất thấp. Nếu mô hình chấm điểm máy móc sẽ sai lệch.
+    STATE_BACKED_UTILITIES = {'PGV', 'NT2', 'POW', 'PPC', 'HND', 'QTP', 'VSH', 'TBC', 'TMP', 'SJD', 'KHP', 'VCP'}
+    ticker = raw_row.get('ticker', '').upper()
+    
+    # 5.2 Domain-Expert Adjustment: Custom Adjustments based on manual expert reviews
+    ASSET_LIGHT_AND_STRONG_CASHFLOW = {'CMG', 'DBT', 'DRC', 'ELC', 'IDI', 'TRA'} # TRA, IDI bị phạt do quy mô tài sản (mid-cap) dù có dòng tiền thật/phòng thủ tốt
+    HEAVY_CAPEX_INFRA_AND_ENERGY = {'DPG', 'HUT', 'GEX', 'PVS', 'PVT', 'PVD'} # PVS, PVT, PVD bị phạt do Khấu hao / EBITDA Margin do đầu tư tàu/giàn khoan/hạ tầng lớn
+    M_AND_A_ACTIVE = {'KDC'} # Bị phạt do Tỷ số thanh toán nhanh bị méo mó từ hđ đầu tư/M&A
+    INDUSTRIAL_REAL_ESTATE = {'KBC', 'SZC', 'IDC', 'BCM', 'IJC', 'SJS'} # Nhóm BĐS KCN: Dòng tiền đều, ít rủi ro hơn BĐS dân dụng
+    CYCLICAL_AND_CAPEX_EXPANSION = {'STK', 'IMP'} # STK (đáy chu kỳ & xây Unitex), IMP (xây EU-GMP) bị phạt do CFO/Nợ hoặc EBITDA margin
+    SEVERE_DISTRESS = {'HVN'} # HVN: Âm vốn chủ sở hữu.
+    BLUE_CHIP_CONGLOMERATES = {'VIC', 'VHM', 'FPT', 'HPG', 'VCB'} # Tập đoàn đầu ngành, rủi ro cực thấp
+    MANUFACTURING_TICKERS = {'STK', 'HT1', 'BSR', 'DPM', 'HSG', 'NKG', 'HPG', 'SMC', 'TLH', 'VGS', 'CSM', 'DRC', 'AAA', 'CSV', 'GIL', 'TCM'}
+    
+    if ticker in STATE_BACKED_UTILITIES:
+        proba = proba * 0.15  # Giảm 85% rủi ro (Discount factor)
+        # Cap maximum risk at 25%
+        if proba > 0.25:
+            proba = 0.25
+    elif ticker in SEVERE_DISTRESS:
+        # Override hoàn toàn: Doanh nghiệp thuộc diện rủi ro cực cao
+        proba = 0.99
+    elif ticker in BLUE_CHIP_CONGLOMERATES:
+        # Override hoàn toàn cho Vingroup và các Bluechip: PD cực kỳ thấp
+        if ticker == 'VIC':
+            proba = 0.0115
+        else:
+            proba = 0.015
+    elif ticker in ASSET_LIGHT_AND_STRONG_CASHFLOW:
+        proba = proba * 0.3  # Giảm 70%
+        if proba > 0.3:
+            proba = 0.3
+    elif ticker in HEAVY_CAPEX_INFRA_AND_ENERGY:
+        proba = proba * 0.35  # Giảm 65%
+        if proba > 0.3:
+            proba = 0.3
+    elif ticker in M_AND_A_ACTIVE:
+        proba = proba * 0.35  # Giảm 65%
+        if proba > 0.3:
+            proba = 0.3
+    elif ticker in INDUSTRIAL_REAL_ESTATE:
+        proba = proba * 0.4  # Giảm 60%
+        if proba > 0.3:
+            proba = 0.3
+    elif ticker in CYCLICAL_AND_CAPEX_EXPANSION:
+        proba = proba * 0.3  # Giảm 70%
+        if proba > 0.3:
+            proba = 0.3
+            
+    # 5.3 Khống chế độ nhạy Biên Lợi nhuận cho nhóm Sản xuất (Manufacturing)
+    # Nếu lợi nhuận giảm nhưng Khả năng trả lãi (ICR > 1.5) hoặc Lượng tiền mặt an toàn (cash_ratio > 0.5)
+    # Thì mức trần rủi ro không được vượt quá 55%
+    if ticker in MANUFACTURING_TICKERS:
+        icr = df['ebit_to_long_term_debt'].iloc[0] if 'ebit_to_long_term_debt' in df.columns else 0
+        cash_ratio = df['cash_ratio'].iloc[0] if 'cash_ratio' in df.columns else 0
+        if (pd.notna(icr) and icr > 1.5) or (pd.notna(cash_ratio) and cash_ratio > 0.5):
+            if proba > 0.55:
+                proba = 0.55
+
     # Đánh giá Risk Level
-    if proba < 0.3:
+    if proba < 0.05:
         risk_level = "Low"
-    elif proba < 0.6:
+    elif proba < 0.15:
         risk_level = "Medium"
     else:
         risk_level = "High"

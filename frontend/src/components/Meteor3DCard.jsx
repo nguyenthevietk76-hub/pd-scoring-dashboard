@@ -153,7 +153,7 @@ const Meteor3DCard = () => {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: '4px' }}>
             <div>
               <div style={{ fontSize: '0.6rem', color: 'rgba(255, 255, 255, 0.4)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Card Holder</div>
-              <div style={{ fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.05em', marginTop: '2px', color: '#ffffff' }}>AURA RISK PREMIUM</div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.05em', marginTop: '2px', color: '#ffffff' }}>Risk Tech PREMIUM</div>
             </div>
             <div style={{ display: 'flex', gap: '4px' }}>
               <div style={{ width: '20px', height: '20px', borderRadius: '50%', backgroundColor: 'rgba(239, 68, 68, 0.85)', zIndex: 2 }} />
