@@ -125,24 +125,47 @@ export default function FinBotPage({ companyContext = null }) {
     }
 
     try {
-      const res = await fetch(`${API_BASE}/chat/stream`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          message: userText,
-          history: currentMessages.filter(m => !m.isError).map(m => ({ role: m.role, content: m.content })),
-          context: companyContext,
-          stream: true,
-        }),
-      });
+      let res;
+      try {
+        res = await fetch(`${API_BASE}/chat/stream`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            message: userText,
+            history: currentMessages.filter(m => !m.isError).map(m => ({ role: m.role, content: m.content })),
+            context: companyContext,
+            stream: true,
+          }),
+        });
+      } catch (_) {}
 
-      if (!res.ok) {
-        let errMsg = "Lỗi kết nối";
-        try {
-          const err = await res.json();
-          errMsg = err.detail || errMsg;
-        } catch (_) {}
-        throw new Error(errMsg);
+      if (!res || !res.ok) {
+        const fallbackRes = await fetch(`${API_BASE}/chat`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            message: userText,
+            history: currentMessages.filter(m => !m.isError).map(m => ({ role: m.role, content: m.content })),
+            context: companyContext,
+            stream: false,
+          }),
+        });
+
+        if (!fallbackRes.ok) {
+          let errMsg = "Lỗi kết nối";
+          try {
+            const err = await fallbackRes.json();
+            errMsg = err.detail || errMsg;
+          } catch (_) {}
+          throw new Error(errMsg);
+        }
+
+        const data = await fallbackRes.json();
+        const responseText = data.reply || data.response || "Xin lỗi, tôi không thể trả lời lúc này.";
+        const finalHistory = [...newHistory, { role: "assistant", content: responseText, company_data: data.company_data }];
+        setMessages(finalHistory);
+        setSessions(prev => prev.map(s => s.id === sessionId ? { ...s, messages: finalHistory, updatedAt: Date.now() } : s));
+        return;
       }
 
       // Tạo một tin nhắn trống cho assistant trong danh sách hiển thị

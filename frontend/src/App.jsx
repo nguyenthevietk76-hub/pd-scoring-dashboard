@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import { AnalysisProvider } from './context/AnalysisContext';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // Lazy load pages to split the bundle size and speed up page load
 const Landing = lazy(() => import('./pages/Landing'));
@@ -73,31 +74,33 @@ const LoadingSpinner = () => {
 function App() {
   return (
     <AnalysisProvider>
-      <BrowserRouter>
-        <Suspense fallback={<LoadingSpinner />}>
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route element={<Layout />}>
-              <Route path="/dashboard" element={<Navigate to="/market-overview" replace />} />
-              <Route path="/market-overview" element={<MarketOverview />} />
-              <Route path="/search-company" element={<SearchCompany />} />
-              <Route path="/pd-scoring" element={<Dashboard />} />
-              <Route path="/trends" element={<Trends />} />
-              <Route path="/altman-z" element={<AltmanZ />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/alerts" element={<Alerts />} />
-              <Route path="/rankings" element={<Rankings />} />
-              <Route path="/credit-report" element={<CreditReport />} />
-              <Route path="/export" element={<Export />} />
-              <Route path="/compare" element={<CompareFinancials />} />
-              <Route path="/custom-chart" element={<CustomChart />} />
-              <Route path="/news" element={<NewsAnalysis />} />
-              <Route path="/sql" element={<SqlExplorer />} />
-              <Route path="/chatbot" element={<FinBotPage />} />
-            </Route>
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
+      <ErrorBoundary>
+        <BrowserRouter>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route element={<Layout />}>
+                <Route path="/dashboard" element={<Navigate to="/market-overview" replace />} />
+                <Route path="/market-overview" element={<MarketOverview />} />
+                <Route path="/search-company" element={<SearchCompany />} />
+                <Route path="/pd-scoring" element={<Dashboard />} />
+                <Route path="/trends" element={<Trends />} />
+                <Route path="/altman-z" element={<AltmanZ />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/alerts" element={<Alerts />} />
+                <Route path="/rankings" element={<Rankings />} />
+                <Route path="/credit-report" element={<CreditReport />} />
+                <Route path="/export" element={<Export />} />
+                <Route path="/compare" element={<CompareFinancials />} />
+                <Route path="/custom-chart" element={<CustomChart />} />
+                <Route path="/news" element={<NewsAnalysis />} />
+                <Route path="/sql" element={<SqlExplorer />} />
+                <Route path="/chatbot" element={<FinBotPage />} />
+              </Route>
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </ErrorBoundary>
     </AnalysisProvider>
   );
 }

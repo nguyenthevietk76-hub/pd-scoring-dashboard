@@ -104,28 +104,52 @@ export default function FinBot({ companyContext = null }) {
     setMessages(newHistory);
     setLoading(true);
 
-    try {
-      const res = await fetch(`${API_BASE}/chat/stream`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          message: userText,
-          history: messages.map(m => ({ role: m.role, content: m.content })),
-          context: companyContext,
-          stream: true,
-        }),
-      });
+      let res;
+      try {
+        res = await fetch(`${API_BASE}/chat/stream`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            message: userText,
+            history: messages.map(m => ({ role: m.role, content: m.content })),
+            context: companyContext,
+            stream: true,
+          }),
+        });
+      } catch (_) {}
 
-      if (!res.ok) {
-        if (res.status === 429) {
-          throw new Error("Bạn đã chat quá nhanh. Vui lòng đợi 1 phút.");
+      if (!res || !res.ok) {
+        const fallbackRes = await fetch(`${API_BASE}/chat`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            message: userText,
+            history: messages.map(m => ({ role: m.role, content: m.content })),
+            context: companyContext,
+            stream: false,
+          }),
+        });
+
+        if (!fallbackRes.ok) {
+          if (fallbackRes.status === 429) {
+            throw new Error("Bạn đã chat quá nhanh. Vui lòng đợi 1 phút.");
+          }
+          let errMsg = "Lỗi kết nối";
+          try {
+            const err = await fallbackRes.json();
+            errMsg = err.detail || errMsg;
+          } catch (_) {}
+          throw new Error(errMsg);
         }
-        let errMsg = "Lỗi kết nối";
-        try {
-          const err = await res.json();
-          errMsg = err.detail || errMsg;
-        } catch (_) {}
-        throw new Error(errMsg);
+
+        const data = await fallbackRes.json();
+        const responseText = data.reply || data.response || "Xin lỗi, tôi không thể trả lời lúc này.";
+        setMessages(prev => [...prev, { 
+          role: "assistant", 
+          content: responseText,
+          company_data: data.company_data 
+        }]);
+        return;
       }
 
       // Tạo một tin nhắn trống cho assistant trong danh sách hiển thị

@@ -1,11 +1,12 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, CartesianGrid } from 'recharts';
 
-const FeatureContributionChart = ({ topFactors }) => {
-  // Chuẩn bị data cho biểu đồ
-  const data = topFactors.map(factor => ({
-    name: factor.label_vi,
-    displayVal: factor.display_val,
-    contribution: factor.contribution
+const FeatureContributionChart = ({ topFactors = [] }) => {
+  // Chuẩn bị data cho biểu đồ với kiểm tra an toàn
+  const safeFactors = Array.isArray(topFactors) ? topFactors : [];
+  const data = safeFactors.map(factor => ({
+    name: factor?.label_vi || factor?.feature || 'Chỉ số',
+    displayVal: factor?.display_val ?? factor?.raw_val ?? factor?.raw_value ?? '',
+    contribution: typeof factor?.contribution === 'number' ? factor.contribution : 0
   }));
 
   // Custom tooltip

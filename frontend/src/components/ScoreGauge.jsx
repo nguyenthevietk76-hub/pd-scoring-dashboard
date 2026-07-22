@@ -2,23 +2,24 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 import { useState, useEffect } from 'react';
 import { CheckCircle, AlertTriangle, AlertOctagon } from 'lucide-react';
 
-const ScoreGauge = ({ score, riskLevel }) => {
+const ScoreGauge = ({ score = 0, riskLevel = '' }) => {
+  const safeScore = typeof score === 'number' && !isNaN(score) ? score : 0;
   const [animatedScore, setAnimatedScore] = useState(0);
 
   useEffect(() => {
     let start = 0;
     const duration = 800; // ms
-    const increment = score / (duration / 16); // 60fps
+    const increment = safeScore / (duration / 16); // 60fps
     
-    if (score === 0) {
+    if (safeScore === 0) {
       setAnimatedScore(0);
       return;
     }
 
     const timer = setInterval(() => {
       start += increment;
-      if (start >= score) {
-        setAnimatedScore(score);
+      if (start >= safeScore) {
+        setAnimatedScore(safeScore);
         clearInterval(timer);
       } else {
         setAnimatedScore(start);
@@ -26,7 +27,7 @@ const ScoreGauge = ({ score, riskLevel }) => {
     }, 16);
 
     return () => clearInterval(timer);
-  }, [score]);
+  }, [safeScore]);
 
   // Convert 0-100 score to 0-180 degrees for half circle
   const data = [

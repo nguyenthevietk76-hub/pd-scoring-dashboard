@@ -95,7 +95,13 @@ const SqlExplorer = () => {
     }
   };
 
-  const columns = results && results.length > 0 ? Object.keys(results[0]) : [];
+  const rows = Array.isArray(results)
+    ? results
+    : (results && Array.isArray(results.rows) ? results.rows : null);
+
+  const columns = results && Array.isArray(results.columns) && results.columns.length > 0
+    ? results.columns
+    : (rows && rows.length > 0 ? Object.keys(rows[0]) : []);
 
   return (
     <div style={{ maxWidth: 1100, margin: '0 auto' }}>
@@ -472,7 +478,7 @@ const SqlExplorer = () => {
       )}
 
       {/* ── Results Table ── */}
-      {results && !isLoading && (
+      {rows && !isLoading && (
         <div className="card card-glow" style={{ padding: 0, overflow: 'hidden' }}>
           {/* Results Header */}
           <div
@@ -499,11 +505,11 @@ const SqlExplorer = () => {
                 border: '1px solid rgba(22,163,74,0.2)',
               }}
             >
-              {results.length} dòng
+              {rows.length} dòng {results.truncated ? '(Hiển thị tối đa 200)' : ''}
             </span>
           </div>
 
-          {results.length === 0 ? (
+          {rows.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '40px 24px', color: 'var(--ink-500)' }}>
               
               <p style={{ fontWeight: 600 }}>Không có dữ liệu trả về.</p>
@@ -522,7 +528,7 @@ const SqlExplorer = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {results.map((row, idx) => (
+                  {rows.map((row, idx) => (
                     <tr key={idx} className="table-row-hover">
                       <td
                         style={{

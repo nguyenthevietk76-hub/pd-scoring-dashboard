@@ -2,20 +2,24 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceL
 import { AlertTriangle, AlertCircle } from 'lucide-react';
 
 const TrendAlert = ({ pdScores4Q }) => {
+  const safeScores = Array.isArray(pdScores4Q) && pdScores4Q.length >= 4 
+    ? pdScores4Q 
+    : [0, 0, 0, 0];
+
   // Chuẩn bị data: Q-3, Q-2, Q-1, Q-Current
-  const data = pdScores4Q.map((score, index) => {
+  const data = safeScores.map((score, index) => {
     let label = '';
     if (index === 3) label = 'Hiện tại';
     else label = `Q-${3 - index}`;
     
     return {
       name: label,
-      score: score
+      score: typeof score === 'number' && !isNaN(score) ? score : 0
     };
   });
 
-  const currentScore = pdScores4Q[3];
-  const prevScore = pdScores4Q[2];
+  const currentScore = typeof safeScores[3] === 'number' && !isNaN(safeScores[3]) ? safeScores[3] : 0;
+  const prevScore = typeof safeScores[2] === 'number' && !isNaN(safeScores[2]) ? safeScores[2] : 0;
   
   // Logic hiển thị cảnh báo
   const diff = currentScore - prevScore;

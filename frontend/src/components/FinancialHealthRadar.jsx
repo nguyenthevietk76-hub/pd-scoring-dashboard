@@ -1,12 +1,13 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip } from 'recharts';
 
-const FinancialHealthRadar = ({ metrics }) => {
+const FinancialHealthRadar = ({ metrics = [] }) => {
+  const safeMetrics = Array.isArray(metrics) ? metrics : [];
   return (
     <div className="card chart-card card-glow" style={{ width: '100%', minWidth: '320px', padding: '32px' }}>
       <h3 className="chart-title">Đánh giá tài chính đa chiều</h3>
       <div style={{ width: '100%', height: '280px', marginTop: '1rem' }}>
         <ResponsiveContainer width="100%" height="100%">
-          <RadarChart cx="50%" cy="50%" outerRadius="75%" data={metrics}>
+          <RadarChart cx="50%" cy="50%" outerRadius="75%" data={safeMetrics}>
             <PolarGrid stroke="var(--border-color)" />
             <PolarAngleAxis 
               dataKey="subject" 
