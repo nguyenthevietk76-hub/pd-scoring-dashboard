@@ -7,6 +7,6 @@ joblib
 scikit-learn
 vnstock>=4.0.0
 chromadb==0.4.24
-sentence-transformers==2.7.0
+pypdf
 rapidfuzz==3.9.0
 httpx==0.27.0

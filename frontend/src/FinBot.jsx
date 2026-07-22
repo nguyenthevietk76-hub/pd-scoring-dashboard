@@ -105,14 +105,14 @@ export default function FinBot({ companyContext = null }) {
     setLoading(true);
 
     try {
-      const res = await fetch(`${API_BASE}/chat`, {
+      const res = await fetch(`${API_BASE}/chat/stream`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           message: userText,
           history: messages.map(m => ({ role: m.role, content: m.content })),
           context: companyContext,
-          stream: false,
+          stream: true,
         }),
       });
 
@@ -120,16 +120,93 @@ export default function FinBot({ companyContext = null }) {
         if (res.status === 429) {
           throw new Error("Bạn đã chat quá nhanh. Vui lòng đợi 1 phút.");
         }
-        const err = await res.json();
-        throw new Error(err.detail || "Lỗi kết nối");
+        let errMsg = "Lỗi kết nối";
+        try {
+          const err = await res.json();
+          errMsg = err.detail || errMsg;
+        } catch (_) {}
+        throw new Error(errMsg);
       }
 
-      const data = await res.json();
-      setMessages(prev => [...prev, { 
-        role: "assistant", 
-        content: data.reply,
-        company_data: data.company_data 
-      }]);
+      // Tạo một tin nhắn trống cho assistant trong danh sách hiển thị
+      setMessages(prev => [...prev, { role: "assistant", content: "" }]);
+
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder("utf-8");
+      let buffer = "";
+      let fullReply = "";
+      let companyData = null;
+
+      while (true) {
+        const { value, done } = await reader.read();
+        if (value) {
+          buffer += decoder.decode(value, { stream: !done });
+          const lines = buffer.split("\n");
+          // Giữ dòng cuối cùng dở dang lại trong buffer
+          buffer = lines.pop() || "";
+
+          for (const line of lines) {
+            const trimmed = line.trim();
+            if (!trimmed || !trimmed.startsWith("data: ")) continue;
+
+            const jsonStr = trimmed.slice(6);
+            try {
+              const parsed = JSON.parse(jsonStr);
+              if (parsed.error) {
+                throw new Error(parsed.error);
+              }
+              if (parsed.chunk) {
+                fullReply += parsed.chunk;
+                setMessages(prev => {
+                  const updated = [...prev];
+                  if (updated.length > 0) {
+                    updated[updated.length - 1] = {
+                      ...updated[updated.length - 1],
+                      content: fullReply
+                    };
+                  }
+                  return updated;
+                });
+              }
+              if (parsed.done) {
+                if (parsed.company_data) companyData = parsed.company_data;
+              }
+            } catch (e) {
+              console.error("Lỗi parse stream:", e);
+            }
+          }
+        }
+        if (done) {
+          break;
+        }
+      }
+
+      // Parse nốt buffer còn thừa nếu có
+      if (buffer.trim().startsWith("data: ")) {
+        try {
+          const parsed = JSON.parse(buffer.trim().slice(6));
+          if (parsed.chunk) {
+            fullReply += parsed.chunk;
+          }
+          if (parsed.done) {
+            if (parsed.company_data) companyData = parsed.company_data;
+          }
+        } catch (_) {}
+      }
+
+      // Cập nhật trạng thái cuối cùng
+      setMessages(prev => {
+        const updated = [...prev];
+        if (updated.length > 0) {
+          updated[updated.length - 1] = {
+            ...updated[updated.length - 1],
+            content: fullReply || "Xin lỗi, tôi không nhận được phản hồi.",
+            company_data: companyData
+          };
+        }
+        return updated;
+      });
+
     } catch (err) {
       setMessages(prev => [...prev, {
         role: "assistant",

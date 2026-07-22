@@ -125,27 +125,106 @@ export default function FinBotPage({ companyContext = null }) {
     }
 
     try {
-      const res = await fetch(`${API_BASE}/chat`, {
+      const res = await fetch(`${API_BASE}/chat/stream`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           message: userText,
           history: currentMessages.filter(m => !m.isError).map(m => ({ role: m.role, content: m.content })),
           context: companyContext,
-          stream: false,
+          stream: true,
         }),
       });
 
       if (!res.ok) {
-        const err = await res.json();
-        throw new Error(err.detail || "Lỗi kết nối");
+        let errMsg = "Lỗi kết nối";
+        try {
+          const err = await res.json();
+          errMsg = err.detail || errMsg;
+        } catch (_) {}
+        throw new Error(errMsg);
       }
 
-      const data = await res.json();
-      const responseText = data.reply || data.response || "Xin lỗi, tôi không thể trả lời lúc này.";
-      const finalHistory = [...newHistory, { role: "assistant", content: responseText }];
+      // Tạo một tin nhắn trống cho assistant trong danh sách hiển thị
+      const tempHistory = [...newHistory, { role: "assistant", content: "" }];
+      setMessages(tempHistory);
+
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder("utf-8");
+      let buffer = "";
+      let fullReply = "";
+      let ragSources = [];
+      let companyData = null;
+
+      while (true) {
+        const { value, done } = await reader.read();
+        if (value) {
+          buffer += decoder.decode(value, { stream: !done });
+          const lines = buffer.split("\n");
+          // Giữ dòng cuối cùng dở dang lại trong buffer
+          buffer = lines.pop() || "";
+
+          for (const line of lines) {
+            const trimmed = line.trim();
+            if (!trimmed || !trimmed.startsWith("data: ")) continue;
+
+            const jsonStr = trimmed.slice(6);
+            try {
+              const parsed = JSON.parse(jsonStr);
+              if (parsed.error) {
+                throw new Error(parsed.error);
+              }
+              if (parsed.chunk) {
+                fullReply += parsed.chunk;
+                setMessages(prev => {
+                  const updated = [...prev];
+                  if (updated.length > 0) {
+                    updated[updated.length - 1] = {
+                      ...updated[updated.length - 1],
+                      content: fullReply
+                    };
+                  }
+                  return updated;
+                });
+              }
+              if (parsed.done) {
+                if (parsed.rag_sources) ragSources = parsed.rag_sources;
+                if (parsed.company_data) companyData = parsed.company_data;
+              }
+            } catch (e) {
+              console.error("Lỗi parse stream:", e);
+            }
+          }
+        }
+        if (done) {
+          break;
+        }
+      }
+
+      // Parse nốt buffer còn thừa nếu có
+      if (buffer.trim().startsWith("data: ")) {
+        try {
+          const parsed = JSON.parse(buffer.trim().slice(6));
+          if (parsed.chunk) {
+            fullReply += parsed.chunk;
+          }
+          if (parsed.done) {
+            if (parsed.rag_sources) ragSources = parsed.rag_sources;
+            if (parsed.company_data) companyData = parsed.company_data;
+          }
+        } catch (_) {}
+      }
+
+      // Cập nhật trạng thái cuối cùng và lưu vào session
+      const finalHistory = [...newHistory, { 
+        role: "assistant", 
+        content: fullReply || "Xin lỗi, tôi không nhận được phản hồi.",
+        rag_sources: ragSources,
+        company_data: companyData
+      }];
       setMessages(finalHistory);
       setSessions(prev => prev.map(s => s.id === sessionId ? { ...s, messages: finalHistory, updatedAt: Date.now() } : s));
+
     } catch (err) {
       const finalHistory = [...newHistory, {
         role: "assistant",

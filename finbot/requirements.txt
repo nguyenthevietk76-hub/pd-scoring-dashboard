@@ -6,5 +6,5 @@ pydantic==2.9.2
 rapidfuzz==3.9.3
 httpx==0.27.0
 chromadb==0.4.24
-sentence-transformers==2.7.0
+pypdf
 slowapi==0.1.9
