@@ -5,8 +5,8 @@ import { AnalysisProvider } from './context/AnalysisContext';
 import ErrorBoundary from './components/ErrorBoundary';
 
 // Lazy load pages to split the bundle size and speed up page load
+import Dashboard from './pages/Dashboard';
 const Landing = lazy(() => import('./pages/Landing'));
-const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const Alerts = lazy(() => import('./pages/Alerts'));
 const MarketOverview = lazy(() => import('./pages/MarketOverview'));
