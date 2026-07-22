@@ -124,7 +124,7 @@ const ScoreGauge = ({ score = 0, riskLevel = '' }) => {
           zIndex: 2
         }}>
           <div style={{fontSize: '2.5rem', fontWeight: 800, color: 'var(--ink-900)', lineHeight: 1}}>
-            {animatedScore.toFixed(1)}%
+            {(typeof animatedScore === 'number' && !isNaN(animatedScore) ? animatedScore : 0).toFixed(1)}%
           </div>
         </div>
       </div>
@@ -132,7 +132,7 @@ const ScoreGauge = ({ score = 0, riskLevel = '' }) => {
       <div style={{marginTop: '1.5rem', zIndex: 2}}>
         <div className={badgeClass}>
           {BadgeIcon && <BadgeIcon size={16} />}
-          <span>MỨC RỦI RO: {riskLevel.toUpperCase()}</span>
+          <span>MỨC RỦI RO: {(typeof riskLevel === 'string' ? riskLevel : String(riskLevel || '')).toUpperCase()}</span>
         </div>
       </div>
     </div>

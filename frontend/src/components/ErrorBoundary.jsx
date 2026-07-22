@@ -19,8 +19,6 @@ class ErrorBoundary extends React.Component {
     this.setState({ hasError: false, error: null });
     if (this.props.onReset) {
       this.props.onReset();
-    } else {
-      window.location.reload();
     }
   };
 
