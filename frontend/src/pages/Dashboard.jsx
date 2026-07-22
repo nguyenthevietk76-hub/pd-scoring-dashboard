@@ -11,13 +11,15 @@ import { AnalysisContext } from '../context/AnalysisContext';
 const Dashboard = () => {
   const [result, setResult] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const { updateAnalysisContext } = useContext(AnalysisContext);
+  const contextObj = useContext(AnalysisContext);
+  const updateAnalysisContext = contextObj?.updateAnalysisContext;
   const location = useLocation();
   const resultRef = useRef(null);
 
   // Generate mock radar data based on PD Score (Lower PD = Higher Health)
   const generateRadarData = (pdScore) => {
-    const baseHealth = 100 - pdScore;
+    const safePd = typeof pdScore === 'number' && !isNaN(pdScore) ? pdScore : 0;
+    const baseHealth = 100 - safePd;
     return [
       { subject: 'Thanh khoản', A: Math.max(10, Math.min(100, baseHealth + (Math.random() * 20 - 10))) },
       { subject: 'Sinh lời', A: Math.max(10, Math.min(100, baseHealth + (Math.random() * 30 - 15))) },
@@ -45,7 +47,7 @@ const Dashboard = () => {
           radar_data: generateRadarData(demoCompany.current_pd)
         };
         setResult(newResult);
-        updateAnalysisContext(newResult, null);
+        if (typeof updateAnalysisContext === 'function') updateAnalysisContext(newResult, null);
         setIsLoading(false);
       }, 500);
     } else {
@@ -93,7 +95,7 @@ const Dashboard = () => {
           radar_data: generateRadarData(res.pd_score_pct)
         };
         setResult(newResult);
-        updateAnalysisContext(newResult, formData);
+        if (typeof updateAnalysisContext === 'function') updateAnalysisContext(newResult, formData);
       } catch (e) {
         console.error(e);
         alert('Lỗi kết nối Backend: ' + e.message);
@@ -129,7 +131,7 @@ const Dashboard = () => {
         radar_data: generateRadarData(res.pd_score_pct)
       };
       setResult(newResult);
-      updateAnalysisContext(newResult, null);
+      if (typeof updateAnalysisContext === 'function') updateAnalysisContext(newResult, null);
     } catch (e) {
       console.error(e);
       alert('Lỗi kết nối Backend: ' + e.message);
@@ -153,7 +155,9 @@ const Dashboard = () => {
   useEffect(() => {
     if (result && resultRef.current) {
       setTimeout(() => {
-        resultRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (typeof resultRef.current?.scrollIntoView === 'function') {
+          resultRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }, 100);
     }
   }, [result]);
