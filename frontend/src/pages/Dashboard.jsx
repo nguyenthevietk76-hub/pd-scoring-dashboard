@@ -11,14 +11,13 @@ import { AnalysisContext } from '../context/AnalysisContext';
 const Dashboard = () => {
   const [result, setResult] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const contextObj = useContext(AnalysisContext);
-  const updateAnalysisContext = contextObj?.updateAnalysisContext;
+  const { updateAnalysisContext } = useContext(AnalysisContext);
   const location = useLocation();
   const resultRef = useRef(null);
 
+  // Generate mock radar data based on PD Score (Lower PD = Higher Health)
   const generateRadarData = (pdScore) => {
-    const safePd = typeof pdScore === 'number' && !isNaN(pdScore) ? pdScore : 0;
-    const baseHealth = 100 - safePd;
+    const baseHealth = 100 - pdScore;
     return [
       { subject: 'Thanh khoản', A: Math.max(10, Math.min(100, baseHealth + (Math.random() * 20 - 10))) },
       { subject: 'Sinh lời', A: Math.max(10, Math.min(100, baseHealth + (Math.random() * 30 - 15))) },
@@ -30,30 +29,33 @@ const Dashboard = () => {
 
   const handlePredict = async (formData, demoCompany) => {
     setIsLoading(true);
-    setResult(null);
+    setResult(null); // reset old result
 
     if (demoCompany) {
+      // Simulate API call for demo company
       setTimeout(() => {
-        const pdVal = typeof demoCompany.current_pd === 'number' ? demoCompany.current_pd : 0;
         const newResult = {
           isDemo: true,
-          companyName: demoCompany.name || 'Doanh nghiệp',
-          sector: demoCompany.sector || 'Chưa rõ',
-          pd_score: pdVal,
-          risk_level: demoCompany.risk_level || 'Thấp',
-          top_factors: Array.isArray(demoCompany.top_factors) ? demoCompany.top_factors : [],
-          pd_scores_4q: Array.isArray(demoCompany.pd_scores_4q) ? demoCompany.pd_scores_4q : [0,0,0,0],
-          radar_data: generateRadarData(pdVal)
+          companyName: demoCompany.name,
+          sector: demoCompany.sector,
+          pd_score: demoCompany.current_pd,
+          risk_level: demoCompany.risk_level,
+          top_factors: demoCompany.top_factors,
+          pd_scores_4q: demoCompany.pd_scores_4q,
+          radar_data: generateRadarData(demoCompany.current_pd)
         };
         setResult(newResult);
-        if (typeof updateAnalysisContext === 'function') updateAnalysisContext(newResult, null);
+        updateAnalysisContext(newResult, null);
         setIsLoading(false);
       }, 500);
-    } else if (formData) {
+    } else {
+      // Gọi API thật từ FastAPI Backend (simplified 5 indicators)
       try {
         const response = await fetch(`${API_BASE_URL}/api/predict/simplified`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+          },
           body: JSON.stringify({
             company_name: formData.name || 'Công ty Chưa rõ tên',
             tax_code: formData.taxCode || null,
@@ -71,35 +73,33 @@ const Dashboard = () => {
         }
 
         const res = await response.json();
-        const scorePct = typeof res.pd_score_pct === 'number' ? res.pd_score_pct : 0;
         
+        // Tạo lịch sử giả lập 4Q dựa trên điểm số thực tế từ backend (phần trăm 0-100)
         const mock4Q = [
-          Math.max(0, scorePct - 10),
-          Math.max(0, scorePct - 5),
-          scorePct,
-          scorePct
+          Math.max(0, res.pd_score_pct - 10),
+          Math.max(0, res.pd_score_pct - 5),
+          res.pd_score_pct,
+          res.pd_score_pct
         ];
 
         const newResult = {
           isDemo: false,
           companyName: formData.name || 'Công ty Chưa rõ tên',
           sector: null,
-          pd_score: scorePct,
-          risk_level: res.risk_level_vi || 'Thấp',
-          top_factors: Array.isArray(res.top_factors) ? res.top_factors : [],
+          pd_score: res.pd_score_pct,
+          risk_level: res.risk_level_vi,
+          top_factors: res.top_factors,
           pd_scores_4q: mock4Q,
-          radar_data: generateRadarData(scorePct)
+          radar_data: generateRadarData(res.pd_score_pct)
         };
         setResult(newResult);
-        if (typeof updateAnalysisContext === 'function') updateAnalysisContext(newResult, formData);
+        updateAnalysisContext(newResult, formData);
       } catch (e) {
         console.error(e);
         alert('Lỗi kết nối Backend: ' + e.message);
       } finally {
         setIsLoading(false);
       }
-    } else {
-      setIsLoading(false);
     }
   };
 
@@ -110,27 +110,26 @@ const Dashboard = () => {
       const response = await fetch(`${API_BASE_URL}/api/predict/ticker/${ticker}`);
       if (!response.ok) throw new Error('Không thể lấy kết quả phân tích cho mã ' + ticker);
       const res = await response.json();
-      const scorePct = typeof res.pd_score_pct === 'number' ? res.pd_score_pct : 0;
       
       const mock4Q = [
-        Math.max(0, scorePct - 10),
-        Math.max(0, scorePct - 5),
-        scorePct,
-        scorePct
+        Math.max(0, res.pd_score_pct - 10),
+        Math.max(0, res.pd_score_pct - 5),
+        res.pd_score_pct,
+        res.pd_score_pct
       ];
 
       const newResult = {
         isDemo: false,
         companyName: res.company_name || ticker,
         sector: null,
-        pd_score: scorePct,
-        risk_level: res.risk_level_vi || 'Thấp',
-        top_factors: Array.isArray(res.top_factors) ? res.top_factors : [],
+        pd_score: res.pd_score_pct,
+        risk_level: res.risk_level_vi,
+        top_factors: res.top_factors,
         pd_scores_4q: mock4Q,
-        radar_data: generateRadarData(scorePct)
+        radar_data: generateRadarData(res.pd_score_pct)
       };
       setResult(newResult);
-      if (typeof updateAnalysisContext === 'function') updateAnalysisContext(newResult, null);
+      updateAnalysisContext(newResult, null);
     } catch (e) {
       console.error(e);
       alert('Lỗi kết nối Backend: ' + e.message);
@@ -139,6 +138,7 @@ const Dashboard = () => {
     }
   };
 
+  // Auto-run prediction when redirected from SearchCompany or Portfolio
   useEffect(() => {
     if (location.state) {
       if (location.state.selectedTicker) {
@@ -149,12 +149,11 @@ const Dashboard = () => {
     }
   }, [location.state]);
 
+  // Smooth scroll to results when prediction completes
   useEffect(() => {
     if (result && resultRef.current) {
       setTimeout(() => {
-        if (typeof resultRef.current?.scrollIntoView === 'function') {
-          resultRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        resultRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 100);
     }
   }, [result]);
@@ -195,6 +194,7 @@ const Dashboard = () => {
             )}
           </div>
           
+          {/* Top Row: Gauge + Trend */}
           <div className="charts-container stagger-enter" style={{ marginBottom: '2rem' }}>
             <div style={{ minWidth: 0 }}>
               <ScoreGauge score={result.pd_score} riskLevel={result.risk_level} />
@@ -204,6 +204,7 @@ const Dashboard = () => {
             </div>
           </div>
           
+          {/* Bottom Row: Feature Contribution + Radar */}
           <div className="charts-container stagger-enter" style={{ marginBottom: '2rem' }}>
             <div style={{ minWidth: 0 }}>
               <FeatureContributionChart topFactors={result.top_factors} />

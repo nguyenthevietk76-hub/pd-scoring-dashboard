@@ -2,25 +2,23 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 import { useState, useEffect } from 'react';
 import { CheckCircle, AlertTriangle, AlertOctagon } from 'lucide-react';
 
-const ScoreGauge = ({ score = 0, riskLevel = 'Thấp' }) => {
-  const safeScore = typeof score === 'number' && !isNaN(score) ? score : 0;
-  const safeRiskLevel = typeof riskLevel === 'string' ? riskLevel : String(riskLevel || 'Thấp');
+const ScoreGauge = ({ score, riskLevel }) => {
   const [animatedScore, setAnimatedScore] = useState(0);
 
   useEffect(() => {
     let start = 0;
     const duration = 800; // ms
-    const increment = safeScore / (duration / 16); // 60fps
+    const increment = score / (duration / 16); // 60fps
     
-    if (safeScore === 0) {
+    if (score === 0) {
       setAnimatedScore(0);
       return;
     }
 
     const timer = setInterval(() => {
       start += increment;
-      if (start >= safeScore) {
-        setAnimatedScore(safeScore);
+      if (start >= score) {
+        setAnimatedScore(score);
         clearInterval(timer);
       } else {
         setAnimatedScore(start);
@@ -28,29 +26,34 @@ const ScoreGauge = ({ score = 0, riskLevel = 'Thấp' }) => {
     }, 16);
 
     return () => clearInterval(timer);
-  }, [safeScore]);
+  }, [score]);
 
+  // Convert 0-100 score to 0-180 degrees for half circle
   const data = [
     { name: 'Score', value: animatedScore },
-    { name: 'Remainder', value: Math.max(0, 100 - animatedScore) },
+    { name: 'Remainder', value: 100 - animatedScore },
   ];
 
+  // Colors based on thresholds
   let fillColors;
-  if (safeScore < 5) fillColors = ['var(--success)', 'transparent'];
-  else if (safeScore < 15) fillColors = ['var(--warning)', 'transparent'];
+  if (score < 5) fillColors = ['var(--success)', 'transparent'];
+  else if (score < 15) fillColors = ['var(--warning)', 'transparent'];
   else fillColors = ['var(--danger)', 'transparent'];
 
   let badgeClass = '';
   let BadgeIcon = null;
-  if (safeScore < 5) { badgeClass = 'badge-low'; BadgeIcon = CheckCircle; }
-  else if (safeScore < 15) { badgeClass = 'badge-medium'; BadgeIcon = AlertTriangle; }
+  if (score < 5) { badgeClass = 'badge-low'; BadgeIcon = CheckCircle; }
+  else if (score < 15) { badgeClass = 'badge-medium'; BadgeIcon = AlertTriangle; }
   else { badgeClass = 'badge-high'; BadgeIcon = AlertOctagon; }
 
   return (
     <div className="card chart-card card-glow" style={{ width: '100%', minWidth: '320px', padding: '32px' }}>
       <h3 className="chart-title">Xác suất vỡ nợ dự báo (PD)</h3>
       
+      {/* Container for gauge and background circle */}
       <div style={{ position: 'relative', width: '280px', height: '180px', margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
+        
+        {/* Background Circle for depth */}
         <div style={{
           position: 'absolute',
           bottom: '0',
@@ -78,8 +81,8 @@ const ScoreGauge = ({ score = 0, riskLevel = 'Thấp' }) => {
                 paddingAngle={0}
                 dataKey="value"
                 stroke="none"
-                isAnimationActive={false}
-                cornerRadius={safeScore === 0 || safeScore === 100 ? 0 : 4}
+                isAnimationActive={false} // We handle animation manually for the number and gauge
+                cornerRadius={score === 0 || score === 100 ? 0 : 4}
               >
                 {data.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={fillColors[index]} />
@@ -89,6 +92,8 @@ const ScoreGauge = ({ score = 0, riskLevel = 'Thấp' }) => {
           </ResponsiveContainer>
         </div>
 
+        {/* Fake track to show remainder nicely if needed, or just let 'transparent' work.
+            Actually, let's use a solid track for the remainder instead of transparent for a better look. */}
         <div style={{ width: '280px', height: '280px', position: 'absolute', top: 0, zIndex: 0 }}>
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
@@ -118,7 +123,7 @@ const ScoreGauge = ({ score = 0, riskLevel = 'Thấp' }) => {
           zIndex: 2
         }}>
           <div style={{fontSize: '2.5rem', fontWeight: 800, color: 'var(--ink-900)', lineHeight: 1}}>
-            {(typeof animatedScore === 'number' && !isNaN(animatedScore) ? animatedScore : 0).toFixed(1)}%
+            {animatedScore.toFixed(1)}%
           </div>
         </div>
       </div>
@@ -126,7 +131,7 @@ const ScoreGauge = ({ score = 0, riskLevel = 'Thấp' }) => {
       <div style={{marginTop: '1.5rem', zIndex: 2}}>
         <div className={badgeClass}>
           {BadgeIcon && <BadgeIcon size={16} />}
-          <span>MỨC RỦI RO: {safeRiskLevel.toUpperCase()}</span>
+          <span>MỨC RỦI RO: {riskLevel.toUpperCase()}</span>
         </div>
       </div>
     </div>

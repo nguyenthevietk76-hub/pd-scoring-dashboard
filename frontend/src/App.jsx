@@ -2,11 +2,10 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import { AnalysisProvider } from './context/AnalysisContext';
-import ErrorBoundary from './components/ErrorBoundary';
 
 // Lazy load pages to split the bundle size and speed up page load
-import Dashboard from './pages/Dashboard';
 const Landing = lazy(() => import('./pages/Landing'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const Alerts = lazy(() => import('./pages/Alerts'));
 const MarketOverview = lazy(() => import('./pages/MarketOverview'));
@@ -22,54 +21,18 @@ const NewsAnalysis = lazy(() => import('./pages/NewsAnalysis'));
 const SqlExplorer = lazy(() => import('./pages/SqlExplorer'));
 const FinBotPage = lazy(() => import('./pages/FinBotPage'));
 
-const LoadingSpinner = () => {
-  // Inject style block for keyframes if not exists
-  React.useEffect(() => {
-    if (!document.getElementById('spin-keyframe-style')) {
-      const style = document.createElement('style');
-      style.id = 'spin-keyframe-style';
-      style.innerHTML = `
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-      `;
-      document.head.appendChild(style);
-    }
-  }, []);
-
-  return (
+const LoadingSpinner = () => (
+  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh' }}>
     <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100vh',
-      background: '#0b0f19', // Dark premium color matching system design
-      color: '#38bdf8', // Blue color matching design
-      fontFamily: 'system-ui, -apple-system, sans-serif',
-      fontSize: '18px',
-      fontWeight: '500'
-    }}>
-      <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '12px'
-      }}>
-        {/* Glow spinner using pure CSS animation */}
-        <div style={{
-          width: '40px',
-          height: '40px',
-          border: '3px solid rgba(56, 189, 248, 0.1)',
-          borderTop: '3px solid #38bdf8',
-          borderRadius: '50%',
-          animation: 'spin 1s linear infinite'
-        }} />
-        <span>Đang tải hệ thống...</span>
-      </div>
-    </div>
-  );
-};
+      width: '40px',
+      height: '40px',
+      border: '4px solid rgba(0, 229, 255, 0.1)',
+      borderTop: '4px solid var(--teal-500)',
+      borderRadius: '50%',
+      animation: 'spin 1s linear infinite'
+    }} />
+  </div>
+);
 
 function App() {
   return (
@@ -104,4 +67,3 @@ function App() {
 }
 
 export default App;
-

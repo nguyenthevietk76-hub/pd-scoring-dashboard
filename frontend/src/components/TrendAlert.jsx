@@ -2,24 +2,20 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceL
 import { AlertTriangle, AlertCircle } from 'lucide-react';
 
 const TrendAlert = ({ pdScores4Q }) => {
-  const safeScores = Array.isArray(pdScores4Q) && pdScores4Q.length >= 4 
-    ? pdScores4Q 
-    : [0, 0, 0, 0];
-
   // Chuẩn bị data: Q-3, Q-2, Q-1, Q-Current
-  const data = safeScores.map((score, index) => {
+  const data = pdScores4Q.map((score, index) => {
     let label = '';
     if (index === 3) label = 'Hiện tại';
     else label = `Q-${3 - index}`;
     
     return {
       name: label,
-      score: typeof score === 'number' && !isNaN(score) ? score : 0
+      score: score
     };
   });
 
-  const currentScore = typeof safeScores[3] === 'number' && !isNaN(safeScores[3]) ? safeScores[3] : 0;
-  const prevScore = typeof safeScores[2] === 'number' && !isNaN(safeScores[2]) ? safeScores[2] : 0;
+  const currentScore = pdScores4Q[3];
+  const prevScore = pdScores4Q[2];
   
   // Logic hiển thị cảnh báo
   const diff = currentScore - prevScore;
@@ -27,9 +23,7 @@ const TrendAlert = ({ pdScores4Q }) => {
   const isHighRisk = currentScore > 15;
 
   const CustomTooltip = ({ active, payload }) => {
-    if (active && Array.isArray(payload) && payload.length > 0 && payload[0]) {
-      const val = typeof payload[0].value === 'number' && !isNaN(payload[0].value) ? payload[0].value : 0;
-      const name = payload[0].payload?.name || '';
+    if (active && payload && payload.length) {
       return (
         <div style={{
           background: 'rgba(255, 255, 255, 0.95)', 
@@ -42,16 +36,13 @@ const TrendAlert = ({ pdScores4Q }) => {
           boxShadow: '0 8px 24px rgba(0, 0, 0, 0.04)',
           color: 'var(--ink-900)'
         }}>
-          <p style={{ fontWeight: 600, color: 'var(--ink-900)', marginBottom: '5px' }}>{name}</p>
-          <p style={{ color: 'var(--danger)', fontWeight: 700 }}>PD: {val.toFixed(1)}%</p>
+          <p style={{ fontWeight: 600, color: 'var(--ink-900)', marginBottom: '5px' }}>{payload[0].payload.name}</p>
+          <p style={{ color: 'var(--danger)', fontWeight: 700 }}>PD: {payload[0].value.toFixed(1)}%</p>
         </div>
       );
     }
     return null;
   };
-
-  const safeCurrentScore = typeof currentScore === 'number' && !isNaN(currentScore) ? currentScore : 0;
-  const safeDiff = typeof diff === 'number' && !isNaN(diff) ? diff : 0;
 
   return (
     <div className="card chart-card card-glow" style={{ width: '100%' }}>
@@ -61,14 +52,14 @@ const TrendAlert = ({ pdScores4Q }) => {
       {isHighRisk && (
         <div className="alert-banner danger" style={{ width: '100%', marginBottom: '1rem', backgroundColor: 'rgba(239, 68, 68, 0.05)', border: '1px solid rgba(239, 68, 68, 0.12)' }}>
           <AlertCircle size={20} />
-          <span style={{ color: '#b91c1c', fontWeight: 600 }}> Cảnh báo: Xác suất vỡ nợ hiện tại đang ở mức cao nguy hiểm ({safeCurrentScore.toFixed(1)}%).</span>
+          <span style={{ color: '#b91c1c', fontWeight: 600 }}> Cảnh báo: Xác suất vỡ nợ hiện tại đang ở mức cao nguy hiểm ({currentScore.toFixed(1)}%).</span>
         </div>
       )}
       
       {isSuddenIncrease && !isHighRisk && (
         <div className="alert-banner warning" style={{ width: '100%', marginBottom: '1rem', backgroundColor: 'rgba(245, 158, 11, 0.05)', border: '1px solid rgba(245, 158, 11, 0.12)' }}>
           <AlertTriangle size={20} />
-          <span style={{ color: '#b45309', fontWeight: 600 }}>️ Cảnh báo: Điểm rủi ro tăng vọt (+{safeDiff.toFixed(1)}%) so với quý liền trước.</span>
+          <span style={{ color: '#b45309', fontWeight: 600 }}>️ Cảnh báo: Điểm rủi ro tăng vọt (+{diff.toFixed(1)}%) so với quý liền trước.</span>
         </div>
       )}
 
