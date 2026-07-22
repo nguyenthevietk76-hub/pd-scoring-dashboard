@@ -80,7 +80,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Landing />} />
               <Route element={<Layout />}>
-                <Route path="/dashboard" element={<Navigate to="/market-overview" replace />} />
+                <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/market-overview" element={<MarketOverview />} />
                 <Route path="/search-company" element={<SearchCompany />} />
                 <Route path="/pd-scoring" element={<Dashboard />} />

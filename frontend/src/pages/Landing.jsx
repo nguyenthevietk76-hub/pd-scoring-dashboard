@@ -52,7 +52,7 @@ const Landing = () => {
         <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#000000', letterSpacing: '-0.03em' }}>
           Risk Tech
         </div>
-        <Link to="/dashboard" className="btn-primary" style={{ padding: '0.6rem 1.8rem', fontSize: '0.875rem' }}>
+        <Link to="/pd-scoring" className="btn-primary" style={{ padding: '0.6rem 1.8rem', fontSize: '0.875rem' }}>
           Khởi chạy hệ thống <ChevronRight size={16} />
         </Link>
       </header>
@@ -142,7 +142,7 @@ const Landing = () => {
             
             <div style={{ display: 'flex', alignItems: 'center' }}>
               {/* Xem thêm Pill Button */}
-              <Link to="/dashboard" className="btn-primary" style={{ fontSize: '1rem', padding: '0.9rem 2.75rem', boxShadow: '0 10px 25px rgba(0, 0, 0, 0.12)' }}>
+              <Link to="/pd-scoring" className="btn-primary" style={{ fontSize: '1rem', padding: '0.9rem 2.75rem', boxShadow: '0 10px 25px rgba(0, 0, 0, 0.12)' }}>
                 Xem thêm
               </Link>
               {/* Mua ngay Text Link Vibe */}
@@ -297,7 +297,7 @@ const Landing = () => {
           <p style={{ color: 'var(--ink-500)', fontSize: '1.15rem', marginBottom: '3.5rem', lineHeight: 1.6, fontWeight: 500 }}>
             Bắt đầu khám phá sức mạnh định lượng rủi ro bằng AI ngay hôm nay để đưa ra các quyết định đầu tư và tín dụng an toàn, tối ưu.
           </p>
-          <Link to="/dashboard" className="btn-primary" style={{ fontSize: '1.1rem', padding: '1rem 3.5rem', boxShadow: '0 10px 25px rgba(0, 0, 0, 0.12)' }}>
+          <Link to="/pd-scoring" className="btn-primary" style={{ fontSize: '1.1rem', padding: '1rem 3.5rem', boxShadow: '0 10px 25px rgba(0, 0, 0, 0.12)' }}>
             Truy cập Dashboard
           </Link>
         </div>

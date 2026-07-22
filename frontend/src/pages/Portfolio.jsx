@@ -132,7 +132,7 @@ const Portfolio = () => {
                 <tr 
                   key={idx} 
                   className="table-row-hover" 
-                  onClick={() => navigate('/dashboard', { state: { company } })}
+                  onClick={() => navigate('/pd-scoring', { state: { company } })}
                   style={{ transition: 'background-color 0.2s', cursor: 'pointer' }}
                 >
                   <td style={{ fontWeight: 800, color: 'var(--teal-500)', padding: '1.25rem 2rem' }}>{company.ticker}</td>
