@@ -1,10 +1,6 @@
 import React, { createContext, useState } from 'react';
 
-export const AnalysisContext = createContext({
-  analysisContext: null,
-  setAnalysisContext: () => {},
-  updateAnalysisContext: () => {}
-});
+export const AnalysisContext = createContext();
 
 export const AnalysisProvider = ({ children }) => {
   const [analysisContext, setAnalysisContext] = useState(null);

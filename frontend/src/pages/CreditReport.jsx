@@ -113,7 +113,7 @@ const CreditReport = () => {
               </div>
             </div>
             <p style={{ fontSize: '0.925rem', color: '#334155', lineHeight: '1.6', margin: 0 }}>
-              Dựa trên mô hình học máy **Random Forest** kết hợp **Logistic Regression** đã qua kiểm định, doanh nghiệp **{selectedCompany.name}** có xác suất xảy ra biến cố mất khả năng thanh toán (Distress) trong vòng 1 năm tới là **{(selectedCompany.current_pd || 0).toFixed(2)}%**. Tình hình tài chính tổng thể của doanh nghiệp được xếp vào nhóm có **rủi ro {(selectedCompany.risk_level || '').toLowerCase()}**.
+              Dựa trên mô hình học máy **Random Forest** kết hợp **Logistic Regression** đã qua kiểm định, doanh nghiệp **{selectedCompany.name}** có xác suất xảy ra biến cố mất khả năng thanh toán (Distress) trong vòng 1 năm tới là **{selectedCompany.current_pd.toFixed(2)}%**. Tình hình tài chính tổng thể của doanh nghiệp được xếp vào nhóm có **rủi ro {selectedCompany.risk_level.toLowerCase()}**.
             </p>
           </div>
 
