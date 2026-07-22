@@ -4,6 +4,13 @@ import json
 import warnings
 warnings.filterwarnings("ignore")
 
+if sys.platform.startswith("win"):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+        sys.stderr.reconfigure(encoding='utf-8')
+    except AttributeError:
+        pass
+
 import pandas as pd
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse

@@ -288,7 +288,7 @@ async def chat(req: ChatRequest, request: Request):
 
     try:
         model = genai.GenerativeModel(
-            model_name="gemini-2.0-flash",
+            model_name="gemini-3.5-flash",
             generation_config=GENERATION_CONFIG,
             safety_settings=SAFETY_SETTINGS,
             system_instruction=build_system_prompt(ctx, available_companies, rag_context),
@@ -407,7 +407,7 @@ async def chat_stream(req: ChatRequest, request: Request):
     async def generate():
         try:
             model = genai.GenerativeModel(
-                model_name="gemini-2.0-flash",
+                model_name="gemini-3.5-flash",
                 generation_config=GENERATION_CONFIG,
                 safety_settings=SAFETY_SETTINGS,
                 system_instruction=build_system_prompt(ctx, available_companies, rag_context),
