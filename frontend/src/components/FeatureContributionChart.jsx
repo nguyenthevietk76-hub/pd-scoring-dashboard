@@ -11,14 +11,17 @@ const FeatureContributionChart = ({ topFactors = [] }) => {
 
   // Custom tooltip
   const CustomTooltip = ({ active, payload }) => {
-    if (active && payload && payload.length) {
-      const isPositive = payload[0].value > 0;
+    if (active && Array.isArray(payload) && payload.length > 0 && payload[0]) {
+      const val = typeof payload[0].value === 'number' && !isNaN(payload[0].value) ? payload[0].value : 0;
+      const isPositive = val > 0;
+      const name = payload[0].payload?.name || '';
+      const displayVal = payload[0].payload?.displayVal || '';
       return (
         <div style={{background: 'rgba(11, 15, 25, 0.95)', backdropFilter: 'blur(8px)', padding: '12px', border: '1px solid var(--border-color)', borderRadius: '8px', boxShadow: '0 8px 32px 0 rgba(0,0,0,0.3)', fontSize: '0.875rem'}}>
-          <p style={{fontWeight: 600, color: 'var(--ink-900)', marginBottom: '5px'}}>{payload[0].payload.name}</p>
-          <p style={{color: 'var(--ink-500)', marginBottom: '8px'}}>Giá trị hiện tại: {payload[0].payload.displayVal}</p>
+          <p style={{fontWeight: 600, color: 'var(--ink-900)', marginBottom: '5px'}}>{name}</p>
+          <p style={{color: 'var(--ink-500)', marginBottom: '8px'}}>Giá trị hiện tại: {displayVal}</p>
           <p style={{color: isPositive ? 'var(--danger)' : 'var(--success)', fontWeight: 500}}>
-            Tác động: {isPositive ? '+' : ''}{payload[0].value.toFixed(2)} 
+            Tác động: {isPositive ? '+' : ''}{val.toFixed(2)} 
             {isPositive ? ' (Tăng rủi ro)' : ' (Giảm rủi ro)'}
           </p>
         </div>
@@ -29,13 +32,14 @@ const FeatureContributionChart = ({ topFactors = [] }) => {
 
   // Custom Y-Axis tick to show label and value
   const CustomYAxisTick = (props) => {
+    if (!props || !props.payload) return null;
     const { x, y, payload } = props;
     const factor = data.find(d => d.name === payload.value);
     
     return (
-      <g transform={`translate(${x},${y})`}>
+      <g transform={`translate(${x || 0},${y || 0})`}>
         <text x={0} y={-8} dy={0} textAnchor="end" fill="var(--ink-900)" fontSize={13} fontWeight={500}>
-          {payload.value}
+          {payload.value || ''}
         </text>
         <text x={0} y={10} dy={0} textAnchor="end" fill="var(--ink-500)" fontSize={12}>
           {factor ? factor.displayVal : ''}

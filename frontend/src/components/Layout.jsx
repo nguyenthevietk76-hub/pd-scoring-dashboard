@@ -1,5 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import TopNavbar from './TopNavbar';
+import ErrorBoundary from './ErrorBoundary';
 
 const Layout = () => {
   const location = useLocation();
@@ -23,7 +24,9 @@ const Layout = () => {
       <TopNavbar />
 
       <main className="main-content" key={location.pathname}>
-        <Outlet />
+        <ErrorBoundary key={location.pathname}>
+          <Outlet />
+        </ErrorBoundary>
       </main>
     </div>
   );

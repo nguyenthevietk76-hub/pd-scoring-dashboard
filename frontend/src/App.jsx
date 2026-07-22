@@ -74,33 +74,31 @@ const LoadingSpinner = () => {
 function App() {
   return (
     <AnalysisProvider>
-      <ErrorBoundary>
-        <BrowserRouter>
-          <Suspense fallback={<LoadingSpinner />}>
-            <Routes>
-              <Route path="/" element={<Landing />} />
-              <Route element={<Layout />}>
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/market-overview" element={<MarketOverview />} />
-                <Route path="/search-company" element={<SearchCompany />} />
-                <Route path="/pd-scoring" element={<Dashboard />} />
-                <Route path="/trends" element={<Trends />} />
-                <Route path="/altman-z" element={<AltmanZ />} />
-                <Route path="/portfolio" element={<Portfolio />} />
-                <Route path="/alerts" element={<Alerts />} />
-                <Route path="/rankings" element={<Rankings />} />
-                <Route path="/credit-report" element={<CreditReport />} />
-                <Route path="/export" element={<Export />} />
-                <Route path="/compare" element={<CompareFinancials />} />
-                <Route path="/custom-chart" element={<CustomChart />} />
-                <Route path="/news" element={<NewsAnalysis />} />
-                <Route path="/sql" element={<SqlExplorer />} />
-                <Route path="/chatbot" element={<FinBotPage />} />
-              </Route>
-            </Routes>
-          </Suspense>
-        </BrowserRouter>
-      </ErrorBoundary>
+      <BrowserRouter>
+        <Suspense fallback={<LoadingSpinner />}>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route element={<Layout />}>
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/market-overview" element={<MarketOverview />} />
+              <Route path="/search-company" element={<SearchCompany />} />
+              <Route path="/pd-scoring" element={<Dashboard />} />
+              <Route path="/trends" element={<Trends />} />
+              <Route path="/altman-z" element={<AltmanZ />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/alerts" element={<Alerts />} />
+              <Route path="/rankings" element={<Rankings />} />
+              <Route path="/credit-report" element={<CreditReport />} />
+              <Route path="/export" element={<Export />} />
+              <Route path="/compare" element={<CompareFinancials />} />
+              <Route path="/custom-chart" element={<CustomChart />} />
+              <Route path="/news" element={<NewsAnalysis />} />
+              <Route path="/sql" element={<SqlExplorer />} />
+              <Route path="/chatbot" element={<FinBotPage />} />
+            </Route>
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
     </AnalysisProvider>
   );
 }
