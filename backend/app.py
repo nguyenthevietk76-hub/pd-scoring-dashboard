@@ -3,6 +3,8 @@ import os
 import sys
 import json
 import warnings
+from dotenv import load_dotenv
+load_dotenv()
 warnings.filterwarnings("ignore")
 
 import pandas as pd
@@ -437,9 +439,19 @@ def call_gemini_api(system_instruction: str, user_message: str) -> str:
                 res = json.loads(response.read().decode("utf-8"))
                 return res["candidates"][0]["content"]["parts"][0]["text"]
         except Exception as e:
-            print(f"Gemini API call failed on attempt {attempt + 1}:", e)
-            if hasattr(e, 'read'):
-                print(e.read().decode('utf-8'))
+            print(f"Gemini API call failed on attempt {attempt + 1}: {e}")
+            import urllib.error
+            if isinstance(e, urllib.error.HTTPError):
+                try:
+                    error_body = e.read().decode('utf-8')
+                    print(f"[Gemini API Error] status={e.code} body={error_body}")
+                except Exception:
+                    pass
+            elif hasattr(e, 'read'):
+                try:
+                    print(e.read().decode('utf-8'))
+                except Exception:
+                    pass
             if attempt == max_retries - 1:
                 raise HTTPException(status_code=500, detail=f"Gemini API call failed after {max_retries} attempts: {str(e)}")
             time.sleep(2)

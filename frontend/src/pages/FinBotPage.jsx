@@ -178,6 +178,7 @@ export default function FinBotPage({ companyContext = null }) {
       let fullReply = "";
       let ragSources = [];
       let companyData = null;
+      let streamError = null;
 
       while (true) {
         const { value, done } = await reader.read();
@@ -192,48 +193,57 @@ export default function FinBotPage({ companyContext = null }) {
             if (!trimmed || !trimmed.startsWith("data: ")) continue;
 
             const jsonStr = trimmed.slice(6);
+            let parsed;
             try {
-              const parsed = JSON.parse(jsonStr);
-              if (parsed.error) {
-                throw new Error(parsed.error);
-              }
-              if (parsed.chunk) {
-                fullReply += parsed.chunk;
-                setMessages(prev => {
-                  const updated = [...prev];
-                  if (updated.length > 0) {
-                    updated[updated.length - 1] = {
-                      ...updated[updated.length - 1],
-                      content: fullReply
-                    };
-                  }
-                  return updated;
-                });
-              }
-              if (parsed.done) {
-                if (parsed.rag_sources) ragSources = parsed.rag_sources;
-                if (parsed.company_data) companyData = parsed.company_data;
-              }
+              parsed = JSON.parse(jsonStr);
             } catch (e) {
-              console.error("Lỗi parse stream:", e);
+              console.error("Lỗi parse JSON dòng stream:", e, jsonStr);
+              continue;
+            }
+
+            if (parsed.error) {
+              streamError = parsed.error;
+              break;
+            }
+
+            if (parsed.chunk) {
+              fullReply += parsed.chunk;
+              setMessages(prev => {
+                const updated = [...prev];
+                if (updated.length > 0) {
+                  updated[updated.length - 1] = {
+                    ...updated[updated.length - 1],
+                    content: fullReply
+                  };
+                }
+                return updated;
+              });
+            }
+            if (parsed.done) {
+              if (parsed.rag_sources) ragSources = parsed.rag_sources;
+              if (parsed.company_data) companyData = parsed.company_data;
             }
           }
         }
-        if (done) {
+        if (streamError || done) {
           break;
         }
       }
 
       // Parse nốt buffer còn thừa nếu có
-      if (buffer.trim().startsWith("data: ")) {
+      if (!streamError && buffer.trim().startsWith("data: ")) {
         try {
           const parsed = JSON.parse(buffer.trim().slice(6));
-          if (parsed.chunk) {
-            fullReply += parsed.chunk;
-          }
-          if (parsed.done) {
-            if (parsed.rag_sources) ragSources = parsed.rag_sources;
-            if (parsed.company_data) companyData = parsed.company_data;
+          if (parsed.error) {
+            streamError = parsed.error;
+          } else {
+            if (parsed.chunk) {
+              fullReply += parsed.chunk;
+            }
+            if (parsed.done) {
+              if (parsed.rag_sources) ragSources = parsed.rag_sources;
+              if (parsed.company_data) companyData = parsed.company_data;
+            }
           }
         } catch (_) {}
       }
@@ -241,9 +251,12 @@ export default function FinBotPage({ companyContext = null }) {
       // Cập nhật trạng thái cuối cùng và lưu vào session
       const finalHistory = [...newHistory, { 
         role: "assistant", 
-        content: fullReply || "Xin lỗi, tôi không nhận được phản hồi.",
+        content: streamError 
+          ? `⚠️ Lỗi từ máy chủ: ${streamError}`
+          : (fullReply || "Xin lỗi, tôi không nhận được phản hồi."),
         rag_sources: ragSources,
-        company_data: companyData
+        company_data: companyData,
+        isError: !!streamError
       }];
       setMessages(finalHistory);
       setSessions(prev => prev.map(s => s.id === sessionId ? { ...s, messages: finalHistory, updatedAt: Date.now() } : s));

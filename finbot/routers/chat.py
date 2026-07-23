@@ -341,6 +341,7 @@ async def chat(req: ChatRequest, request: Request):
             detail="Phản hồi bị dừng giữa chừng. Vui lòng thử lại."
         )
     except Exception as e:
+        logger.error(f"[Gemini SDK Error] {type(e).__name__}: {e}", exc_info=True)
         error_msg = str(e)
         if "API_KEY" in error_msg.upper() or "401" in error_msg:
             raise HTTPException(status_code=401, detail="API key Gemini không hợp lệ hoặc chưa được cấu hình.")
@@ -447,6 +448,7 @@ async def chat_stream(req: ChatRequest, request: Request):
             yield f"data: {json.dumps({'done': True, 'rag_sources': rag_sources, 'company_data': company_data_response}, ensure_ascii=False)}\n\n"
 
         except Exception as e:
+            logger.error(f"[Gemini SDK Stream Error] {type(e).__name__}: {e}", exc_info=True)
             yield f"data: {json.dumps({'error': str(e)}, ensure_ascii=False)}\n\n"
 
     return StreamingResponse(

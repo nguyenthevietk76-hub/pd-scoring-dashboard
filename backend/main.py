@@ -2,6 +2,8 @@ import os
 import sys
 import json
 import warnings
+from dotenv import load_dotenv
+load_dotenv()
 warnings.filterwarnings("ignore")
 
 if sys.platform.startswith("win"):
@@ -512,11 +514,12 @@ async def call_gemini_api(system_instruction: str, user_message: str, history: L
             try:
                 response = await client.post(url, json=body, headers=headers)
                 if response.status_code != 200:
+                    print(f"[Gemini API Error] status={response.status_code} body={response.text}")
                     raise Exception(f"HTTP {response.status_code}: {response.text}")
                 res = response.json()
                 return res["candidates"][0]["content"]["parts"][0]["text"]
             except Exception as e:
-                print(f"Gemini API call failed on attempt {attempt + 1}:", e)
+                print(f"Gemini API call failed on attempt {attempt + 1}: {e}")
                 if attempt == max_retries - 1:
                     raise HTTPException(status_code=500, detail=f"Gemini API call failed after {max_retries} attempts: {str(e)}")
                 await asyncio.sleep(2)
